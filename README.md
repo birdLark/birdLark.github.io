@@ -1,10 +1,10 @@
-# Apache SeaTunnel Website
+# Apache LarkMidTable Website
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 [English](README.md) | [中文](README_ZH.md)
 
-This is the repository containing all the source code of `https://seatunnel.apache.org`.
+This is the repository containing all the source code of `https://birdlark.github.io`.
 This guide will guide you how to contribute to the SeaTunnel website.
 
 ## Branch
@@ -13,7 +13,7 @@ main is the default branch. For all modifications, please fork first, and then p
 
 ```
 main #default branch
-asf-site   #The official environment of asf-site official website is accessed through https://seatunnel.apache.org
+asf-site   #The official environment of asf-site official website is accessed through https://birdlark.github.io
 asf-staging #The asf-staging official website test environment is accessed through https://seatunnel.staged.apache.org
 ```
 
@@ -111,7 +111,7 @@ css and other style files are placed in the `src/css` directory
 
 ### 3.5 Home page modification
 
-Visit the page https://seatunnel.apache.org
+Visit the page https://birdlark.github.io
 
 Located in `src/pages/home`
 
@@ -124,7 +124,7 @@ Located in `src/pages/home`
 
 ### 3.6 Team page modification
 
-Visit the page https://seatunnel.apache.org/team
+Visit the page https://birdlark.github.io/team
 
 Located in `src/pages/team`
 
@@ -137,7 +137,7 @@ Located in `src/pages/team`
 
 ### 3.7 User list page modification
 
-Visit the page https://seatunnel.apache.org/user
+Visit the page https://birdlark.github.io/user
 
 Located in `src/pages/user`
 
@@ -152,7 +152,7 @@ Located in `src/pages/user`
 
 ### 3.8 version List page modification
 
-Visit the page https://seatunnel.apache.org/versions
+Visit the page https://birdlark.github.io/versions
 
 Located in `src/pages/versions`
 

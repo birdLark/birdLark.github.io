@@ -1,50 +1,23 @@
-# Website
+# official-website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+> 响应式企业官方网站模板，使用vue全家桶开发
 
-### Prerequisites
+## 技术要点
 
-- [Node.js](https://nodejs.org/) 12.x + 
-- [Yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
+``` bash
+# bootstarp——整体框架，主要用到了栅格系统和一些组件
 
-### Installation
+# swiper——轮播插件
 
-```bash
-$ yarn
+# wow.js+animate.css——网站的整体动画插件
+
+# axios——ajax请求
+
+# vue-router——路由
+
+# vuex——状态管理（项目没有用到）
+
+# session storage——本地存储
+
+# 对可复用的组件进行了封装，对api接口进行了封装
 ```
-Or
-```bash
-$ npm install
-```
-
-### Local Development
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

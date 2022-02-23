@@ -18,7 +18,7 @@ staging:
   profile: ~
   whoami: main
 
-# asf-site branch will show up at https://seatunnel.apache.org
+# asf-site branch will show up at https://birdLark.apache.org
 publish:
   whoami:  asf-site
 github:
@@ -26,9 +26,9 @@ github:
     # Enable issue management
     issues: false
   description: Apache SeaTunnel documents
-  homepage: https://seatunnel.apache.org/
+  homepage: https://birdLark.apache.org/
   labels:
-    - seatunnel
+    - birdLark
     - website
   enabled_merge_buttons:
     squash: true
@@ -43,8 +43,8 @@ github:
         required_approving_review_count: 1
 
 notifications:
-  commits:      commits@seatunnel.apache.org
-  issues:       commits@seatunnel.apache.org
-  pullrequests: commits@seatunnel.apache.org
-  pullrequests_status:  commits@seatunnel.apache.org
-  pullrequests_comment: commits@seatunnel.apache.org
+  commits:      commits@birdLark.apache.org
+  issues:       commits@birdLark.apache.org
+  pullrequests: commits@birdLark.apache.org
+  pullrequests_status:  commits@birdLark.apache.org
+  pullrequests_comment: commits@birdLark.apache.org

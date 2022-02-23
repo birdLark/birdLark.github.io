@@ -2,7 +2,7 @@
 title: SeaTunnel FAQ
 ---
 
-**FAQ 1.** I encounter a problem when using SeaTunnel and I cannot solve it by myself. What should I do?Firstly search in [Issue list](https://github.com/apache/incubator-seatunnel/issues) or [mailing list](https://lists.apache.org/list.html?dev@seatunnel.apache.org) to see if someone has already asked the same question and got the answer. If you still cannot find the answer, you can contact community members for help in[ these ways](https://github.com/apache/incubator-seatunnel#contact-us) .
+**FAQ 1.** I encounter a problem when using SeaTunnel and I cannot solve it by myself. What should I do?Firstly search in [Issue list](https://github.com/apache/incubator-birdLark/issues) or [mailing list](https://lists.apache.org/list.html?dev@birdLark.apache.org) to see if someone has already asked the same question and got the answer. If you still cannot find the answer, you can contact community members for help in[ these ways](https://github.com/apache/incubator-birdLark#contact-us) .
 
 **FAQ 2.** How to declare a variable in SeaTunnel's configuration, and then dynamically replace the value of the variable at runtime?
 
@@ -23,7 +23,7 @@ transform {
 Taking Spark Local mode as an example, the startup command is as follows:
 
 ```shell
-./bin/start-seatunnel-spark.sh -c ./config/your_app.conf -e client -m local[2] -i city=shanghai -i date=20190319
+./bin/start-birdLark-spark.sh -c ./config/your_app.conf -e client -m local[2] -i city=shanghai -i date=20190319
 ```
 
 You can use the parameter `-i` or `--variable` followed with `key=value` to specify the value of the variable, where the key needs to be same as the variable name in the configuration.
@@ -110,7 +110,7 @@ sink {
 }
 ```
 
-In addition, SeaTunnel has implemented `Hive` output plugin after 1.5.7 in 1.x branch; in 2.x branch, the Hive plugin of the Spark engine has been supported after version 2.0.5: https://github.com/apache/incubator-seatunnel/issues/910.
+In addition, SeaTunnel has implemented `Hive` output plugin after 1.5.7 in 1.x branch; in 2.x branch, the Hive plugin of the Spark engine has been supported after version 2.0.5: https://github.com/apache/incubator-birdLark/issues/910.
 
 **FAQ 9.** How does SeaTunnel write multiple instances of ClickHouse to achieve load balancing?
 
@@ -219,7 +219,7 @@ For example, if you want to set the JDK version to JDK8, there are two cases:
 
 **FAQ 14.** What should I do if OOM always appears when running SeaTunnel in Spark local[*] mode?
 
-If you run in local mode, you need to modify the start-seatunnel.sh startup script after  spark-submit, add a parameter `--driver-memory 4g` . Under normal circumstances, the local mode is not used in the production environment. Therefore, this parameter generally does not need to be set during On Yarn. See: [Application Properties](https://spark.apache.org/docs/latest/configuration.html#application-properties) for details .
+If you run in local mode, you need to modify the start-birdLark.sh startup script after  spark-submit, add a parameter `--driver-memory 4g` . Under normal circumstances, the local mode is not used in the production environment. Therefore, this parameter generally does not need to be set during On Yarn. See: [Application Properties](https://spark.apache.org/docs/latest/configuration.html#application-properties) for details .
 
 **FAQ 15.** Where can the self-written plugins or third-party jdbc.jar be placed to be loaded by SeaTunnel?
 
@@ -308,13 +308,13 @@ Data conversion, data conversion can be achieved through the following two plug-
 1. Filter Convert plugin
 2. Filter Sql plugin
 
-Detailed data type conversion reference: [ClickHouse Data Type Check List](https://interestinglab.github.io/seatunnel-docs/#/en/configuration/output-plugins/Clickhouse?id=clickhouse-data-type-check-list)
+Detailed data type conversion reference: [ClickHouse Data Type Check List](https://interestinglab.github.io/birdLark-docs/#/en/configuration/output-plugins/Clickhouse?id=clickhouse-data-type-check-list)
 
-Refer to issue:[#488](https://github.com/apache/incubator-seatunnel/issues/488) [#382](https://github.com/apache/incubator-seatunnel/issues/382)
+Refer to issue:[#488](https://github.com/apache/incubator-birdLark/issues/488) [#382](https://github.com/apache/incubator-birdLark/issues/382)
 
 **FAQ 18.** How does SeaTunnel access kerberos-authenticated HDFS, YARN, Hive and other resources?
 
-Please refer to: [#590](https://github.com/apache/incubator-seatunnel/issues/590)
+Please refer to: [#590](https://github.com/apache/incubator-birdLark/issues/590)
 
 **FAQ 19.** How to troubleshoot NoClassDefFoundError, ClassNotFoundException and other issues?
 
@@ -336,7 +336,7 @@ There is an article on how to modify the spark code to complete the configuratio
 
 **FAQ 21.** I want to learn the source code of SeaTunnel, where should I start?
 
-SeaTunnel has a completely abstract and structured code implementation, and many people have chosen  SeaTunnel As a way to learn Spark, you can learn the source code from the main program entry: [Seatunnel.java](https://github.com/apache/incubator-seatunnel/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/seatunnel-core/seatunnel-core-base/src/main/java/org/apache/seatunnel/Seatunnel.java)
+SeaTunnel has a completely abstract and structured code implementation, and many people have chosen  SeaTunnel As a way to learn Spark, you can learn the source code from the main program entry: [LarkMidTable.java](https://github.com/apache/incubator-birdLark/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/birdLark-core/birdLark-core-base/src/main/java/org/apache/birdLark/LarkMidTable.java)
 
 **FAQ 22.** When SeaTunnel developers develop their own plugins, do they need to understand the SeaTunnel code? Should these code integrated into the SeaTunnel project?
 

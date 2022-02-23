@@ -17,13 +17,13 @@ Community involvement: Committers should have a constructive and friendly attitu
 In SeaTunnel, **new committer nomination** could only be officially started by existing PPMC members. If a new committer feels that he/she is qualified, he/she should contact any existing PPMC member and discuss. If this is agreed among some members of the PPMC, the process will kick off.
 
 The following steps are recommended (to be initiated only by an existing PPMC member):
-1. Send an email titled `[DISCUSS] Promote xxx as new committer` to `private@seatunnel.apache.org`. List the important contributions of the candidate,
+1. Send an email titled `[DISCUSS] Promote xxx as new committer` to `private@birdLark.apache.org`. List the important contributions of the candidate,
    so you could gather support from other PPMC members for your proposal.
 1. Keep the discussion open for more than 3 days but no more than 1 week, unless there is any express objection or concern.
-1. If the PPMC generally agrees to the proposal, send an email titled `[VOTE] Promote xxx as new committer` to `private@seatunnel.apache.org`.
+1. If the PPMC generally agrees to the proposal, send an email titled `[VOTE] Promote xxx as new committer` to `private@birdLark.apache.org`.
 1. Keep the voting process open for more than 3 days, but no more than 1 week. Consider the result as `Consensus Approval` if there are three +1 votes and
    +1 votes > -1 votes.
-1. Send an email titled `[RESULT][VOTE] Promote xxx as new committer` to `private@seatunnel.apache.org`, and list the voting details, including who the voters are.
+1. Send an email titled `[RESULT][VOTE] Promote xxx as new committer` to `private@birdLark.apache.org`, and list the voting details, including who the voters are.
 
 ### Invite new committer
 The PPMC member who starts the promotion is responsible for sending an invitation to the new committer and guiding him/her to set up the ASF env.
@@ -31,7 +31,7 @@ The PPMC member who starts the promotion is responsible for sending an invitatio
 The PPMC member should send an email using the following template to the new committer:
 ```
 To: klein@gmail.com
-Cc: private@seatunnel.apache.org
+Cc: private@birdLark.apache.org
 Subject: Invitation to become SeaTunnel committer: klein
 
 Hello [invitee name],
@@ -81,11 +81,11 @@ establishing you as a committer.
 ```
 
 ### Invitation acceptance process
-The new committer should reply to `private@seatunnel.apache.org` (choose `reply all`), and express his/her intention to accept the invitation.
+The new committer should reply to `private@birdLark.apache.org` (choose `reply all`), and express his/her intention to accept the invitation.
 Then, this invitation will be treated as accepted by the project's PPMC. Of course, the new committer may also choose to decline the invitation.
 
 Once the invitation has been accepted, the new committer has to take the following steps:
-1. Subscribe to `dev@seatunnel.apache.org`. Usually this is already done.
+1. Subscribe to `dev@birdLark.apache.org`. Usually this is already done.
 1. Choose a Apache ID that is not on the [apache committers list page](http://people.apache.org/committer-index.html).
 1. Download the [ICLA](https://www.apache.org/licenses/icla.pdf)  (If the new committer contributes to the project as a day job, [CCLA](http://www.apache.org/licenses/cla-corporate.pdf)  is expected).
 1. After filling in the `icla.pdf` (or `ccla.pdf`) with the correct information, print, sign it by hand,  scan it as an PDF, and send it as an attachment to [secretary@apache.org](mailto:secretary@apache.org). (If electronic signature is preferred, please follow the steps on [this page](http://www.apache.org/licenses/contributor-agreements.html#submitting))
@@ -149,7 +149,7 @@ The new PPMC voting process should also follow the `[DISCUSS]`, `[VOTE]` and `[R
 Before sending the invitation, the PPMC [must also send a NOTICE mail to the Apache board](http://www.apache.org/dev/PPMC.html#newPPMC).
 ```
 To: board@apache.org
-Cc: private@seatunnel.apache.org
+Cc: private@birdLark.apache.org
 Subject: [NOTICE] Jane Doe for SeaTunnel PPMC
 
 SeaTunnel proposes to invite Jane Doe (janedoe) to join the PPMC.
@@ -159,4 +159,4 @@ SeaTunnel proposes to invite Jane Doe (janedoe) to join the PPMC.
 
 After 72 hours, if the board doesn't object to the nomination (which it won't most cases), an invitation may then be sent to the candidate.
 
-Once the invitation is accepted, a PPMC member should add the new member to the official PPMC list through [roster](https://whimsy.apache.org/roster/ppmc/seatunnel).
+Once the invitation is accepted, a PPMC member should add the new member to the official PPMC list through [roster](https://whimsy.apache.org/roster/ppmc/birdLark).

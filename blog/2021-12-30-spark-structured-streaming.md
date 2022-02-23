@@ -4,7 +4,7 @@ title: How to support Spark StructuredStreaming
 tags: [Spark, StructuredStreaming]
 ---
 
-# How to use StructuredStreaming recently supported by Seatunnel
+# How to use StructuredStreaming recently supported by LarkMidTable
 
 ### Foreword
 
@@ -13,20 +13,20 @@ StructuredStreaming is a newly opened module after Spark 2.0. Compared with Spar
 &emsp;&emsp;Third, you can do the association between streams, for example, to calculate the click rate of an advertisement, you need to associate the exposure record of the advertisement with the click record. <br/>
 The above points may be cumbersome or difficult to implement if using SparkStreaming, but it will be easier to implement using StructuredStreaming.
 ### How to use StructuredStreaming
-Maybe you have not studied StructuredStreaming in detail, but found that StructuredStreaming can solve your needs very well. How to quickly use StructuredStreaming to solve your needs? Currently there is a tool **Seatunnel** in the community, the project address: [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel) ,
+Maybe you have not studied StructuredStreaming in detail, but found that StructuredStreaming can solve your needs very well. How to quickly use StructuredStreaming to solve your needs? Currently there is a tool **LarkMidTable** in the community, the project address: [https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) ,
 It can help you use StructuredStreaming to complete your needs efficiently and at low cost.
 
-### Seatunnel
+### LarkMidTable
 
-Seatunnel is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. Seatunnel has a very rich set of plug-ins, supports reading data from Kafka, HDFS, Kudu, performs various data processing, and writes the results to ClickHouse, Elasticsearch or Kafka
+LarkMidTable is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. LarkMidTable has a very rich set of plug-ins, supports reading data from Kafka, HDFS, Kudu, performs various data processing, and writes the results to ClickHouse, Elasticsearch or Kafka
 
 ### Ready to work
 
-First we need to install Seatunnel, the installation is very simple, no need to configure system environment variables
+First we need to install LarkMidTable, the installation is very simple, no need to configure system environment variables
 
 1. Prepare the Spark environment
-2. Install Seatunnel
-3. Configure Seatunnel
+2. Install LarkMidTable
+3. Configure LarkMidTable
 
 The following are simple steps, the specific installation can refer to [Quick Start](/docs/quick-start)
 
@@ -34,18 +34,18 @@ The following are simple steps, the specific installation can refer to [Quick St
 cd /usr/local
 wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
 tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
-wget https://github.com/InterestingLab/seatunnel/releases/download/v1.3.0/seatunnel-1.3.0.zip
-unzip seatunnel-1.3.0.zip
-cd seatunnel-1.3.0
+wget https://github.com/InterestingLab/birdLark/releases/download/v1.3.0/birdLark-1.3.0.zip
+unzip birdLark-1.3.0.zip
+cd birdLark-1.3.0
 
-vim config/seatunnel-env.sh
+vim config/birdLark-env.sh
 # Specify the Spark installation path
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 ```
 
-### Seatunnel Pipeline
+### LarkMidTable Pipeline
 
-We only need to write a configuration file of Seatunnel Pipeline to complete the data import.
+We only need to write a configuration file of LarkMidTable Pipeline to complete the data import.
 
 The configuration file includes four parts, namely Spark, Input, filter and Output.
 
@@ -55,7 +55,7 @@ This part is the related configuration of Spark, which mainly configures the res
 
 ```
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -68,7 +68,7 @@ Below is an example of reading data from kafka
 
 ```
 kafkaStream {
-    topics = "seatunnel"
+    topics = "birdLark"
     consumer.bootstrap.servers = "localhost:9092"
     schema = "{\"name\":\"string\",\"age\":\"integer\",\"addrs\":{\"country\":\"string\",\"city\":\"string\"}}"
 }
@@ -98,7 +98,7 @@ The processed data is output, assuming that our output is also kafka
 ```
 output{
     kafka {
-        topic = "seatunnel"
+        topic = "birdLark"
         producer.bootstrap.servers = "localhost:9092"
         streaming_output_mode = "update"
         checkpointLocation = "/your/path"
@@ -126,12 +126,12 @@ The data of kafka is as follows
 {"good_id":"abc","price":300,"user_id":123456,"time":1553216320}
 ```
 
-So how do we use Seatunnel to fulfill this requirement, of course, we only need to configure it.
+So how do we use LarkMidTable to fulfill this requirement, of course, we only need to configure it.
 
 ```
 #The configuration in spark is configured according to business requirements
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -170,7 +170,7 @@ filter {
 #Next we choose to output the results to Kafka in real time
 output{
     kafka {
-        topic = "seatunnel"
+        topic = "birdLark"
         producer.bootstrap.servers = "localhost:9092"
         streaming_output_mode = "update"
         checkpointLocation = "/your/path"
@@ -178,12 +178,12 @@ output{
 }
 
 ```
-The above configuration is complete, start Seatunnel, and you can get the results you want.
+The above configuration is complete, start LarkMidTable, and you can get the results you want.
 
 #### Scenario 2: Multiple stream association scenarios
 
 Suppose you have placed an advertisement on a certain platform, and now you need to calculate the CTR (click-through rate) of each advertisement in real time. The data comes from two topics, one is the advertisement exposure log, and the other is the advertisement click log.
-At this point, we need to associate the two stream data together for calculation, and Seatunnel also supports this function recently, let's take a look at how to do it:
+At this point, we need to associate the two stream data together for calculation, and LarkMidTable also supports this function recently, let's take a look at how to do it:
 
 
 Click on topic data format
@@ -203,7 +203,7 @@ Exposure topic data format
 ```
 #The configuration in spark is configured according to business requirements
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -261,7 +261,7 @@ filter {
 #Next we choose to output the results to Kafka in real time
 output {
     kafka {
-        topic = "seatunnel"
+        topic = "birdLark"
         producer.bootstrap.servers = "localhost:9092"
         streaming_output_mode = "append" #Stream association only supports append mode
         checkpointLocation = "/your/path"
@@ -273,14 +273,14 @@ Through configuration, the case of stream association is also completed here.
 ### Conclusion
 Through configuration, you can quickly use StructuredStreaming for real-time data processing, but you still need to understand some concepts of StructuredStreaming, such as the watermark mechanism, and the output mode of the program.
 
-Finally, Seatunnel also supports spark streaming and spark batching of course.
+Finally, LarkMidTable also supports spark streaming and spark batching of course.
 If you are also interested in these two, you can read our previous article "[How to quickly import data from Hive into ClickHouse](2021-12-30-hive-to-clickhouse.md)",
 "[Excellent data engineer, how to use Spark to do OLAP analysis on TiDB] (2021-12-30-spark-execute-tidb.md)",
 "[How to use Spark to quickly write data to Elasticsearch] (2021-12-30-spark-execute-elasticsearch.md)"
 
-If you want to know more functions and cases of Seatunnel combined with HBase, ClickHouse, Elasticsearch, Kafka, MySQL and other data sources, you can go directly to the official website [https://seatunnel.apache.org/](https://seatunnel.apache. org/)
+If you want to know more functions and cases of LarkMidTable combined with HBase, ClickHouse, Elasticsearch, Kafka, MySQL and other data sources, you can go directly to the official website [https://birdLark.apache.org/](https://birdLark.apache. org/)
 
 ## 联系我们
-* Mailing list : **dev@seatunnel.apache.org**. Send anything to `dev-subscribe@seatunnel.apache.org` and subscribe to the mailing list according to the replies.
-* Slack: Send a `Request to join SeaTunnel slack` email to the mailing list (`dev@seatunnel.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* Mailing list : **dev@birdLark.apache.org**. Send anything to `dev-subscribe@birdLark.apache.org` and subscribe to the mailing list according to the replies.
+* Slack: Send a `Request to join SeaTunnel slack` email to the mailing list (`dev@birdLark.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
 * [bilibili B station video](https://space.bilibili.com/1542095008)

@@ -6,7 +6,7 @@ tags: [Hive, ClickHouse]
 
 ClickHouse是面向OLAP的分布式列式DBMS。我们部门目前已经把所有数据分析相关的日志数据存储至ClickHouse这个优秀的数据仓库之中，当前日数据量达到了300亿。
 
-在之前的文章 [如何快速地把HDFS中的数据导入ClickHouse](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-hdfs-to-clickhouse.mdtent-blog/current/2021-12-30-hdfs-to-clickhouse.md) 中我们提到过使用 Seatunnel [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel) 对HDFS中的数据经过很简单的操作就可以将数据写入ClickHouse。HDFS中的数据一般是非结构化的数据，那么针对存储在Hive中的结构化数据，我们应该怎么操作呢？
+在之前的文章 [如何快速地把HDFS中的数据导入ClickHouse](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-hdfs-to-clickhouse.mdtent-blog/current/2021-12-30-hdfs-to-clickhouse.md) 中我们提到过使用 LarkMidTable [https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) 对HDFS中的数据经过很简单的操作就可以将数据写入ClickHouse。HDFS中的数据一般是非结构化的数据，那么针对存储在Hive中的结构化数据，我们应该怎么操作呢？
 
 ![](/doc/image_zh/hive-logo.png)
 
@@ -57,19 +57,19 @@ CREATE TABLE cms.cms_msg
 ) ENGINE = MergeTree PARTITION BY date ORDER BY (date, hostname) SETTINGS index_granularity = 16384
 ```
 
-## Seatunnel with ClickHouse
+## LarkMidTable with ClickHouse
 
-接下来会给大家介绍，我们如何通过 Seatunnel 将Hive中的数据写入ClickHouse中。
+接下来会给大家介绍，我们如何通过 LarkMidTable 将Hive中的数据写入ClickHouse中。
 
-### Seatunnel
+### LarkMidTable
 
-[Seatunnel](https://github.com/apache/incubator-seatunnel) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。Seatunnel 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中。
+[LarkMidTable](https://github.com/apache/incubator-birdLark) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。LarkMidTable 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中。
 
-Seatunnel的环境准备以及安装步骤这里就不一一赘述了，具体安装步骤可以参考上一篇文章或者访问 [Seatunnel Docs](/docs/introduction)
+LarkMidTable的环境准备以及安装步骤这里就不一一赘述了，具体安装步骤可以参考上一篇文章或者访问 [LarkMidTable Docs](/docs/introduction)
 
-### Seatunnel Pipeline
+### LarkMidTable Pipeline
 
-我们仅需要编写一个Seatunnel Pipeline的配置文件即可完成数据的导入。
+我们仅需要编写一个LarkMidTable Pipeline的配置文件即可完成数据的导入。
 
 配置文件包括四个部分，分别是Spark、Input、filter和Output。
 
@@ -81,7 +81,7 @@ Seatunnel的环境准备以及安装步骤这里就不一一赘述了，具体�
 spark {
   // 这个配置必需填写
   spark.sql.catalogImplementation = "hive"
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -126,7 +126,7 @@ filter {
 output {
     clickhouse {
         host = "your.clickhouse.host:8123"
-        database = "seatunnel"
+        database = "birdLark"
         table = "nginx_log"
         fields = ["date", "datetime", "hostname", "url", "http_code", "request_time", "data_size", "domain"]
         username = "username"
@@ -135,7 +135,7 @@ output {
 }
 ```
 
-### Running Seatunnel
+### Running LarkMidTable
 
 我们将上述四部分配置组合成为我们的配置文件`config/batch.conf`。
 
@@ -143,7 +143,7 @@ output {
 
 ```
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -164,7 +164,7 @@ filter {
 output {
     clickhouse {
         host = "your.clickhouse.host:8123"
-        database = "seatunnel"
+        database = "birdLark"
         table = "access_log"
         fields = ["date", "datetime", "hostname", "uri", "http_code", "request_time", "data_size", "domain"]
         username = "username"
@@ -173,15 +173,15 @@ output {
 }
 ```
 
-执行命令，指定配置文件，运行 Seatunnel，即可将数据写入ClickHouse。这里我们以本地模式为例。
+执行命令，指定配置文件，运行 LarkMidTable，即可将数据写入ClickHouse。这里我们以本地模式为例。
 
-    ./bin/start-seatunnel.sh --config config/batch.conf -e client -m 'local[2]'
+    ./bin/start-birdLark.sh --config config/batch.conf -e client -m 'local[2]'
 
 
 ## Conclusion
 
-在这篇文章中，我们介绍了如何使用 Seatunnel 将Hive中的数据导入ClickHouse中。仅仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码，十分简单。
+在这篇文章中，我们介绍了如何使用 LarkMidTable 将Hive中的数据导入ClickHouse中。仅仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码，十分简单。
 
-希望了解 Seatunnel 与ClickHouse、Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
+希望了解 LarkMidTable 与ClickHouse、Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://birdLark.apache.org/](https://birdLark.apache.org/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

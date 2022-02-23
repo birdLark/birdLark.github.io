@@ -5,16 +5,16 @@ sidebar_position: 1
 
 # Documentation Notice
 
-Good documentation is critical for any type of software. Any contribution that can improve the Seatunnel documentation is welcome.
+Good documentation is critical for any type of software. Any contribution that can improve the LarkMidTable documentation is welcome.
 
 ##  Get the document project
 
-Documentation for the Seatunnel project is maintained in a separate [git repository](https://github.com/apache/incubator-seatunnel-website).
+Documentation for the LarkMidTable project is maintained in a separate [git repository](https://github.com/apache/incubator-birdLark-website).
 
 First you need to fork the document project into your own github repository, and then clone the document to your local computer.
 
 ```shell
-git clone https://github.com/<your-github-user-name>/incubator-seatunnel-website
+git clone https://github.com/<your-github-user-name>/incubator-birdLark-website
 ```
 
 ## Preview and generate static files
@@ -22,7 +22,7 @@ git clone https://github.com/<your-github-user-name>/incubator-seatunnel-website
 This website is compiled using node, using Docusaurus framework components
 
 1. Download and install nodejs (version>12.5.0)
-2. Clone the code to the local `git clone git@github.com:apache/incubator-seatunnel-website.git`
+2. Clone the code to the local `git clone git@github.com:apache/incubator-birdLark-website.git`
 2. Run `npm install` to install the required dependent libraries.
 3. Run `npm run start` in the root directory, you can visit http://localhost:3000 to view the English mode preview of the site
 4. Run `npm run start-zh` in the root directory, you can visit http://localhost:3000 to view the Chinese mode preview of the site
@@ -91,7 +91,7 @@ css and other style files are placed in the `src/css` directory
 > Except for the homepage, team, user, Docs>All Version module page, all other pages can be directly jumped to the corresponding github resource modification page through the'Edit this page' button at the bottom
 
 ### Home page modification
-Visit the page https://seatunnel.apache.org
+Visit the page https://birdLark.apache.org
 Located in `src/pages/home`
 
 ```
@@ -100,7 +100,7 @@ Located in `src/pages/home`
 │ index.less     // homepage style
 ```
 ### Team page modification
-Visit the page https://seatunnel.apache.org/team
+Visit the page https://birdLark.apache.org/team
 Located in `src/pages/team`
 ```
 ├─team
@@ -109,7 +109,7 @@ Located in `src/pages/team`
 │ index.less
 ```
 ### User list page modification
-Visit the page https://seatunnel.apache.org/user
+Visit the page https://birdLark.apache.org/user
 ```
 Located in `src/pages/user`
 └─versions
@@ -121,7 +121,7 @@ Located in `src/pages/user`
 ```
 
 ### version List page modification
-Visit the page https://seatunnel.apache.org/versions
+Visit the page https://birdLark.apache.org/versions
 ```
 Located in `src/pages/versions`
 └─versions

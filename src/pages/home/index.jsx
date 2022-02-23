@@ -23,14 +23,14 @@ export default function () {
 
                     <div className="banner text_center">
                         <h1 className="main_title"><span className="apache">Apache</span> <span
-                            className="seatunnel">SeaTunnel</span>
+                            className="birdLark">SeaTunnel</span>
                             <span className="badge">Incubating</span>
                         </h1>
 
                         <p className="main_slogan">{dataSource.home.banner.slogan}</p>
 
                         <div className="button_row center">
-                            <a href="https://seatunnel.apache.org/docs/introduction#quick-start" className="corner_button blue_fill">{dataSource.common.getStart}</a>
+                            <a href="https://birdLark.apache.org/docs/introduction#quick-start" className="corner_button blue_fill">{dataSource.common.getStart}</a>
                             <a href={systemConfiguration.github.projectUrl} target="_blank"
                                className="corner_button blue" onMouseOver={() => changeFlag(1)} onMouseOut={() => changeFlag(2)}>
                                 <img className="button_icon github1" src={useBaseUrl('/home/icons/github' + flag + '.svg')} alt="github"/>
@@ -59,7 +59,7 @@ export default function () {
                     <div className="item_block" style={{position: 'relative'}}>
                         <p className="paragraph">{dataSource.home.architecture.desc}</p>
                         <div className="architecture-image">
-                            <img className="button_icon github1" src={useBaseUrl('/image/seatunnel-workflow.svg')} alt="System Architecture"/>
+                            <img className="button_icon github1" src={useBaseUrl('/image/birdLark-workflow.svg')} alt="System Architecture"/>
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,7 @@ ClickHouse is a distributed columnar DBMS for OLAP. Our department has now store
 
 The experience of data processing and storage introduced earlier is based on real-time data streams. The data is stored in Kafka. We use Java or Golang to read, parse, and clean the data from Kafka and write it into ClickHouse, so that the data can be stored in ClickHouse. Quick access. However, in the usage scenarios of many students, the data is not real-time, and it may be necessary to import the data in HDFS or Hive into ClickHouse. Some students implement data import by writing Spark programs, so is there a simpler and more efficient way?
 
-At present, there is a tool **Seatunnel** in the open source community, the project address [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel), can quickly Data in HDFS is imported into ClickHouse.
+At present, there is a tool **LarkMidTable** in the open source community, the project address [https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark), can quickly Data in HDFS is imported into ClickHouse.
 
 ## HDFS To ClickHouse
 
@@ -21,7 +21,7 @@ Assuming that our logs are stored in HDFS, we need to parse the logs and filter 
 The log format we store in HDFS is as follows, which is a very common Nginx log
 
 ```shell
-10.41.1.28 github.com 114.250.140.241 0.001s "127.0.0.1:80" [26/Oct/2018:03:09:32 +0800] "GET /Apache/Seatunnel HTTP/1.1" 200 0 "-" - "Dalvik/2.1.0 (Linux; U; Android 7.1.1; OPPO R11 Build/NMF26X)" "196" "-" "mainpage" "443" "-" "172.16.181.129"
+10.41.1.28 github.com 114.250.140.241 0.001s "127.0.0.1:80" [26/Oct/2018:03:09:32 +0800] "GET /Apache/LarkMidTable HTTP/1.1" 200 0 "-" - "Dalvik/2.1.0 (Linux; U; Android 7.1.1; OPPO R11 Build/NMF26X)" "196" "-" "mainpage" "443" "-" "172.16.181.129"
 ```
 
 ### ClickHouse Schema
@@ -44,21 +44,21 @@ CREATE TABLE cms.cms_msg
 ) ENGINE = MergeTree PARTITION BY date ORDER BY date SETTINGS index_granularity = 16384
 ```
 
-## Seatunnel with ClickHouse
+## LarkMidTable with ClickHouse
 
-Next, I will introduce to you in detail how we can meet the above requirements through Seatunnel and write the data in HDFS into ClickHouse.
+Next, I will introduce to you in detail how we can meet the above requirements through LarkMidTable and write the data in HDFS into ClickHouse.
 
-### Seatunnel
+### LarkMidTable
 
-[Seatunnel](https://github.com/apache/incubator-seatunnel) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. Seatunnel has a very rich set of plugins that support reading data from Kafka, HDFS, Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
+[LarkMidTable](https://github.com/apache/incubator-birdLark) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. LarkMidTable has a very rich set of plugins that support reading data from Kafka, HDFS, Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
 
 ### Prerequisites
 
-First we need to install Seatunnel, the installation is very simple, no need to configure system environment variables
+First we need to install LarkMidTable, the installation is very simple, no need to configure system environment variables
 
 1. Prepare the Spark environment
-2. Install Seatunnel
-3. Configure Seatunnel
+2. Install LarkMidTable
+3. Configure LarkMidTable
 
 The following are simple steps, the specific installation can refer to [Quick Start](/docs/quick-start)
 
@@ -68,20 +68,20 @@ cd /usr/local
 wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
 tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
 
-wget https://github.com/InterestingLab/seatunnel/releases/download/v1.1.1/seatunnel-1.1.1.zip
+wget https://github.com/InterestingLab/birdLark/releases/download/v1.1.1/birdLark-1.1.1.zip
 
-unzip seatunnel-1.1.1.zip
+unzip birdLark-1.1.1.zip
 
-cd seatunnel-1.1.1
-vim config/seatunnel-env.sh
+cd birdLark-1.1.1
+vim config/birdLark-env.sh
 
 # Specify the Spark installation path
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 ```
 
-### seatunnel Pipeline
+### birdLark Pipeline
 
-We only need to write a configuration file of seatunnel Pipeline to complete the data import.
+We only need to write a configuration file of birdLark Pipeline to complete the data import.
 
 The configuration file consists of four parts, Spark, Input, filter and Output.
 
@@ -91,7 +91,7 @@ This part is the related configuration of Spark, which mainly configures the siz
 
 ```shell
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -150,7 +150,7 @@ Finally, we write the processed structured data to ClickHouse
 output {
     clickhouse {
         host = "your.clickhouse.host:8123"
-        database = "seatunnel"
+        database = "birdLark"
         table = "access_log"
         fields = ["date", "datetime", "hostname", "uri", "http_code", "request_time", "data_size", "domain"]
         username = "username"
@@ -159,7 +159,7 @@ output {
 }
 ```
 
-### Running seatunnel
+### Running birdLark
 
 We combine the above four-part configuration into our configuration file `config/batch.conf`.
 
@@ -169,7 +169,7 @@ vim config/batch.conf
 
 ```shell
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -210,7 +210,7 @@ filter {
 output {
     clickhouse {
         host = "your.clickhouse.host:8123"
-        database = "seatunnel"
+        database = "birdLark"
         table = "access_log"
         fields = ["date", "datetime", "hostname", "uri", "http_code", "request_time", "data_size", "domain"]
         username = "username"
@@ -219,18 +219,18 @@ output {
 }
 ```
 
-Execute the command, specify the configuration file, and run Seatunnel to write data to ClickHouse. Here we take the local mode as an example.
+Execute the command, specify the configuration file, and run LarkMidTable to write data to ClickHouse. Here we take the local mode as an example.
 
 ```shell
-./bin/start-seatunnel.sh --config config/batch.conf -e client -m 'local[2]'
+./bin/start-birdLark.sh --config config/batch.conf -e client -m 'local[2]'
 ```
 
 ## Conclusion
 
-In this post, we covered how to import Nginx log files from HDFS into ClickHouse using Seatunnel. Data can be imported quickly with only one configuration file without writing any code. In addition to supporting HDFS data sources, Seatunnel also supports real-time reading and processing of data from Kafka to ClickHouse. Our next article will describe how to quickly import data from Hive into ClickHouse.
+In this post, we covered how to import Nginx log files from HDFS into ClickHouse using LarkMidTable. Data can be imported quickly with only one configuration file without writing any code. In addition to supporting HDFS data sources, LarkMidTable also supports real-time reading and processing of data from Kafka to ClickHouse. Our next article will describe how to quickly import data from Hive into ClickHouse.
 
-Of course, Seatunnel is not only a tool for ClickHouse data writing, but also plays a very important role in the writing of data sources such as Elasticsearch and Kafka.
+Of course, LarkMidTable is not only a tool for ClickHouse data writing, but also plays a very important role in the writing of data sources such as Elasticsearch and Kafka.
 
-If you want to know more functions and cases of Seatunnel combined with ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
+If you want to know more functions and cases of LarkMidTable combined with ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://birdLark.apache.org/](https://birdLark.apache.org/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # 提交代码
 
-* 首先从远端仓库 <https://github.com/apache/incubator-seatunnel.git> fork一份代码到自己的仓库中
+* 首先从远端仓库 <https://github.com/apache/incubator-birdLark.git> fork一份代码到自己的仓库中
 
 * 远端仓库中目前有三个分支：
     * **dev**    日常开发分支
@@ -17,13 +17,13 @@ sidebar_position: 2
 * 把自己仓库clone到本地
 
     ```shell
-    git clone git@github.com:apache/incubator-seatunnel.git
+    git clone git@github.com:apache/incubator-birdLark.git
     ```
 
 * 添加远端仓库地址，命名为upstream
 
     ```shell
-    git remote add upstream git@github.com:apache/incubator-seatunnel.git
+    git remote add upstream git@github.com:apache/incubator-birdLark.git
     ```
 
 * 查看仓库：
@@ -69,4 +69,4 @@ sidebar_position: 2
 
 * 接着社区 Committer 们会做 CodeReview，然后他会与您讨论一些细节（包括设计，实现，性能等）。当团队中所有人员对本次修改满意后，会将提交合并到dev分支
 
-* 最后，恭喜您已经成为了 Apache Seatunnel 的官方贡献者！
+* 最后，恭喜您已经成为了 Apache LarkMidTable 的官方贡献者！

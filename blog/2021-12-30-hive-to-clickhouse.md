@@ -6,7 +6,7 @@ tags: [Hive, ClickHouse]
 
 ClickHouse is a distributed columnar DBMS for OLAP. Our department has stored all log data related to data analysis in ClickHouse, an excellent data warehouse, and the current daily data volume has reached 30 billion.
 
-In the previous article [How to quickly import data from HDFS into ClickHouse] (2021-12-30-hdfs-to-clickhouse.md), we mentioned the use of Seatunnel [https://github.com/apache/incubator -seatunnel](https://github.com/apache/incubator-seatunnel) After a very simple operation on the data in HDFS, the data can be written to ClickHouse. The data in HDFS is generally unstructured data, so what should we do with the structured data stored in Hive?
+In the previous article [How to quickly import data from HDFS into ClickHouse] (2021-12-30-hdfs-to-clickhouse.md), we mentioned the use of LarkMidTable [https://github.com/apache/incubator -birdLark](https://github.com/apache/incubator-birdLark) After a very simple operation on the data in HDFS, the data can be written to ClickHouse. The data in HDFS is generally unstructured data, so what should we do with the structured data stored in Hive?
 
 ![](/doc/image_zh/hive-logo.png)
 
@@ -57,19 +57,19 @@ CREATE TABLE cms.cms_msg
 ) ENGINE = MergeTree PARTITION BY date ORDER BY (date, hostname) SETTINGS index_granularity = 16384
 ```
 
-## Seatunnel with ClickHouse
+## LarkMidTable with ClickHouse
 
-Next, I will introduce to you how we write data from Hive to ClickHouse through Seatunnel.
+Next, I will introduce to you how we write data from Hive to ClickHouse through LarkMidTable.
 
-### Seatunnel
+### LarkMidTable
 
-[Seatunnel](https://github.com/apache/incubator-seatunnel) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. Seatunnel has a very rich set of plug-ins that support reading data from Kafka, HDFS, and Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
+[LarkMidTable](https://github.com/apache/incubator-birdLark) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. LarkMidTable has a very rich set of plug-ins that support reading data from Kafka, HDFS, and Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
 
-The environment preparation and installation steps of Seatunnel will not be repeated here. For specific installation steps, please refer to the previous article or visit [Seatunnel Docs](/docs/introduction)
+The environment preparation and installation steps of LarkMidTable will not be repeated here. For specific installation steps, please refer to the previous article or visit [LarkMidTable Docs](/docs/introduction)
 
-### Seatunnel Pipeline
+### LarkMidTable Pipeline
 
-We only need to write a configuration file of Seatunnel Pipeline to complete the data import.
+We only need to write a configuration file of LarkMidTable Pipeline to complete the data import.
 
 The configuration file includes four parts, namely Spark, Input, filter and Output.
 
@@ -82,7 +82,7 @@ This part is the related configuration of Spark, which mainly configures the res
 spark {
   // This configuration is required
   spark.sql.catalogImplementation = "hive"
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -128,7 +128,7 @@ Finally, we write the processed structured data to ClickHouse
 output {
     clickhouse {
         host = "your.clickhouse.host:8123"
-        database = "seatunnel"
+        database = "birdLark"
         table = "nginx_log"
         fields = ["date", "datetime", "hostname", "url", "http_code", "request_time", "data_size", "domain"]
         username = "username"
@@ -137,7 +137,7 @@ output {
 }
 ```
 
-### Running Seatunnel
+### Running LarkMidTable
 
 We combine the above four-part configuration into our configuration file `config/batch.conf`.
 
@@ -145,7 +145,7 @@ We combine the above four-part configuration into our configuration file `config
 
 ```
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -166,7 +166,7 @@ filter {
 output {
     clickhouse {
         host = "your.clickhouse.host:8123"
-        database = "seatunnel"
+        database = "birdLark"
         table = "access_log"
         fields = ["date", "datetime", "hostname", "uri", "http_code", "request_time", "data_size", "domain"]
         username = "username"
@@ -175,15 +175,15 @@ output {
 }
 ```
 
-Execute the command, specify the configuration file, and run Seatunnel to write data to ClickHouse. Here we take the local mode as an example.
+Execute the command, specify the configuration file, and run LarkMidTable to write data to ClickHouse. Here we take the local mode as an example.
 
-    ./bin/start-seatunnel.sh --config config/batch.conf -e client -m 'local[2]'
+    ./bin/start-birdLark.sh --config config/batch.conf -e client -m 'local[2]'
 
 
 ## Conclusion
 
-In this post, we covered how to import data from Hive into ClickHouse using Seatunnel. The data import can be completed quickly through only one configuration file without writing any code, which is very simple.
+In this post, we covered how to import data from Hive into ClickHouse using LarkMidTable. The data import can be completed quickly through only one configuration file without writing any code, which is very simple.
 
-If you want to know more functions and cases of Seatunnel combined with ClickHouse, Elasticsearch, Kafka, Hadoop, you can go directly to the official website [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
+If you want to know more functions and cases of LarkMidTable combined with ClickHouse, Elasticsearch, Kafka, Hadoop, you can go directly to the official website [https://birdLark.apache.org/](https://birdLark.apache.org/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-WEBSITE_REPO="https://github.com/apache/incubator-seatunnel-website.git"
-MAIN_REPO="https://github.com/apache/incubator-seatunnel.git"
+WEBSITE_REPO="https://github.com/apache/incubator-birdLark-website.git"
+MAIN_REPO="https://github.com/apache/incubator-birdLark.git"
 
-WEBSITE_REPO_NAME="incubator-seatunnel-website"
+WEBSITE_REPO_NAME="incubator-birdLark-website"
 WEBSITE_NAME="website"
-MAIN_NAME="seatunnel"
+MAIN_NAME="birdLark"
 
-WORK_PATH=~/work/incubator-seatunnel-website
+WORK_PATH=~/work/incubator-birdLark-website
 
 if [ ! -d ${WORK_PATH} ]; then
   mkdir -p ${WORK_PATH}

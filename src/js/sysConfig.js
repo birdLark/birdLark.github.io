@@ -1,9 +1,9 @@
 const  systemConfiguration={
     github:{
-        "projectUrl":"https://github.com/apache/incubator-seatunnel",
-        "projectReleaseUrl":"https://github.com/apache/incubator-seatunnel/releases",
-        "projectIssueUrl":"https://github.com/apache/incubator-seatunnel/issues",
-        "projectPrUrl":"https://github.com/apache/incubator-seatunnel/pulls",
+        "projectUrl":"https://github.com/apache/incubator-birdLark",
+        "projectReleaseUrl":"https://github.com/apache/incubator-birdLark/releases",
+        "projectIssueUrl":"https://github.com/apache/incubator-birdLark/issues",
+        "projectPrUrl":"https://github.com/apache/incubator-birdLark/pulls",
     },
 }
 export  default systemConfiguration

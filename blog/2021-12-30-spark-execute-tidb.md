@@ -14,16 +14,16 @@ TiSpark is a product launched by PingCAP to solve the complex OLAP needs of user
 
 Completing OLAP operations with TiSpark directly requires knowledge of Spark and some development work. So, are there some out-of-the-box tools that can help us use TiSpark to complete OLAP analysis on TiDB more quickly?
 
-At present, there is a tool **Seatunnel** in the open source community, the project address [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel), which can be based on Spark, Quickly implement TiDB data reading and OLAP analysis based on TiSpark.
+At present, there is a tool **LarkMidTable** in the open source community, the project address [https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark), which can be based on Spark, Quickly implement TiDB data reading and OLAP analysis based on TiSpark.
 
 
-## Operating TiDB with Seatunnel
+## Operating TiDB with LarkMidTable
 
-We have such a requirement online. Read the website access data of a certain day from TiDB, count the number of visits of each domain name and the status code returned by the service, and finally write the statistical results to another table in TiDB. Let's see how Seatunnel implements such a function.
+We have such a requirement online. Read the website access data of a certain day from TiDB, count the number of visits of each domain name and the status code returned by the service, and finally write the statistical results to another table in TiDB. Let's see how LarkMidTable implements such a function.
 
-### Seatunnel
+### LarkMidTable
 
-[Seatunnel](https://github.com/apache/incubator-seatunnel) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. Seatunnel has a very rich set of plugins that support reading data from TiDB, Kafka, HDFS, Kudu, perform various data processing, and then write the results to TiDB, ClickHouse, Elasticsearch or Kafka.
+[LarkMidTable](https://github.com/apache/incubator-birdLark) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. LarkMidTable has a very rich set of plugins that support reading data from TiDB, Kafka, HDFS, Kudu, perform various data processing, and then write the results to TiDB, ClickHouse, Elasticsearch or Kafka.
 
 
 #### Ready to work
@@ -82,12 +82,12 @@ CREATE TABLE access_collect (
 +--------+-------------+------+------+---------+-------+
 ```
 
-##### 2. Install Seatunnel
+##### 2. Install LarkMidTable
 
-After we have the input and output tables of TiDB, we need to install Seatunnel. The installation is very simple, and there is no need to configure system environment variables
+After we have the input and output tables of TiDB, we need to install LarkMidTable. The installation is very simple, and there is no need to configure system environment variables
 1. Prepare the Spark environment
-2. Install Seatunnel
-3. Configure Seatunnel
+2. Install LarkMidTable
+3. Configure LarkMidTable
 
 The following are simple steps, the specific installation can refer to [Quick Start](/docs/quick-start)
 
@@ -97,24 +97,24 @@ cd /usr/local
 wget https://archive.apache.org/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
 tar -xvf https://archive.apache.org/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
 wget
-# Download and install seatunnel
-https://github.com/InterestingLab/seatunnel/releases/download/v1.2.0/seatunnel-1.2.0.zip
-unzip seatunnel-1.2.0.zip
-cd seatunnel-1.2.0
+# Download and install birdLark
+https://github.com/InterestingLab/birdLark/releases/download/v1.2.0/birdLark-1.2.0.zip
+unzip birdLark-1.2.0.zip
+cd birdLark-1.2.0
 
-vim config/seatunnel-env.sh
+vim config/birdLark-env.sh
 # Specify the Spark installation path
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.1.0-bin-hadoop2.7}
 ```
 
 
-### Implement the Seatunnel processing flow
+### Implement the LarkMidTable processing flow
 
-We only need to write a Seatunnel configuration file to read, process, and write data.
+We only need to write a LarkMidTable configuration file to read, process, and write data.
 
-The Seatunnel configuration file consists of four parts, `Spark`, `Input`, `Filter` and `Output`. The `Input` part is used to specify the input source of the data, the `Filter` part is used to define various data processing and aggregation, and the `Output` part is responsible for writing the processed data to the specified database or message queue.
+The LarkMidTable configuration file consists of four parts, `Spark`, `Input`, `Filter` and `Output`. The `Input` part is used to specify the input source of the data, the `Filter` part is used to define various data processing and aggregation, and the `Output` part is responsible for writing the processed data to the specified database or message queue.
 
-The whole processing flow is `Input` -> `Filter` -> `Output`, which constitutes the processing flow (Pipeline) of Seatunnel.
+The whole processing flow is `Input` -> `Filter` -> `Output`, which constitutes the processing flow (Pipeline) of LarkMidTable.
 
 > The following is a specific configuration, which is derived from an online practical application, but simplified for demonstration.
 
@@ -133,7 +133,7 @@ This part of the configuration defines the input source. The following is to rea
 
 ##### Filter
 
-In the Filter section, here we configure a series of transformations, most of the data analysis requirements are completed in the Filter. Seatunnel provides a wealth of plug-ins enough to meet various data analysis needs. Here we complete the data aggregation operation through the SQL plugin.
+In the Filter section, here we configure a series of transformations, most of the data analysis requirements are completed in the Filter. LarkMidTable provides a wealth of plug-ins enough to meet various data analysis needs. Here we complete the data aggregation operation through the SQL plugin.
 
     filter {
         sql {
@@ -164,7 +164,7 @@ This part is related to Spark configuration. It mainly configures the resource s
 Our TiDB Input plugin is implemented based on TiSpark, which relies on TiKV cluster and Placement Driver (PD). So we need to specify PD node information and TiSpark related configuration `spark.tispark.pd.addresses` and `spark.sql.extensions`.
 
     spark {
-      spark.app.name = "seatunnel-tidb"
+      spark.app.name = "birdLark-tidb"
       spark.executor.instances = 2
       spark.executor.cores = 1
       spark.executor.memory = "1g"
@@ -174,13 +174,13 @@ Our TiDB Input plugin is implemented based on TiSpark, which relies on TiKV clus
     }
 
 
-#### Run Seatunnel
+#### Run LarkMidTable
 
 We combine the above four parts into our final configuration file `conf/tidb.conf`
 
 ```
 spark {
-    spark.app.name = "seatunnel-tidb"
+    spark.app.name = "birdLark-tidb"
     spark.executor.instances = 2
     spark.executor.cores = 1
     spark.executor.memory = "1g"
@@ -212,19 +212,19 @@ output {
 }
 ```
 
-Execute the command, specify the configuration file, and run Seatunnel to implement our data processing logic.
+Execute the command, specify the configuration file, and run LarkMidTable to implement our data processing logic.
 
 * Local
 
-> ./bin/start-seatunnel.sh --config config/tidb.conf --deploy-mode client --master 'local[2]'
+> ./bin/start-birdLark.sh --config config/tidb.conf --deploy-mode client --master 'local[2]'
 
 * yarn-client
 
-> ./bin/start-seatunnel.sh --config config/tidb.conf --deploy-mode client --master yarn
+> ./bin/start-birdLark.sh --config config/tidb.conf --deploy-mode client --master yarn
 
 * yarn-cluster
 
-> ./bin/start-seatunnel.sh --config config/tidb.conf --deploy-mode cluster -master yarn
+> ./bin/start-birdLark.sh --config config/tidb.conf --deploy-mode cluster -master yarn
 
 If it is a local test and verification logic, you can use the local mode (Local). Generally, in the production environment, the `yarn-client` or `yarn-cluster` mode is used.
 
@@ -245,17 +245,17 @@ mysql> select * from access_collect;
 
 ## Conclusion
 
-In this article, we introduced how to use Seatunnel to read data from TiDB, do simple data processing and write it to another table in TiDB. Data can be imported quickly with only one configuration file without writing any code.
+In this article, we introduced how to use LarkMidTable to read data from TiDB, do simple data processing and write it to another table in TiDB. Data can be imported quickly with only one configuration file without writing any code.
 
-In addition to supporting TiDB data sources, Seatunnel also supports Elasticsearch, Kafka, Kudu, ClickHouse and other data sources.
+In addition to supporting TiDB data sources, LarkMidTable also supports Elasticsearch, Kafka, Kudu, ClickHouse and other data sources.
 
-**At the same time, we are developing an important function, which is to use the transaction features of TiDB in Seatunnel to realize streaming data processing from Kafka to TiDB, and support Exactly-Once data from end (Kafka) to end (TiDB). consistency. **
+**At the same time, we are developing an important function, which is to use the transaction features of TiDB in LarkMidTable to realize streaming data processing from Kafka to TiDB, and support Exactly-Once data from end (Kafka) to end (TiDB). consistency. **
 
-If you want to know more functions and cases of Seatunnel combined with TiDB, ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
+If you want to know more functions and cases of LarkMidTable combined with TiDB, ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://birdLark.apache.org/](https://birdLark.apache.org/)
 
 ## Contract us
-* Mailing list : **dev@seatunnel.apache.org**. Send anything to `dev-subscribe@seatunnel.apache.org` and subscribe to the mailing list according to the replies.
-* Slack: Send a `Request to join SeaTunnel slack` email to the mailing list (`dev@seatunnel.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* Mailing list : **dev@birdLark.apache.org**. Send anything to `dev-subscribe@birdLark.apache.org` and subscribe to the mailing list according to the replies.
+* Slack: Send a `Request to join SeaTunnel slack` email to the mailing list (`dev@birdLark.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
 * [bilibili B station video](https://space.bilibili.com/1542095008)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

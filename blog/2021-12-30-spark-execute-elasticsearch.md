@@ -14,14 +14,14 @@ In order to meet these scenarios, many students will choose Spark, use Spark ope
 
 Our department used Spark to analyze Nginx logs, counted our web service access, aggregated Nginx logs every minute and finally wrote the results to Elasticsearch, and then used Kibana to configure real-time monitoring of the Dashboard. Both Elasticsearch and Kibana are convenient and practical, but with more and more similar requirements, how to quickly write data to Elasticsearch through Spark has become a big problem for us.
 
-Today, I would like to recommend a black technology Seatunnel [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel) that can realize fast data writing. It is very easy to use , a high-performance, real-time data processing product that can deal with massive data. It is built on Spark and is easy to use, flexibly configured, and requires no development.
+Today, I would like to recommend a black technology LarkMidTable [https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) that can realize fast data writing. It is very easy to use , a high-performance, real-time data processing product that can deal with massive data. It is built on Spark and is easy to use, flexibly configured, and requires no development.
 
 ![](/doc/image_zh/wd-struct.png)
 
 
 ## Kafka to Elasticsearch
 
-Like Logstash, Seatunnel also supports multiple types of data input. Here we take the most common Kakfa as the input source as an example to explain how to use Seatunnel to quickly write data to Elasticsearch
+Like Logstash, LarkMidTable also supports multiple types of data input. Here we take the most common Kakfa as the input source as an example to explain how to use LarkMidTable to quickly write data to Elasticsearch
 
 ### Log Sample
 
@@ -41,20 +41,20 @@ datetime String
 count int
 ```
 
-## Seatunnel with Elasticsearch
+## LarkMidTable with Elasticsearch
 
-Next, I will introduce you in detail, how we read the data in Kafka through Seatunnel, parse and aggregate the data, and finally write the processing results into Elasticsearch.
+Next, I will introduce you in detail, how we read the data in Kafka through LarkMidTable, parse and aggregate the data, and finally write the processing results into Elasticsearch.
 
-### Seatunnel
+### LarkMidTable
 
-[Seatunnel](https://github.com/apache/incubator-seatunnel) also has a very rich plug-in that supports reading data from Kafka, HDFS, Hive, performing various data processing, and converting the results Write to Elasticsearch, Kudu or Kafka.
+[LarkMidTable](https://github.com/apache/incubator-birdLark) also has a very rich plug-in that supports reading data from Kafka, HDFS, Hive, performing various data processing, and converting the results Write to Elasticsearch, Kudu or Kafka.
 
 ### Prerequisites
 
-First of all, we need to install seatunnel, the installation is very simple, no need to configure system environment variables
+First of all, we need to install birdLark, the installation is very simple, no need to configure system environment variables
 1. Prepare the Spark environment
-2. Install Seatunnel
-3. Configure Seatunnel
+2. Install LarkMidTable
+3. Configure LarkMidTable
 
 The following are simple steps, the specific installation can refer to [Quick Start](/docs/quick-start)
 
@@ -62,18 +62,18 @@ The following are simple steps, the specific installation can refer to [Quick St
 cd /usr/local
 wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
 tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
-wget https://github.com/InterestingLab/seatunnel/releases/download/v1.1.1/seatunnel-1.1.1.zip
-unzip seatunnel-1.1.1.zip
-cd seatunnel-1.1.1
+wget https://github.com/InterestingLab/birdLark/releases/download/v1.1.1/birdLark-1.1.1.zip
+unzip birdLark-1.1.1.zip
+cd birdLark-1.1.1
 
-vim config/seatunnel-env.sh
+vim config/birdLark-env.sh
 # Specify the Spark installation path
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 ```
 
-### Seatunnel Pipeline
+### LarkMidTable Pipeline
 
-Like Logstash, we only need to write a configuration file of Seatunnel Pipeline to complete the data import. I believe that friends who know Logstash can start Seatunnel configuration soon.
+Like Logstash, we only need to write a configuration file of LarkMidTable Pipeline to complete the data import. I believe that friends who know Logstash can start LarkMidTable configuration soon.
 
 The configuration file includes four parts, namely Spark, Input, filter and Output.
 
@@ -83,7 +83,7 @@ The configuration file includes four parts, namely Spark, Input, filter and Outp
 This part is the related configuration of Spark, which mainly configures the resource size required for Spark execution.
 ```
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -97,9 +97,9 @@ This part defines the data source. The following is a configuration example of r
 
 ```
 kafkaStream {
-    topics = "seatunnel-es"
+    topics = "birdLark-es"
     consumer.bootstrap.servers = "localhost:9092"
-    consumer.group.id = "seatunnel_es_group"
+    consumer.group.id = "birdLark_es_group"
     consumer.rebalance.max.retries = 100
 }
 ```
@@ -138,14 +138,14 @@ Finally, we write the processed structured data to Elasticsearch.
 output {
     elasticsearch {
         hosts = ["localhost:9200"]
-        index = "seatunnel-${now}"
+        index = "birdLark-${now}"
         es.batch.size.entries = 100000
         index_time_format = "yyyy.MM.dd"
     }
 }
 ```
 
-### Running Seatunnel
+### Running LarkMidTable
 
 We combine the above four-part configuration into our configuration file `config/batch.conf`.
 
@@ -153,7 +153,7 @@ We combine the above four-part configuration into our configuration file `config
 
 ```
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -161,9 +161,9 @@ spark {
 }
 input {
     kafkaStream {
-        topics = "seatunnel-es"
+        topics = "birdLark-es"
         consumer.bootstrap.servers = "localhost:9092"
-        consumer.group.id = "seatunnel_es_group"
+        consumer.group.id = "birdLark_es_group"
         consumer.rebalance.max.retries = 100
     }
 }
@@ -191,16 +191,16 @@ filter {
 output {
     elasticsearch {
         hosts = ["localhost:9200"]
-        index = "seatunnel-${now}"
+        index = "birdLark-${now}"
         es.batch.size.entries = 100000
         index_time_format = "yyyy.MM.dd"
     }
 }
 ```
 
-Execute the command, specify the configuration file, and run Seatunnel to write data to Elasticsearch. Here we take the local mode as an example.
+Execute the command, specify the configuration file, and run LarkMidTable to write data to Elasticsearch. Here we take the local mode as an example.
 
-    ./bin/start-seatunnel.sh --config config/batch.conf -e client -m 'local[2]'
+    ./bin/start-birdLark.sh --config config/batch.conf -e client -m 'local[2]'
 
 Finally, the data written into Elasticsearch is as follows, and with Kibana, real-time monitoring of web services can be realized ^_^.
 
@@ -216,16 +216,16 @@ Finally, the data written into Elasticsearch is as follows, and with Kibana, rea
 
 ## Conclusion
 
-In this post, we introduced how to write data from Kafka to Elasticsearch via Seatunnel. You can quickly run a Spark Application with only one configuration file, complete data processing and writing, and do not need to write any code, which is very simple.
+In this post, we introduced how to write data from Kafka to Elasticsearch via LarkMidTable. You can quickly run a Spark Application with only one configuration file, complete data processing and writing, and do not need to write any code, which is very simple.
 
-When there are scenarios that Logstash cannot support or the performance of Logstah cannot meet expectations during data processing, you can try to use Seatunnel to solve the problem.
+When there are scenarios that Logstash cannot support or the performance of Logstah cannot meet expectations during data processing, you can try to use LarkMidTable to solve the problem.
 
-If you want to know more functions and cases of using Seatunnel in combination with Elasticsearch, Kafka and Hadoop, you can go directly to the official website [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
+If you want to know more functions and cases of using LarkMidTable in combination with Elasticsearch, Kafka and Hadoop, you can go directly to the official website [https://birdLark.apache.org/](https://birdLark.apache.org/)
 
 
 **We will publish another article "How to Use Spark and Elasticsearch for Interactive Data Analysis" in the near future, so stay tuned.**
 
 ## Contract us
-* Mailing list : **dev@seatunnel.apache.org**. Send anything to `dev-subscribe@seatunnel.apache.org` and subscribe to the mailing list according to the replies.
-* Slack: Send a `Request to join SeaTunnel slack` email to the mailing list (`dev@seatunnel.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* Mailing list : **dev@birdLark.apache.org**. Send anything to `dev-subscribe@birdLark.apache.org` and subscribe to the mailing list according to the replies.
+* Slack: Send a `Request to join SeaTunnel slack` email to the mailing list (`dev@birdLark.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
 * [bilibili B station video](https://space.bilibili.com/1542095008)

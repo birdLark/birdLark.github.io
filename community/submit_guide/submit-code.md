@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Submit Code
 
-* First from the remote repository <https://github.com/apache/incubator-seatunnel.git> fork a copy of the code into your own repository
+* First from the remote repository <https://github.com/apache/incubator-birdLark.git> fork a copy of the code into your own repository
 
 * There are currently three branches in the remote repository:
     * **dev**   daily development branch
@@ -17,13 +17,13 @@ sidebar_position: 2
 * Clone your repository to your local
 
     ```shell
-    git clone git@github.com:apache/incubator-seatunnel.git
+    git clone git@github.com:apache/incubator-birdLark.git
     ```
 
 * Add remote repository address, named upstream
 
     ```shell
-    git remote add upstream git@github.com:apache/incubator-seatunnel.git
+    git remote add upstream git@github.com:apache/incubator-birdLark.git
     ```
 
 * View repository
@@ -69,4 +69,4 @@ sidebar_position: 2
 
 * Then the community Committers will do CodeReview, and then he will discuss some details (including design, implementation, performance, etc.) with you. When everyone on the team is satisfied with this modification, the commit will be merged into the dev branch
 
-* Finally, congratulations, you have become an official contributor to Apache Seatunnel !
+* Finally, congratulations, you have become an official contributor to Apache LarkMidTable !

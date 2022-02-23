@@ -5,9 +5,9 @@ sidebar_position: 1
 
 # SeaTunnel
 
-<img src="https://seatunnel.apache.org/image/logo.png" alt="seatunnel logo" width="200px" height="200px" align="right" />
+<img src="https://birdLark.apache.org/image/logo.png" alt="birdLark logo" width="200px" height="200px" align="right" />
 
-[![Slack](https://img.shields.io/badge/slack-%23seatunnel-4f8eba?logo=slack)](https://join.slack.com/t/apacheseatunnel/shared_invite/zt-123jmewxe-RjB_DW3M3gV~xL91pZ0oVQ)
+[![Slack](https://img.shields.io/badge/slack-%23birdLark-4f8eba?logo=slack)](https://join.slack.com/t/apachebirdLark/shared_invite/zt-123jmewxe-RjB_DW3M3gV~xL91pZ0oVQ)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ASFSeaTunnel.svg?label=Follow&logo=twitter)](https://twitter.com/ASFSeaTunnel)
 
 ---
@@ -51,7 +51,7 @@ SeaTunnel will do its best to solve the problems that may be encountered in the 
 
 ## Workflow of SeaTunnel
 
-![seatunnel-workflow.svg](../static/image/seatunnel-workflow.svg)
+![birdLark-workflow.svg](../static/image/birdLark-workflow.svg)
 
 ```
 Source[Data Source Input] -> Transform[Data Processing] -> Sink[Result Output]
@@ -86,18 +86,18 @@ and Flink.
 
 ## Downloads
 
-Download address for run-directly software package :https://github.com/apache/incubator-seatunnel/releases
+Download address for run-directly software package :https://github.com/apache/incubator-birdLark/releases
 
 ## Quick start
 
 **Spark**
-https://seatunnel.apache.org/docs/spark/quick-start
+https://birdLark.apache.org/docs/spark/quick-start
 
 **Flink**
-https://seatunnel.apache.org/docs/flink/quick-start
+https://birdLark.apache.org/docs/flink/quick-start
 
 Detailed documentation on SeaTunnel
-https://seatunnel.apache.org/docs/introduction
+https://birdLark.apache.org/docs/introduction
 
 ## Application practice cases
 
@@ -134,9 +134,9 @@ volume average daily, and later writing the data to Clickhouse.
 
 - Tencent Cloud
 
-Collecting various logs from business services into Apache Kafka, some of the data in Apache Kafka is consumed and extracted through Seatunnel, and then store into Clickhouse.
+Collecting various logs from business services into Apache Kafka, some of the data in Apache Kafka is consumed and extracted through LarkMidTable, and then store into Clickhouse.
 
-For more use cases, please refer to: https://seatunnel.apache.org/blog
+For more use cases, please refer to: https://birdLark.apache.org/blog
 
 # Code of conduct
 
@@ -149,13 +149,13 @@ unacceptable behavior.
 
 Thanks to all developers!
 
-[![](https://opencollective.com/seatunnel/contributors.svg?width=666)](https://github.com/apache/incubator-seatunnel/graphs/contributors)
+[![](https://opencollective.com/birdLark/contributors.svg?width=666)](https://github.com/apache/incubator-birdLark/graphs/contributors)
 
 ## Contact Us
 
-* Mail list: **dev@seatunnel.apache.org**. Mail to `dev-subscribe@seatunnel.apache.org`, follow the reply to subscribe
+* Mail list: **dev@birdLark.apache.org**. Mail to `dev-subscribe@birdLark.apache.org`, follow the reply to subscribe
   the mail list.
-* Slack: https://join.slack.com/t/apacheseatunnel/shared_invite/zt-123jmewxe-RjB_DW3M3gV~xL91pZ0oVQ
+* Slack: https://join.slack.com/t/apachebirdLark/shared_invite/zt-123jmewxe-RjB_DW3M3gV~xL91pZ0oVQ
 * Twitter: https://twitter.com/ASFSeaTunnel
 * [Bilibili](https://space.bilibili.com/1542095008) (for Chinese users)
 

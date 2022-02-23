@@ -5,7 +5,7 @@ sidebar_position: 1
 
 **FAQ 1.** 使用SeaTunnel时遇到问题，我自己解决不了，我应该怎么办？
 
-首先搜索[Issue列表](https://github.com/apache/incubator-seatunnel/issues)或者[邮件列表](https://lists.apache.org/list.html?dev@seatunnel.apache.org)看是否有人已经提问过相同问题并已得到解决。如果仍然没有找到答案，可以通过[这些方式](https://github.com/apache/incubator-seatunnel#contact-us)联系社区人员寻求帮助。
+首先搜索[Issue列表](https://github.com/apache/incubator-birdLark/issues)或者[邮件列表](https://lists.apache.org/list.html?dev@birdLark.apache.org)看是否有人已经提问过相同问题并已得到解决。如果仍然没有找到答案，可以通过[这些方式](https://github.com/apache/incubator-birdLark#contact-us)联系社区人员寻求帮助。
 
 **FAQ 2.** SeaTunnel 中如何在配置中指定变量，之后在运行时动态指定变量的值？
 
@@ -27,7 +27,7 @@ transform {
 以Spark Local模式为例，启动命令如下：
 
 ```shell
-./bin/start-seatunnel-spark.sh -c ./config/your_app.conf -e client -m local[2] -i city=shanghai -i date=20190319
+./bin/start-birdLark-spark.sh -c ./config/your_app.conf -e client -m local[2] -i city=shanghai -i date=20190319
 ```
 
 可以用参数 `-i` 或者 `--variable` 后面指定 `key=value`来指定变量的值，其中`key` 需要与配置中的变量名相同。
@@ -116,7 +116,7 @@ sink {
 }
 ```
 
-另外，在1.5.7版本之后已经支持了Hive output插件，在2.0.5版本中已经支持了Spark引擎的Hive插件：https://github.com/apache/incubator-seatunnel/issues/910。
+另外，在1.5.7版本之后已经支持了Hive output插件，在2.0.5版本中已经支持了Spark引擎的Hive插件：https://github.com/apache/incubator-birdLark/issues/910。
 
 **FAQ 9.** SeaTunnel 写 ClickHouse 多个实例如何实现负载均衡？
 
@@ -227,7 +227,7 @@ env {
 
 **FAQ 14.** Spark local[*] 模式下跑SeaTunnel，总是出现OOM怎么办？
 
-如果用local模式跑的话，需要修改一下start-seatunnel.sh启动脚本，在spark-submit后面，增加一个参数 `--driver-memory 4g` 。一般情况下生产环境不用local 模式，所以这个参数在On Yarn时一般不需要设置。
+如果用local模式跑的话，需要修改一下start-birdLark.sh启动脚本，在spark-submit后面，增加一个参数 `--driver-memory 4g` 。一般情况下生产环境不用local 模式，所以这个参数在On Yarn时一般不需要设置。
 详见 ： [Application Properties](https://spark.apache.org/docs/latest/configuration.html#application-properties)。
 
 **FAQ 15.** 自己编写的插件或者是第三方的jdbc.jar放在哪里可以被 SeaTunnel 加载？
@@ -313,13 +313,13 @@ https://stackoverflow.com/questions/27781187/how-to-stop-info-messages-displayin
 1. Filter Convert插件
 2. Filter Sql插件
 
-详细的数据类型转换参考：[https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/configuration/output-plugins/Clickhouse?id=clickhouse%e7%b1%bb%e5%9e%8b%e5%af%b9%e7%85%a7%e8%a1%a8](https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/configuration/output-plugins/Clickhouse?id=clickhouse类型对照表)
+详细的数据类型转换参考：[https://interestinglab.github.io/birdLark-docs/#/zh-cn/v1/configuration/output-plugins/Clickhouse?id=clickhouse%e7%b1%bb%e5%9e%8b%e5%af%b9%e7%85%a7%e8%a1%a8](https://interestinglab.github.io/birdLark-docs/#/zh-cn/v1/configuration/output-plugins/Clickhouse?id=clickhouse类型对照表)
 
-参考Issue： [#488](https://github.com/apache/incubator-seatunnel/issues/488) [#382](https://github.com/apache/incubator-seatunnel/issues/382)
+参考Issue： [#488](https://github.com/apache/incubator-birdLark/issues/488) [#382](https://github.com/apache/incubator-birdLark/issues/382)
 
 **FAQ 18.** SeaTunnel 如何访问kerberos鉴权的HDFS、YARN、Hive等资源？
 
-请参考：[#590](https://github.com/apache/incubator-seatunnel/issues/590)
+请参考：[#590](https://github.com/apache/incubator-birdLark/issues/590)
 
 **FAQ 19.** 如何排查NoClassDefFoundError、ClassNotFoundException 等问题？
 
@@ -341,7 +341,7 @@ spark-submit --verbose
 
 **FAQ 21.** 我想学习SeaTunnel 源码，从哪里开始呢？
 
-SeaTunnel 拥有完全抽象化，结构化的代码实现，已经有很多人选择将SeaTunnel的源码作为学习Spark的方式，你可以从主程序入口开始学习源码：[Seatunnel.java](https://github.com/apache/incubator-seatunnel/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/seatunnel-core/seatunnel-core-base/src/main/java/org/apache/seatunnel/Seatunnel.java)
+SeaTunnel 拥有完全抽象化，结构化的代码实现，已经有很多人选择将SeaTunnel的源码作为学习Spark的方式，你可以从主程序入口开始学习源码：[LarkMidTable.java](https://github.com/apache/incubator-birdLark/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/birdLark-core/birdLark-core-base/src/main/java/org/apache/birdLark/LarkMidTable.java)
 
 **FAQ 22.** SeaTunnel开发者自己开发插件时，是否需要了解SeaTunnel代码，是否需要把代码写到SeaTunnel项目里？
 

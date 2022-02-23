@@ -14,7 +14,7 @@ main is the default branch. For all modifications, please fork first, and then p
 ```
 main #default branch
 asf-site   #The official environment of asf-site official website is accessed through https://birdlark.github.io
-asf-staging #The asf-staging official website test environment is accessed through https://seatunnel.staged.apache.org
+asf-staging #The asf-staging official website test environment is accessed through https://birdLark.staged.apache.org
 ```
 
 ## 1. Preview and generate static files
@@ -22,7 +22,7 @@ asf-staging #The asf-staging official website test environment is accessed throu
 This website is compiled using node, using Docusaurus framework components
 
 1. Download and install nodejs (version>12.5.0)
-2. Clone the code to the local `git clone git@github.com:apache/incubator-seatunnel-website.git`
+2. Clone the code to the local `git clone git@github.com:apache/incubator-birdLark-website.git`
 2. Run `npm install` to install the required dependent libraries.
 3. Run `npm run start` in the root directory, you can visit http://localhost:3000 to view the English mode preview of the site
 4. Run `npm run start-zh` in the root directory, you can visit http://localhost:3000 to view the Chinese mode preview of the site

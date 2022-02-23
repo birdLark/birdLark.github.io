@@ -4,7 +4,7 @@ title: 如何支持的 Spark StructuredStreaming
 tags: [Spark, StructuredStreaming]
 ---
 
-# Seatunnel 最近支持的 StructuredStreaming 怎么用
+# LarkMidTable 最近支持的 StructuredStreaming 怎么用
 
 ### 前言
 
@@ -13,20 +13,20 @@ StructuredStreaming是Spark 2.0以后新开放的一个模块，相比SparkStrea
 &emsp;&emsp;三、可以做流与流之间的关联，例如计算广告的点击率，需要将广告的曝光记录和点击记录关联。<br/>
 以上几点如果使用SparkStreaming来实现可能会比较麻烦或者说是很难实现，但是使用StructuredStreaming实现起来会比较轻松。
 ### 如何使用StructuredStreaming
-可能你没有详细研究过StructuredStreaming，但是发现StructuredStreaming能很好的解决你的需求，如何快速利用StructuredStreaming来解决你的需求？目前社区有一款工具 **Seatunnel**，项目地址：[https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel) ,
+可能你没有详细研究过StructuredStreaming，但是发现StructuredStreaming能很好的解决你的需求，如何快速利用StructuredStreaming来解决你的需求？目前社区有一款工具 **LarkMidTable**，项目地址：[https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) ,
 可以高效低成本的帮助你利用StructuredStreaming来完成你的需求。
 
-### Seatunnel
+### LarkMidTable
 
-Seatunnel 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。Seatunnel 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中
+LarkMidTable 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。LarkMidTable 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中
 
 ### 准备工作
 
-首先我们需要安装 Seatunnel，安装十分简单，无需配置系统环境变量
+首先我们需要安装 LarkMidTable，安装十分简单，无需配置系统环境变量
 
 1. 准备Spark环境
-2. 安装 Seatunnel
-3. 配置 Seatunnel
+2. 安装 LarkMidTable
+3. 配置 LarkMidTable
 
 以下是简易步骤，具体安装可以参照 [Quick Start](/docs/quick-start)
 
@@ -34,18 +34,18 @@ Seatunnel 是一个非常易用，高性能，能够应对海量数据的实时�
 cd /usr/local
 wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
 tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
-wget https://github.com/InterestingLab/seatunnel/releases/download/v1.3.0/seatunnel-1.3.0.zip
-unzip seatunnel-1.3.0.zip
-cd seatunnel-1.3.0
+wget https://github.com/InterestingLab/birdLark/releases/download/v1.3.0/birdLark-1.3.0.zip
+unzip birdLark-1.3.0.zip
+cd birdLark-1.3.0
 
-vim config/seatunnel-env.sh
+vim config/birdLark-env.sh
 # 指定Spark安装路径
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 ```
 
-### Seatunnel Pipeline
+### LarkMidTable Pipeline
 
-我们仅需要编写一个 Seatunnel Pipeline的配置文件即可完成数据的导入。
+我们仅需要编写一个 LarkMidTable Pipeline的配置文件即可完成数据的导入。
 
 配置文件包括四个部分，分别是Spark、Input、filter和Output。
 
@@ -55,7 +55,7 @@ SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 
 ```
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -68,7 +68,7 @@ spark {
 
 ```
 kafkaStream {
-    topics = "seatunnel"
+    topics = "birdLark"
     consumer.bootstrap.servers = "localhost:9092"
     schema = "{\"name\":\"string\",\"age\":\"integer\",\"addrs\":{\"country\":\"string\",\"city\":\"string\"}}"
 }
@@ -98,7 +98,7 @@ filter{
 ```
 output{
     kafka {
-        topic = "seatunnel"
+        topic = "birdLark"
         producer.bootstrap.servers = "localhost:9092"
         streaming_output_mode = "update"
         checkpointLocation = "/your/path"
@@ -126,12 +126,12 @@ kafka的数据如下
 {"good_id":"abc","price":300,"user_id":123456,"time":1553216320}
 ```
 
-那我们该怎么利用 Seatunnel 来完成这个需求呢，当然还是只需要配置就好了。
+那我们该怎么利用 LarkMidTable 来完成这个需求呢，当然还是只需要配置就好了。
 
 ```
 #spark里的配置根据业务需求配置
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -170,7 +170,7 @@ filter {
 #接下来我们选择将结果实时输出到Kafka
 output{
     kafka {
-        topic = "seatunnel"
+        topic = "birdLark"
         producer.bootstrap.servers = "localhost:9092"
         streaming_output_mode = "update"
         checkpointLocation = "/your/path"
@@ -178,12 +178,12 @@ output{
 }
 
 ```
-如上配置完成，启动 Seatunnel，就可以获取你想要的结果了。
+如上配置完成，启动 LarkMidTable，就可以获取你想要的结果了。
 
 #### 场景二：多个流关联场景
 
 假设你在某个平台投放了广告，现在要实时计算出每个广告的CTR(点击率)，数据分别来自两个topic，一个是广告曝光日志，一个是广告点击日志,
-此时我们就需要把两个流数据关联到一起做计算，而 Seatunnel 最近也支持了此功能，让我们一起看一下该怎么做：
+此时我们就需要把两个流数据关联到一起做计算，而 LarkMidTable 最近也支持了此功能，让我们一起看一下该怎么做：
 
 
 点击topic数据格式
@@ -203,7 +203,7 @@ output{
 ```
 #spark里的配置根据业务需求配置
 spark {
-  spark.app.name = "seatunnel"
+  spark.app.name = "birdLark"
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
@@ -261,7 +261,7 @@ filter {
 #接下来我们选择将结果实时输出到Kafka
 output {
     kafka {
-        topic = "seatunnel"
+        topic = "birdLark"
         producer.bootstrap.servers = "localhost:9092"
         streaming_output_mode = "append" #流关联只支持append模式
         checkpointLocation = "/your/path"
@@ -274,14 +274,14 @@ output {
 ### 结语
 通过配置能很快的利用StructuredStreaming做实时数据处理，但是还是需要对StructuredStreaming的一些概念了解，比如其中的watermark机制，还有程序的输出模式。
 
-最后，Seatunnel 当然还支持spark streaming和spark 批处理。
+最后，LarkMidTable 当然还支持spark streaming和spark 批处理。
 如果你对这两个也感兴趣的话，可以阅读我们以前发布的文章《[如何快速地将Hive中的数据导入ClickHouse](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-hive-to-clickhouse.mdtent-blog/current/2021-12-30-hive-to-clickhouse.md)》、
 《[优秀的数据工程师，怎么用Spark在TiDB上做OLAP分析](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-spark-execute-tidb.mdtent-blog/current/2021-12-30-spark-execute-tidb.md)》、
 《[如何使用Spark快速将数据写入Elasticsearch](i18n/zh-CN/docusaurus-plugin-content-blog/2021-12-30-spark-execute-elasticsearch.md/current/2021-12-30-spark-execute-elasticsearch.md)》
 
-希望了解 Seatunnel 和 HBase, ClickHouse、Elasticsearch、Kafka、MySQL 等数据源结合使用的更多功能和案例，可以直接进入官网 [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
+希望了解 LarkMidTable 和 HBase, ClickHouse、Elasticsearch、Kafka、MySQL 等数据源结合使用的更多功能和案例，可以直接进入官网 [https://birdLark.apache.org/](https://birdLark.apache.org/)
 
 ## 联系我们
-* 邮件列表 : **dev@seatunnel.apache.org**. 发送任意内容至 `dev-subscribe@seatunnel.apache.org`， 按照回复订阅邮件列表。
-* Slack: 发送 `Request to join SeaTunnel slack` 邮件到邮件列表 (`dev@seatunnel.apache.org`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
+* 邮件列表 : **dev@birdLark.apache.org**. 发送任意内容至 `dev-subscribe@birdLark.apache.org`， 按照回复订阅邮件列表。
+* Slack: 发送 `Request to join SeaTunnel slack` 邮件到邮件列表 (`dev@birdLark.apache.org`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
 * [bilibili B站 视频](https://space.bilibili.com/1542095008)

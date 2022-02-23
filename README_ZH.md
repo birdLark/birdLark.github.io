@@ -4,7 +4,7 @@
 
 [English](README.md) | [中文](README_ZH.md)
 
-这是包含 `https://seatunnel.apache.org` 的所有源代码的存储库。
+这是包含 `https://birdLark.apache.org` 的所有源代码的存储库。
 本指南将指导您如何为SeaTunnel的网站做出贡献。
 
 ## 分支
@@ -13,8 +13,8 @@ main为默认主分支，修改请先fork到自己的仓库，然后在main分�
 
 ```
 main  默认分支
-asf-site    官网正式环境  通过https://seatunnel.apache.org 访问
-asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
+asf-site    官网正式环境  通过https://birdLark.apache.org 访问
+asf-staging 官网测试环境  通过https://birdLark.staged.apache.org 访问
 ```
 
 ## 1.预览并生成静态文件
@@ -22,7 +22,7 @@ asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
 本网站是使用node编译的，使用的是Docusaurus框架组件
 
 1. 下载并安装 nodejs(version>12.5.0)
-2. 克隆代码到本地 `git clone  git@github.com:apache/incubator-seatunnel-website.git`
+2. 克隆代码到本地 `git clone  git@github.com:apache/incubator-birdLark-website.git`
 2. 运行 `npm install` 来安装所需的依赖库。
 3. 在根目录运行`npm run start`，可以访问http://localhost:3000查看站点英文模式预览
 4. 在根目录运行`npm run start-zh`，可以访问http://localhost:3000查看站点的中文模式预览
@@ -111,7 +111,7 @@ css等样式文件放在`src/css`目录下
 
 ### 3.5 首页页面修改
 
-访问页面  https://seatunnel.apache.org/
+访问页面  https://birdLark.apache.org/
 
 位于 `src/pages/home`
 
@@ -124,7 +124,7 @@ css等样式文件放在`src/css`目录下
 
 ### 3.6 团队页面修改
 
-访问页面  https://seatunnel.apache.org/zh-CN/team
+访问页面  https://birdLark.apache.org/zh-CN/team
 
 位于 `src/pages/team`
 
@@ -137,7 +137,7 @@ css等样式文件放在`src/css`目录下
 
 ### 3.7  用户 列表页面修改
 
-访问页面  https://seatunnel.apache.org/zh-CN/user/
+访问页面  https://birdLark.apache.org/zh-CN/user/
 
 位于 `src/pages/user`
 
@@ -152,7 +152,7 @@ css等样式文件放在`src/css`目录下
 
 ### 3.8 version 列表页面修改
 
-访问页面  https://seatunnel.apache.org/zh-CN/versions/
+访问页面  https://birdLark.apache.org/zh-CN/versions/
 
 位于 `src/pages/versions`
 

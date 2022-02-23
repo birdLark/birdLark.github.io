@@ -5,16 +5,16 @@ sidebar_position: 1
 
 # 文档须知
 
-良好的使用文档对任何类型的软件都是至关重要的。欢迎任何可以改进 Seatunnel 文档的贡献。
+良好的使用文档对任何类型的软件都是至关重要的。欢迎任何可以改进 LarkMidTable 文档的贡献。
 
 ## 获取文档项目
 
-Seatunnel 项目的文档维护在独立的 [git 仓库] (https://github.com/apache/incubator-seatunnel-website) 中。
+LarkMidTable 项目的文档维护在独立的 [git 仓库] (https://github.com/apache/incubator-birdLark-website) 中。
 
 首先你需要先将文档项目 fork 到自己的 github 仓库中，然后将 fork 的文档克隆到本地计算机中。
 
 ```
-git clone https://github.com/<your-github-user-name>/incubator-seatunnel-website
+git clone https://github.com/<your-github-user-name>/incubator-birdLark-website
 ```
 
 ## 预览并生成静态文件
@@ -22,7 +22,7 @@ git clone https://github.com/<your-github-user-name>/incubator-seatunnel-website
 本网站是使用node编译的，使用的是Docusaurus框架组件
 
 1. 下载并安装 nodejs(version>12.5.0)
-2. 克隆代码到本地 `git clone  git@github.com:apache/incubator-seatunnel-website.git`
+2. 克隆代码到本地 `git clone  git@github.com:apache/incubator-birdLark-website.git`
 2. 运行 `npm install` 来安装所需的依赖库。
 3. 在根目录运行`npm run start`，可以访问http://localhost:3000查看站点英文模式预览
 4. 在根目录运行`npm run start-zh`，可以访问http://localhost:3000查看站点的中文模式预览
@@ -91,7 +91,7 @@ css等样式文件放在`src/css`目录下
 > 除了首页、团队、用户、Docs>All Version 模块页面外，其余页面都能通过底部的'Edit this page'按钮 直接跳转至对应的github的资源修改页
 
 ### 首页页面修改
-访问页面  https://seatunnel.apache.org/
+访问页面  https://birdLark.apache.org/
 位于 `src/pages/home`
 
 ```
@@ -100,7 +100,7 @@ css等样式文件放在`src/css`目录下
 │      index.less  首页样式
 ```
 ### 团队页面修改
-访问页面  https://seatunnel.apache.org/zh-CN/team
+访问页面  https://birdLark.apache.org/zh-CN/team
 位于 `src/pages/team`
 ```
 ├─team
@@ -109,7 +109,7 @@ css等样式文件放在`src/css`目录下
 │ index.less
 ```
 ### 用户 列表页面修改
-访问页面  https://seatunnel.apache.org/zh-CN/user/
+访问页面  https://birdLark.apache.org/zh-CN/user/
 ```
 位于 `src/pages/user`
 └─versions
@@ -121,7 +121,7 @@ css等样式文件放在`src/css`目录下
 ```
 
 ### version 列表页面修改
-访问页面  https://seatunnel.apache.org/zh-CN/versions/
+访问页面  https://birdLark.apache.org/zh-CN/versions/
 ```
 位于 `src/pages/versions`
 └─versions

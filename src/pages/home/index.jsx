@@ -23,7 +23,7 @@ export default function () {
 
                     <div className="banner text_center">
                         <h1 className="main_title"><span className="apache">Apache</span> <span
-                            className="birdLark">SeaTunnel</span>
+                            className="birdLark">LarkMidTable</span>
                             <span className="badge">Incubating</span>
                         </h1>
 

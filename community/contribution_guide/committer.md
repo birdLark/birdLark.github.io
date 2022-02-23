@@ -1,20 +1,20 @@
-# Become Apache SeaTunnel Committer
-SeaTunnel Podling Project Management Committee (PPMC) is responsible for assessing the contributions of candidates.
+# Become Apache LarkMidTable Committer
+LarkMidTable Podling Project Management Committee (PPMC) is responsible for assessing the contributions of candidates.
 
-Like many Apache projects, SeaTunnel welcome all contributions, including code contributions, blog entries, guides for new users, public speeches, and enhancement of the project in various ways.
+Like many Apache projects, LarkMidTable welcome all contributions, including code contributions, blog entries, guides for new users, public speeches, and enhancement of the project in various ways.
 
 Becoming a committer
-To get started contributing to SeaTunnel, learn how to contribute – anyone can submit patches, documentation and examples to the project.
+To get started contributing to LarkMidTable, learn how to contribute – anyone can submit patches, documentation and examples to the project.
 
-The PPMC regularly adds new committers from the active contributors, based on their contributions to SeaTunnel. The qualifications for new committers include:
+The PPMC regularly adds new committers from the active contributors, based on their contributions to LarkMidTable. The qualifications for new committers include:
 
-Sustained contributions to SeaTunnel: Committers should have a history of major contributions to SeaTunnel. An ideal committer will have contributed broadly throughout the project, and have contributed at least one major component where they have taken an “ownership” role. An ownership role means that existing contributors feel that they should run patches for this component by this person.
-Quality of contributions: Committers more than any other community member should submit simple, well-tested, and well-designed patches. In addition, they should show sufficient expertise to be able to review patches, including making sure they fit within SeaTunnel’s engineering practices (testability, documentation, API stability, code style, etc). The committership is collectively responsible for the software quality and maintainability of SeaTunnel. Note that contributions to critical parts of SeaTunnel, like its core and SQL modules, will be held to a higher standard when assessing quality. Contributors to these areas will face more review of their changes.
+Sustained contributions to LarkMidTable: Committers should have a history of major contributions to LarkMidTable. An ideal committer will have contributed broadly throughout the project, and have contributed at least one major component where they have taken an “ownership” role. An ownership role means that existing contributors feel that they should run patches for this component by this person.
+Quality of contributions: Committers more than any other community member should submit simple, well-tested, and well-designed patches. In addition, they should show sufficient expertise to be able to review patches, including making sure they fit within LarkMidTable’s engineering practices (testability, documentation, API stability, code style, etc). The committership is collectively responsible for the software quality and maintainability of LarkMidTable. Note that contributions to critical parts of LarkMidTable, like its core and SQL modules, will be held to a higher standard when assessing quality. Contributors to these areas will face more review of their changes.
 Community involvement: Committers should have a constructive and friendly attitude in all community interactions. They should also be active on the dev and user list and help mentor newer contributors and users. In design discussions, committers should maintain a professional and diplomatic approach, even in the face of disagreement.
 
 ## Committer
 ### Nominate new committer
-In SeaTunnel, **new committer nomination** could only be officially started by existing PPMC members. If a new committer feels that he/she is qualified, he/she should contact any existing PPMC member and discuss. If this is agreed among some members of the PPMC, the process will kick off.
+In LarkMidTable, **new committer nomination** could only be officially started by existing PPMC members. If a new committer feels that he/she is qualified, he/she should contact any existing PPMC member and discuss. If this is agreed among some members of the PPMC, the process will kick off.
 
 The following steps are recommended (to be initiated only by an existing PPMC member):
 1. Send an email titled `[DISCUSS] Promote xxx as new committer` to `private@birdLark.apache.org`. List the important contributions of the candidate,
@@ -32,11 +32,11 @@ The PPMC member should send an email using the following template to the new com
 ```
 To: klein@gmail.com
 Cc: private@birdLark.apache.org
-Subject: Invitation to become SeaTunnel committer: klein
+Subject: Invitation to become LarkMidTable committer: klein
 
 Hello [invitee name],
 
-The SeaTunnel Project Management Committee] (PPMC) 
+The LarkMidTable Project Management Committee] (PPMC) 
 hereby offers you committer privileges to the project. These privileges are
 offered on the understanding that you'll use them
 reasonably and with common sense. We like to work on trust
@@ -56,7 +56,7 @@ contributor, participating as you do now.
 
 A. This personal invitation is a chance for you to 
 accept or decline in private.  Either way, please 
-let us know in reply to the [private@SeaTunnel.apache.org] 
+let us know in reply to the [private@LarkMidTable.apache.org] 
 address only.
 
 B. If you accept, the next step is to register an iCLA:
@@ -68,7 +68,7 @@ B. If you accept, the next step is to register an iCLA:
     http://www.apache.org/licenses/#submitting
 
     3. When you transmit the completed iCLA, request 
-    to notify the Apache SeaTunnel and choose a 
+    to notify the Apache LarkMidTable and choose a 
     unique Apache id. Look to see if your preferred 
     id is already taken at 
     http://people.apache.org/committer-index.html     
@@ -109,20 +109,20 @@ The V.P. could request through the [Apache Account Submission Helper Form](https
 After several days, the new committer will receive an email confirming creation of the account, titled `Welcome to the Apache Software Foundation (ASF)!`.
 Congratulations! The new committer now has an official Apache ID.
 
-The PPMC member should add the new committer to the official committer list through [roster](https://whimsy.apache.org/roster/committee/SeaTunnel).
+The PPMC member should add the new committer to the official committer list through [roster](https://whimsy.apache.org/roster/committee/LarkMidTable).
 
 ### Set up the Apache ID and dev env
 1. Go to [Apache Account Utility Platform](https://id.apache.org/), create your password, set up your personal mailbox (`Forwarding email address`) and GitHub account(`Your GitHub Username`). An organizational invite will be sent to you via email shortly thereafter (within 2 hours).
 1. If you would like to use the `xxx@apache.org` email service, please refer to [here](https://infra.apache.org/committer-email.html). Gmail is recommended, because this forwarding mode is not easy to find in most mailbox service settings.
 1. Follow the [authorized GitHub 2FA wiki](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) to enable two-factor authorization (2FA) on [Github](http://github.com/). When you set 2FA to "off", it will be delisted by the corresponding Apache committer write permission group until you set it up again. (**NOTE: Treat your recovery codes with the same level of attention as you would your password!**)
-1. Use [GitBox Account Linking Utility](https://gitbox.apache.org/setup/) to obtain write permission of the SeaTunnel project.
-1. Follow this [doc](https://github.com/apache/SeaTunnel-website#how-to-add-a-new-committer) to update the website.
+1. Use [GitBox Account Linking Utility](https://gitbox.apache.org/setup/) to obtain write permission of the LarkMidTable project.
+1. Follow this [doc](https://github.com/apache/LarkMidTable-website#how-to-add-a-new-committer) to update the website.
 
 If you would like to show up publicly in the Apache GitHub org, you need to go to the [Apache GitHub org people page](https://github.com/orgs/apache/people),
 search for yourself, and choose `Organization visibility` to `Public`.
 
 ### Committer rights, duties, and responsibilities
-The SeaTunnel project doesn't require continuing contributions from you after you have become a committer, but we truly hope that you will continue to play a part in our community!
+The LarkMidTable project doesn't require continuing contributions from you after you have become a committer, but we truly hope that you will continue to play a part in our community!
 
 As a committer, you could
 1. Review and merge the pull request to the master branch in the Apache repo. A pull request often contains multiple commits. Those commits **must be squashed and merged** into a single commit **with explanatory comments**. It is recommended for new committers to request recheck of the pull request from senior committers.
@@ -150,9 +150,9 @@ Before sending the invitation, the PPMC [must also send a NOTICE mail to the Apa
 ```
 To: board@apache.org
 Cc: private@birdLark.apache.org
-Subject: [NOTICE] Jane Doe for SeaTunnel PPMC
+Subject: [NOTICE] Jane Doe for LarkMidTable PPMC
 
-SeaTunnel proposes to invite Jane Doe (janedoe) to join the PPMC.
+LarkMidTable proposes to invite Jane Doe (janedoe) to join the PPMC.
 
 (include if a vote was held) The vote result is available here: https://lists.apache.org/...
 ```

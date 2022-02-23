@@ -25,7 +25,7 @@ github:
   features:
     # Enable issue management
     issues: false
-  description: Apache SeaTunnel documents
+  description: Apache LarkMidTable documents
   homepage: https://birdLark.apache.org/
   labels:
     - birdLark

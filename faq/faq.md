@@ -1,12 +1,12 @@
 ---
-title: SeaTunnel FAQ
+title: LarkMidTable FAQ
 ---
 
-**FAQ 1.** I encounter a problem when using SeaTunnel and I cannot solve it by myself. What should I do?Firstly search in [Issue list](https://github.com/apache/incubator-birdLark/issues) or [mailing list](https://lists.apache.org/list.html?dev@birdLark.apache.org) to see if someone has already asked the same question and got the answer. If you still cannot find the answer, you can contact community members for help in[ these ways](https://github.com/apache/incubator-birdLark#contact-us) .
+**FAQ 1.** I encounter a problem when using LarkMidTable and I cannot solve it by myself. What should I do?Firstly search in [Issue list](https://github.com/apache/incubator-birdLark/issues) or [mailing list](https://lists.apache.org/list.html?dev@birdLark.apache.org) to see if someone has already asked the same question and got the answer. If you still cannot find the answer, you can contact community members for help in[ these ways](https://github.com/apache/incubator-birdLark#contact-us) .
 
-**FAQ 2.** How to declare a variable in SeaTunnel's configuration, and then dynamically replace the value of the variable at runtime?
+**FAQ 2.** How to declare a variable in LarkMidTable's configuration, and then dynamically replace the value of the variable at runtime?
 
-Since `v1.2.4` SeaTunnel supports variables substitution in the configuration. This feature is often used for timing or non-timing offline processing to replace variables such as time and date. The usage is as follows:
+Since `v1.2.4` LarkMidTable supports variables substitution in the configuration. This feature is often used for timing or non-timing offline processing to replace variables such as time and date. The usage is as follows:
 
 Configure the variable name in the configuration, here is an example of sql transform (actually anywhere in the configuration file the value in 'key = value' can use the variable substitution):
 
@@ -50,7 +50,7 @@ your string 1
 
 refer to: [lightbend/config#456](https://github.com/lightbend/config/issues/456)
 
-**FAQ 5.** Is SeaTunnel supportted in Azkaban, Oozie, DolphinScheduler?
+**FAQ 5.** Is LarkMidTable supportted in Azkaban, Oozie, DolphinScheduler?
 
 Of course, please see the screenshot below:
 
@@ -58,7 +58,7 @@ Of course, please see the screenshot below:
 
 <img src="/doc/image/faq.assets/azkaban.png" alt="img"  />
 
-**FAQ 6.** Does SeaTunnel have a case of configuring multiple sources, such as configuring  elasticsearch and hdfs in source at the same time?
+**FAQ 6.** Does LarkMidTable have a case of configuring multiple sources, such as configuring  elasticsearch and hdfs in source at the same time?
 
 ```
 env {
@@ -89,7 +89,7 @@ sink {
 
 There is hbase input plugin, download it from here: https://github.com/garyelephant/waterdrop-input-hbase
 
-**FAQ 8.** How to use SeaTunnel to write data to Hive?
+**FAQ 8.** How to use LarkMidTable to write data to Hive?
 
 ```
 env {
@@ -110,9 +110,9 @@ sink {
 }
 ```
 
-In addition, SeaTunnel has implemented `Hive` output plugin after 1.5.7 in 1.x branch; in 2.x branch, the Hive plugin of the Spark engine has been supported after version 2.0.5: https://github.com/apache/incubator-birdLark/issues/910.
+In addition, LarkMidTable has implemented `Hive` output plugin after 1.5.7 in 1.x branch; in 2.x branch, the Hive plugin of the Spark engine has been supported after version 2.0.5: https://github.com/apache/incubator-birdLark/issues/910.
 
-**FAQ 9.** How does SeaTunnel write multiple instances of ClickHouse to achieve load balancing?
+**FAQ 9.** How does LarkMidTable write multiple instances of ClickHouse to achieve load balancing?
 
 1. Write distributed tables directly (not recommended)
 
@@ -160,7 +160,7 @@ In addition, SeaTunnel has implemented `Hive` output plugin after 1.5.7 in 1.x b
    }
    ```
 
-**FAQ 10.** How to solve OOM when SeaTunnel consumes Kafka?
+**FAQ 10.** How to solve OOM when LarkMidTable consumes Kafka?
 
 In most cases, OOM is caused by the fact that there is no rate limit for consumption. The solution is as follows:
 
@@ -186,9 +186,9 @@ The reason is that the version of httpclient.jar that comes with the CDH version
 
 **FAQ 12.** The default JDK of my Spark cluster is JDK7. After I install JDK8, how can I specify the
 
-SeaTunnel starts with JDK8?
+LarkMidTable starts with JDK8?
 
-In SeaTunnel's config file, specify the following configuration:
+In LarkMidTable's config file, specify the following configuration:
 
 ```shell
 spark {
@@ -199,11 +199,11 @@ spark {
 }
 ```
 
-**FAQ 13.**  How to specify a different JDK version for SeaTunnel on Yarn?
+**FAQ 13.**  How to specify a different JDK version for LarkMidTable on Yarn?
 
 For example, if you want to set the JDK version to JDK8, there are two cases:
 
-- The Yarn cluster has deployed JDK8, but the default JDK is not JDK8. you should only add 2 configurations to the SeaTunnel config file:
+- The Yarn cluster has deployed JDK8, but the default JDK is not JDK8. you should only add 2 configurations to the LarkMidTable config file:
 
     ```
       env {
@@ -214,34 +214,34 @@ For example, if you want to set the JDK version to JDK8, there are two cases:
     }
   ```
   
-- Yarn cluster does not deploy JDK8. At this time, when you start SeaTunnel attached with JDK8.For detailed operations, see the link below:
+- Yarn cluster does not deploy JDK8. At this time, when you start LarkMidTable attached with JDK8.For detailed operations, see the link below:
   https://www.cnblogs.com/jasondan/p/spark-specific-jdk-version.html
 
-**FAQ 14.** What should I do if OOM always appears when running SeaTunnel in Spark local[*] mode?
+**FAQ 14.** What should I do if OOM always appears when running LarkMidTable in Spark local[*] mode?
 
 If you run in local mode, you need to modify the start-birdLark.sh startup script after  spark-submit, add a parameter `--driver-memory 4g` . Under normal circumstances, the local mode is not used in the production environment. Therefore, this parameter generally does not need to be set during On Yarn. See: [Application Properties](https://spark.apache.org/docs/latest/configuration.html#application-properties) for details .
 
-**FAQ 15.** Where can the self-written plugins or third-party jdbc.jar be placed to be loaded by SeaTunnel?
+**FAQ 15.** Where can the self-written plugins or third-party jdbc.jar be placed to be loaded by LarkMidTable?
 
 Place the Jar package under the specified structure of the plugins directory:
 
 ```
-cd SeaTunnel
+cd LarkMidTable
 mkdir -p plugins/my_plugins/lib
 cp third-part.jar plugins/my_plugins/lib
 ```
 
 `my_plugins` can be any string.
 
-**FAQ 16.** How to configure logging related parameters in SeaTunnel-v1(Spark)?
+**FAQ 16.** How to configure logging related parameters in LarkMidTable-v1(Spark)?
 
 There are 3 ways to configure Logging related parameters (such as Log Level):
 
 - [Not recommended] Change the default `$SPARK_HOME/conf/log4j.properties`
   - This will affect all programs submitted via `$SPARK_HOME/bin/spark-submit` 
-- [Not recommended] Modify logging related parameters directly in the Spark code of SeaTunnel
+- [Not recommended] Modify logging related parameters directly in the Spark code of LarkMidTable
   - This is equivalent to writing dead, and each change needs to be recompiled
-- [Recommended] Use the following methods to change the logging configuration in the SeaTunnel configuration file(It only takes effect after SeaTunnel >= 1.5.5 ): 
+- [Recommended] Use the following methods to change the logging configuration in the LarkMidTable configuration file(It only takes effect after LarkMidTable >= 1.5.5 ): 
 
     ```
     env {
@@ -280,9 +280,9 @@ log4j.appender.console.layout=org.apache.log4j.PatternLayout
 log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
 ```
 
-How to configure logging related parameters in SeaTunnel-v2(Spark, Flink)?
+How to configure logging related parameters in LarkMidTable-v2(Spark, Flink)?
 
-Currently, it cannot be set directly. The user needs to modify the SeaTunnel startup script.The relevant parameters are specified in the task submission command. For specific parameters, please refer to the official document:
+Currently, it cannot be set directly. The user needs to modify the LarkMidTable startup script.The relevant parameters are specified in the task submission command. For specific parameters, please refer to the official document:
 
 - Spark official documentation: http://spark.apache.org/docs/latest/configuration.html#configuring-logging
 - Flink official documentation: https://ci.apache.org/projects/flink/flink-docs-stable/monitoring/logging.html
@@ -299,7 +299,7 @@ https://stackoverflow.com/questions/27781187/how-to-stop-info-messages-displayin
 
 **FAQ 17.** Error when writing to ClickHouse: ClassCastException
 
-In SeaTunnel, the data type will not be actively converted. After the Input reads the data, the corresponding
+In LarkMidTable, the data type will not be actively converted. After the Input reads the data, the corresponding
 
 Schema. When writing ClickHouse, the field type needs to be strictly matched, and the mismatch needs to be done.
 
@@ -312,13 +312,13 @@ Detailed data type conversion reference: [ClickHouse Data Type Check List](https
 
 Refer to issue:[#488](https://github.com/apache/incubator-birdLark/issues/488) [#382](https://github.com/apache/incubator-birdLark/issues/382)
 
-**FAQ 18.** How does SeaTunnel access kerberos-authenticated HDFS, YARN, Hive and other resources?
+**FAQ 18.** How does LarkMidTable access kerberos-authenticated HDFS, YARN, Hive and other resources?
 
 Please refer to: [#590](https://github.com/apache/incubator-birdLark/issues/590)
 
 **FAQ 19.** How to troubleshoot NoClassDefFoundError, ClassNotFoundException and other issues?
 
-There is a high probability that there are multiple different versions of the corresponding Jar package class loaded in the Java classpath, because of the conflict of the load order, instead of really missing this Jar, please modify this SeaTunnel startup command, add the following parameters to the spark-submit submission place, and debug in detail through the output log.
+There is a high probability that there are multiple different versions of the corresponding Jar package class loaded in the Java classpath, because of the conflict of the load order, instead of really missing this Jar, please modify this LarkMidTable startup command, add the following parameters to the spark-submit submission place, and debug in detail through the output log.
 
 ```
 spark-submit --verbose
@@ -328,21 +328,21 @@ spark-submit --verbose
     ...
 ```
 
-**FAQ 20.** How to use SeaTunnel to synchronize data across HDFS clusters?
+**FAQ 20.** How to use LarkMidTable to synchronize data across HDFS clusters?
 
 Just configure hdfs-site.xml properly, refer to: https://www.cnblogs.com/suanec/p/7828139.html
 
-There is an article on how to modify the spark code to complete the configuration(SeaTunnel does not need to do this): https://www.jianshu.com/p/3e84c4c97610
+There is an article on how to modify the spark code to complete the configuration(LarkMidTable does not need to do this): https://www.jianshu.com/p/3e84c4c97610
 
-**FAQ 21.** I want to learn the source code of SeaTunnel, where should I start?
+**FAQ 21.** I want to learn the source code of LarkMidTable, where should I start?
 
-SeaTunnel has a completely abstract and structured code implementation, and many people have chosen  SeaTunnel As a way to learn Spark, you can learn the source code from the main program entry: [LarkMidTable.java](https://github.com/apache/incubator-birdLark/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/birdLark-core/birdLark-core-base/src/main/java/org/apache/birdLark/LarkMidTable.java)
+LarkMidTable has a completely abstract and structured code implementation, and many people have chosen  LarkMidTable As a way to learn Spark, you can learn the source code from the main program entry: [LarkMidTable.java](https://github.com/apache/incubator-birdLark/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/birdLark-core/birdLark-core-base/src/main/java/org/apache/birdLark/LarkMidTable.java)
 
-**FAQ 22.** When SeaTunnel developers develop their own plugins, do they need to understand the SeaTunnel code? Should these code integrated into the SeaTunnel project?
+**FAQ 22.** When LarkMidTable developers develop their own plugins, do they need to understand the LarkMidTable code? Should these code integrated into the LarkMidTable project?
 
-The plug-in developed by the developer has nothing to do with the SeaTunnel project and does not need to write your plug-in code
+The plug-in developed by the developer has nothing to do with the LarkMidTable project and does not need to write your plug-in code
 
-The plugin can be completely independent with SeaTunnel project, in which you can use java,
+The plugin can be completely independent with LarkMidTable project, in which you can use java,
 
 Scala, maven, sbt, gradle, whatever you want. This is also the way we recommend developers to develop plugins.
 

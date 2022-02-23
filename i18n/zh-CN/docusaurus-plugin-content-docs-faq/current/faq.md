@@ -1,15 +1,15 @@
 ---
-title: SeaTunnel FAQ
+title: LarkMidTable FAQ
 sidebar_position: 1
 ---
 
-**FAQ 1.** 使用SeaTunnel时遇到问题，我自己解决不了，我应该怎么办？
+**FAQ 1.** 使用LarkMidTable时遇到问题，我自己解决不了，我应该怎么办？
 
 首先搜索[Issue列表](https://github.com/apache/incubator-birdLark/issues)或者[邮件列表](https://lists.apache.org/list.html?dev@birdLark.apache.org)看是否有人已经提问过相同问题并已得到解决。如果仍然没有找到答案，可以通过[这些方式](https://github.com/apache/incubator-birdLark#contact-us)联系社区人员寻求帮助。
 
-**FAQ 2.** SeaTunnel 中如何在配置中指定变量，之后在运行时动态指定变量的值？
+**FAQ 2.** LarkMidTable 中如何在配置中指定变量，之后在运行时动态指定变量的值？
 
-SeaTunnel 从`v1.2.4`开始，支持在配置中指定变量，此功能常用于做定时或非定时的离线处理时，替换时间、日期等变量，用法如下：
+LarkMidTable 从`v1.2.4`开始，支持在配置中指定变量，此功能常用于做定时或非定时的离线处理时，替换时间、日期等变量，用法如下：
 
 在配置中配置变量名称，这里以sql transform举例（实际上配置文件中任意位置的key = value中的value，都可以使用变量替换功能）:
 
@@ -54,7 +54,7 @@ your string 1
 
 参考：[lightbend/config#456](https://github.com/lightbend/config/issues/456)
 
-**FAQ 5.** SeaTunnel 是否支持在Azkaban， Oozie，DolphinScheduler 这些任务调度框架中运行呢？
+**FAQ 5.** LarkMidTable 是否支持在Azkaban， Oozie，DolphinScheduler 这些任务调度框架中运行呢？
 
 当然可以，请见下面的截图：
 
@@ -62,7 +62,7 @@ your string 1
 
 <img src="/doc/image/faq.assets/azkaban.png" alt="img"  />
 
-**FAQ 6.** SeaTunnel有配置多个数据源的案例吗， 比如在source里面同时配置elasticsearch和hdfs？
+**FAQ 6.** LarkMidTable有配置多个数据源的案例吗， 比如在source里面同时配置elasticsearch和hdfs？
 
 多数据源举例如下：
 
@@ -95,7 +95,7 @@ sink {
 
 有hbase input 插件，从这里下载：https://github.com/garyelephant/waterdrop-input-hbase
 
-**FAQ 8.** 如何用SeaTunnel把数据写入Hive？
+**FAQ 8.** 如何用LarkMidTable把数据写入Hive？
 
 ```
 env {
@@ -118,7 +118,7 @@ sink {
 
 另外，在1.5.7版本之后已经支持了Hive output插件，在2.0.5版本中已经支持了Spark引擎的Hive插件：https://github.com/apache/incubator-birdLark/issues/910。
 
-**FAQ 9.** SeaTunnel 写 ClickHouse 多个实例如何实现负载均衡？
+**FAQ 9.** LarkMidTable 写 ClickHouse 多个实例如何实现负载均衡？
 
 1. 直接写分布式表（不推荐）
 
@@ -166,7 +166,7 @@ sink {
    }
    ```
 
-**FAQ 10.** SeaTunnel消费Kafka出现OOM怎么解决？
+**FAQ 10.** LarkMidTable消费Kafka出现OOM怎么解决？
 
 多数情况，OOM是由于消费没有限速导致的，解决方法如下：
 
@@ -194,9 +194,9 @@ sink {
 
 原因是CDH版本Spark自带的 httpclient.jar 版本较低，而ClickHouse JDBC基于的httpclient版本为4.5.2，包版本冲突。解决方法是用 httpclient-4.5.2 版本替换掉 CDH 自带的jar包。
 
-**FAQ 12.** 我的Spark集群的默认JDK是JDK7，我安装了JDK8之后，如何指定让SeaTunnel使用JDK8启动？
+**FAQ 12.** 我的Spark集群的默认JDK是JDK7，我安装了JDK8之后，如何指定让LarkMidTable使用JDK8启动？
 
-在SeaTunnel的config 文件中，指定如下配置：
+在LarkMidTable的config 文件中，指定如下配置：
 
 ```shell
 env {
@@ -207,11 +207,11 @@ env {
 }
 ```
 
-**FAQ 13.** 如何为SeaTunnel on Yarn指定不同的JDK版本？
+**FAQ 13.** 如何为LarkMidTable on Yarn指定不同的JDK版本？
 
 比如，你希望将JDK版本定为JDK8，分两种情况：
 
-- Yarn集群已经部署了JDK8，但默认的JDK不是JDK8，此时只需要在SeaTunnel的config 文件中增加2个配置即可：
+- Yarn集群已经部署了JDK8，但默认的JDK不是JDK8，此时只需要在LarkMidTable的config 文件中增加2个配置即可：
 
     ```
     spark {
@@ -222,35 +222,35 @@ env {
     }
     ```
   
-- Yarn集群没有部署JDK8，此时需要你启动SeaTunnel时，同时附带上JDK8，具体操作见下面的连接：
+- Yarn集群没有部署JDK8，此时需要你启动LarkMidTable时，同时附带上JDK8，具体操作见下面的连接：
   https://www.cnblogs.com/jasondan/p/spark-specific-jdk-version.html
 
-**FAQ 14.** Spark local[*] 模式下跑SeaTunnel，总是出现OOM怎么办？
+**FAQ 14.** Spark local[*] 模式下跑LarkMidTable，总是出现OOM怎么办？
 
 如果用local模式跑的话，需要修改一下start-birdLark.sh启动脚本，在spark-submit后面，增加一个参数 `--driver-memory 4g` 。一般情况下生产环境不用local 模式，所以这个参数在On Yarn时一般不需要设置。
 详见 ： [Application Properties](https://spark.apache.org/docs/latest/configuration.html#application-properties)。
 
-**FAQ 15.** 自己编写的插件或者是第三方的jdbc.jar放在哪里可以被 SeaTunnel 加载？
+**FAQ 15.** 自己编写的插件或者是第三方的jdbc.jar放在哪里可以被 LarkMidTable 加载？
 
 将Jar包放置在 `plugins` 目录指定结构下：
 
 ```
-cd SeaTunnel
+cd LarkMidTable
 mkdir -p plugins/my_plugins/lib
 cp third-part.jar plugins/my_plugins/lib
 ```
 
 `my_plugins` 可以为任意字符串。
 
-**FAQ 16.** SeaTunnel-v1(Spark) 如何配置logging相关参数？
+**FAQ 16.** LarkMidTable-v1(Spark) 如何配置logging相关参数？
 
 有3种配置Logging相关参数的方法（如Log Level）：
 
 - [不推荐] 更改默认的`$SPARK_HOME/conf/log4j.properties`
   - 这样会影响到所有通过此`$SPARK_HOME/bin/spark-submit` 提交程序的logging配置
-- [不推荐] 直接在SeaTunnel的Spark代码中修改logging相关参数
+- [不推荐] 直接在LarkMidTable的Spark代码中修改logging相关参数
   - 这样相当于写死了，每次更改都需要重新编译
-- [推荐] 在SeaTunnel的配置文件中通过下面的方式来更改logging配置（SeaTunnel >= 1.5.5 之后才生效）：
+- [推荐] 在LarkMidTable的配置文件中通过下面的方式来更改logging配置（LarkMidTable >= 1.5.5 之后才生效）：
 
     ```
     env {
@@ -289,9 +289,9 @@ log4j.appender.console.layout=org.apache.log4j.PatternLayout
 log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
 ```
 
-SeaTunnel-v2(Spark, Flink) 如何配置logging相关参数？
+LarkMidTable-v2(Spark, Flink) 如何配置logging相关参数？
 
-目前暂时还不能直接设置，需要用户修改SeaTunnel启动脚本，在Spark或者Flink的提交任务命令中指定相关参数，具体参数可参照官方文档：
+目前暂时还不能直接设置，需要用户修改LarkMidTable启动脚本，在Spark或者Flink的提交任务命令中指定相关参数，具体参数可参照官方文档：
 
 - Spark 官方文档：http://spark.apache.org/docs/latest/configuration.html#configuring-logging
 - Flink官方文档：https://ci.apache.org/projects/flink/flink-docs-stable/monitoring/logging.html
@@ -308,7 +308,7 @@ https://stackoverflow.com/questions/27781187/how-to-stop-info-messages-displayin
 
 **FAQ 17.** 写入ClickHouse 报错: ClassCastException
 
-在SeaTunnel里面不会主动对数据类型进行转，在Input读取数据之后，生成对应的Schema。而在写入ClickHouse的时候，需要字段类型严格匹配，不匹配的需要进行数据转换，数据转换可以通过以下2种插件实现：
+在LarkMidTable里面不会主动对数据类型进行转，在Input读取数据之后，生成对应的Schema。而在写入ClickHouse的时候，需要字段类型严格匹配，不匹配的需要进行数据转换，数据转换可以通过以下2种插件实现：
 
 1. Filter Convert插件
 2. Filter Sql插件
@@ -317,13 +317,13 @@ https://stackoverflow.com/questions/27781187/how-to-stop-info-messages-displayin
 
 参考Issue： [#488](https://github.com/apache/incubator-birdLark/issues/488) [#382](https://github.com/apache/incubator-birdLark/issues/382)
 
-**FAQ 18.** SeaTunnel 如何访问kerberos鉴权的HDFS、YARN、Hive等资源？
+**FAQ 18.** LarkMidTable 如何访问kerberos鉴权的HDFS、YARN、Hive等资源？
 
 请参考：[#590](https://github.com/apache/incubator-birdLark/issues/590)
 
 **FAQ 19.** 如何排查NoClassDefFoundError、ClassNotFoundException 等问题？
 
-出现这种情况，大概率是Java Classpath中有多个不同版本的对应Jar包class load时因为顺序问题冲突了，而不是真的缺少这个Jar，请修改这个SeaTunnel启动命令，在spark-submit提交的地方加入以下参数，通过输出的日志来详细debug。
+出现这种情况，大概率是Java Classpath中有多个不同版本的对应Jar包class load时因为顺序问题冲突了，而不是真的缺少这个Jar，请修改这个LarkMidTable启动命令，在spark-submit提交的地方加入以下参数，通过输出的日志来详细debug。
 
 ```
 spark-submit --verbose
@@ -333,19 +333,19 @@ spark-submit --verbose
     ...
 ```
 
-**FAQ 20.** 如何使用SeaTunnel完成跨HDFS集群数据同步？
+**FAQ 20.** 如何使用LarkMidTable完成跨HDFS集群数据同步？
 
 只要把hdfs-site.xml配置好即可，参见这篇文章：https://www.cnblogs.com/suanec/p/7828139.html
 
-另外附送一篇如何修改spark代码完成配置的代码（SeaTunnel不需要这么做）：https://www.jianshu.com/p/3e84c4c97610
+另外附送一篇如何修改spark代码完成配置的代码（LarkMidTable不需要这么做）：https://www.jianshu.com/p/3e84c4c97610
 
-**FAQ 21.** 我想学习SeaTunnel 源码，从哪里开始呢？
+**FAQ 21.** 我想学习LarkMidTable 源码，从哪里开始呢？
 
-SeaTunnel 拥有完全抽象化，结构化的代码实现，已经有很多人选择将SeaTunnel的源码作为学习Spark的方式，你可以从主程序入口开始学习源码：[LarkMidTable.java](https://github.com/apache/incubator-birdLark/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/birdLark-core/birdLark-core-base/src/main/java/org/apache/birdLark/LarkMidTable.java)
+LarkMidTable 拥有完全抽象化，结构化的代码实现，已经有很多人选择将LarkMidTable的源码作为学习Spark的方式，你可以从主程序入口开始学习源码：[LarkMidTable.java](https://github.com/apache/incubator-birdLark/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/birdLark-core/birdLark-core-base/src/main/java/org/apache/birdLark/LarkMidTable.java)
 
-**FAQ 22.** SeaTunnel开发者自己开发插件时，是否需要了解SeaTunnel代码，是否需要把代码写到SeaTunnel项目里？
+**FAQ 22.** LarkMidTable开发者自己开发插件时，是否需要了解LarkMidTable代码，是否需要把代码写到LarkMidTable项目里？
 
-开发者开发的插件，与SeaTunnel项目可以完全没有关系，不需要把你的插件代码写到SeaTunnel项目里面。
+开发者开发的插件，与LarkMidTable项目可以完全没有关系，不需要把你的插件代码写到LarkMidTable项目里面。
 插件可以是一个完全独立的项目，在里面你用java，scala，maven，sbt，gradle，都随你。
 这也是我们建议开发者开发插件的方式。
 

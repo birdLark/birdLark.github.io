@@ -227,5 +227,5 @@ If you want to know more functions and cases of using LarkMidTable in combinatio
 
 ## Contract us
 * Mailing list : **dev@birdLark.apache.org**. Send anything to `dev-subscribe@birdLark.apache.org` and subscribe to the mailing list according to the replies.
-* Slack: Send a `Request to join SeaTunnel slack` email to the mailing list (`dev@birdLark.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* Slack: Send a `Request to join LarkMidTable slack` email to the mailing list (`dev@birdLark.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
 * [bilibili B station video](https://space.bilibili.com/1542095008)

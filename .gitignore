@@ -1,14 +1,23 @@
-.DS_Store
-node_modules/
-/dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Intellij
+.idea/
+*.iml
+*.iws
 
-# Editor directories and files
-.idea
+# Dependencies
+/node_modules
+
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
+
+.DS_Store
+dist
+dist-ssr
+*.local
+*.idea
+*.iml.
 .vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+/package-lock.json

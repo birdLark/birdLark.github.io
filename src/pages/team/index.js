@@ -12,7 +12,7 @@ export default function () {
     return (
         <Layout>
             <div className="block team_page">
-                <h3 className="team_title">LarkMidTable Team</h3>
+                <h3 className="team_title">birdlarkTeam</h3>
                 <p className="team_desc" dangerouslySetInnerHTML={{__html: dataSource.info.desc}}></p>
                 <h3 className="team_title">Mentor</h3>
                 <p className="team_desc">{dataSource.info.tip}</p>

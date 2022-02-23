@@ -12,17 +12,17 @@ sidebar_position: 1
 
 ---
 
-LarkMidTable was formerly named Waterdrop , and renamed LarkMidTable since October 12, 2021.
+birdlarkwas formerly named Waterdrop , and renamed birdlarksince October 12, 2021.
 
 ---
 
-LarkMidTable is a very easy-to-use ultra-high-performance distributed data integration platform that supports real-time
+birdlarkis a very easy-to-use ultra-high-performance distributed data integration platform that supports real-time
 synchronization of massive data. It can synchronize tens of billions of data stably and efficiently every day, and has
 been used in the production of nearly 100 companies.
 
 ## Why do we need LarkMidTable
 
-LarkMidTable will do its best to solve the problems that may be encountered in the synchronization of massive data:
+birdlarkwill do its best to solve the problems that may be encountered in the synchronization of massive data:
 
 - Data loss and duplication
 - Task accumulation and delay
@@ -30,7 +30,7 @@ LarkMidTable will do its best to solve the problems that may be encountered in t
 - Long cycle to be applied in the production environment
 - Lack of application running status monitoring
 
-## LarkMidTable use scenarios
+## birdlarkuse scenarios
 
 - Mass data synchronization
 - Mass data integration
@@ -59,7 +59,7 @@ Source[Data Source Input] -> Transform[Data Processing] -> Sink[Result Output]
 
 The data processing pipeline is constituted by multiple filters to meet a variety of data processing needs. If you are
 accustomed to SQL, you can also directly construct a data processing pipeline by SQL, which is simple and efficient.
-Currently, the filter list supported by LarkMidTable is still being expanded. Furthermore, you can develop your own data
+Currently, the filter list supported by birdlarkis still being expanded. Furthermore, you can develop your own data
 processing plug-in, because the whole system is easy to expand.
 
 ## Plugins supported by LarkMidTable
@@ -75,13 +75,13 @@ processing plug-in, because the whole system is easy to expand.
 
 1. java runtime environment, java >= 8
 
-2. If you want to run LarkMidTable in a cluster environment, any of the following Spark cluster environments is usable:
+2. If you want to run birdlarkin a cluster environment, any of the following Spark cluster environments is usable:
 
 - Spark on Yarn
 - Spark Standalone
 
 If the data volume is small, or the goal is merely for functional verification, you can also start in local mode without
-a cluster environment, because LarkMidTable supports standalone operation. Note: LarkMidTable 2.0 supports running on Spark
+a cluster environment, because birdlarksupports standalone operation. Note: birdlark2.0 supports running on Spark
 and Flink.
 
 ## Downloads
@@ -103,33 +103,33 @@ https://birdlark.github.io/docs/introduction
 
 - Weibo, Value-added Business Department Data Platform
 
-Weibo business uses an internal customized version of LarkMidTable and its sub-project Guardian for LarkMidTable On Yarn task
+Weibo business uses an internal customized version of birdlarkand its sub-project Guardian for birdlarkOn Yarn task
 monitoring for hundreds of real-time streaming computing tasks.
 
 - Sina, Big Data Operation Analysis Platform
 
-Sina Data Operation Analysis Platform uses LarkMidTable to perform real-time and offline analysis of data operation and
+Sina Data Operation Analysis Platform uses birdlarkto perform real-time and offline analysis of data operation and
 maintenance for Sina News, CDN and other services, and write it into Clickhouse.
 
 - Sogou, Sogou Qiqian System
 
-Sogou Qiqian System takes LarkMidTable as an ETL tool to help establish a real-time data warehouse system.
+Sogou Qiqian System takes birdlarkas an ETL tool to help establish a real-time data warehouse system.
 
 - Qutoutiao, Qutoutiao Data Center
 
-Qutoutiao Data Center uses LarkMidTable to support mysql to hive offline ETL tasks, real-time hive to clickhouse backfill
+Qutoutiao Data Center uses birdlarkto support mysql to hive offline ETL tasks, real-time hive to clickhouse backfill
 technical support, and well covers most offline and real-time tasks needs.
 
 - Yixia Technology, Yizhibo Data Platform
 
 - Yonghui Superstores Founders' Alliance-Yonghui Yunchuang Technology, Member E-commerce Data Analysis Platform
 
-LarkMidTable provides real-time streaming and offline SQL computing of e-commerce user behavior data for Yonghui Life, a
+birdlarkprovides real-time streaming and offline SQL computing of e-commerce user behavior data for Yonghui Life, a
 new retail brand of Yonghui Yunchuang Technology.
 
 - Shuidichou, Data Platform
 
-Shuidichou adopts LarkMidTable to do real-time streaming and regular offline batch processing on Yarn, processing 3~4T data
+Shuidichou adopts birdlarkto do real-time streaming and regular offline batch processing on Yarn, processing 3~4T data
 volume average daily, and later writing the data to Clickhouse.
 
 - Tencent Cloud
@@ -165,5 +165,5 @@ Thanks to all developers!
 <br/><br/>
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-LarkMidTable enriches the <a href="https://landscape.cncf.io/landscape=observability-and-analysis&license=apache-license-2-0">CNCF CLOUD NATIVE Landscape.</a >
+birdlarkenriches the <a href="https://landscape.cncf.io/landscape=observability-and-analysis&license=apache-license-2-0">CNCF CLOUD NATIVE Landscape.</a >
 </p >

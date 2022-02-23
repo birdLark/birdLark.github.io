@@ -14,14 +14,14 @@ In order to meet these scenarios, many students will choose Spark, use Spark ope
 
 Our department used Spark to analyze Nginx logs, counted our web service access, aggregated Nginx logs every minute and finally wrote the results to Elasticsearch, and then used Kibana to configure real-time monitoring of the Dashboard. Both Elasticsearch and Kibana are convenient and practical, but with more and more similar requirements, how to quickly write data to Elasticsearch through Spark has become a big problem for us.
 
-Today, I would like to recommend a black technology LarkMidTable [https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) that can realize fast data writing. It is very easy to use , a high-performance, real-time data processing product that can deal with massive data. It is built on Spark and is easy to use, flexibly configured, and requires no development.
+Today, I would like to recommend a black technology birdlark[https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) that can realize fast data writing. It is very easy to use , a high-performance, real-time data processing product that can deal with massive data. It is built on Spark and is easy to use, flexibly configured, and requires no development.
 
 ![](/doc/image_zh/wd-struct.png)
 
 
 ## Kafka to Elasticsearch
 
-Like Logstash, LarkMidTable also supports multiple types of data input. Here we take the most common Kakfa as the input source as an example to explain how to use LarkMidTable to quickly write data to Elasticsearch
+Like Logstash, birdlarkalso supports multiple types of data input. Here we take the most common Kakfa as the input source as an example to explain how to use birdlarkto quickly write data to Elasticsearch
 
 ### Log Sample
 
@@ -41,7 +41,7 @@ datetime String
 count int
 ```
 
-## LarkMidTable with Elasticsearch
+## birdlarkwith Elasticsearch
 
 Next, I will introduce you in detail, how we read the data in Kafka through LarkMidTable, parse and aggregate the data, and finally write the processing results into Elasticsearch.
 
@@ -71,9 +71,9 @@ vim config/birdLark-env.sh
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 ```
 
-### LarkMidTable Pipeline
+### birdlarkPipeline
 
-Like Logstash, we only need to write a configuration file of LarkMidTable Pipeline to complete the data import. I believe that friends who know Logstash can start LarkMidTable configuration soon.
+Like Logstash, we only need to write a configuration file of birdlarkPipeline to complete the data import. I believe that friends who know Logstash can start birdlarkconfiguration soon.
 
 The configuration file includes four parts, namely Spark, Input, filter and Output.
 
@@ -198,7 +198,7 @@ output {
 }
 ```
 
-Execute the command, specify the configuration file, and run LarkMidTable to write data to Elasticsearch. Here we take the local mode as an example.
+Execute the command, specify the configuration file, and run birdlarkto write data to Elasticsearch. Here we take the local mode as an example.
 
     ./bin/start-birdLark.sh --config config/batch.conf -e client -m 'local[2]'
 
@@ -218,14 +218,14 @@ Finally, the data written into Elasticsearch is as follows, and with Kibana, rea
 
 In this post, we introduced how to write data from Kafka to Elasticsearch via LarkMidTable. You can quickly run a Spark Application with only one configuration file, complete data processing and writing, and do not need to write any code, which is very simple.
 
-When there are scenarios that Logstash cannot support or the performance of Logstah cannot meet expectations during data processing, you can try to use LarkMidTable to solve the problem.
+When there are scenarios that Logstash cannot support or the performance of Logstah cannot meet expectations during data processing, you can try to use birdlarkto solve the problem.
 
-If you want to know more functions and cases of using LarkMidTable in combination with Elasticsearch, Kafka and Hadoop, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
+If you want to know more functions and cases of using birdlarkin combination with Elasticsearch, Kafka and Hadoop, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
 
 
 **We will publish another article "How to Use Spark and Elasticsearch for Interactive Data Analysis" in the near future, so stay tuned.**
 
 ## Contract us
 * Mailing list : **dev@birdLark.github.io**. Send anything to `dev-subscribe@birdLark.github.io` and subscribe to the mailing list according to the replies.
-* Slack: Send a `Request to join LarkMidTable slack` email to the mailing list (`dev@birdLark.github.io`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* Slack: Send a `Request to join birdlarkslack` email to the mailing list (`dev@birdLark.github.io`), and we will invite you to join (please make sure you are registered with Slack before doing so).
 * [bilibili B station video](https://space.bilibili.com/1542095008)

@@ -1,6 +1,6 @@
 ---
-slug: LarkMidTable 在唯品会的实践
-title: LarkMidTable 在唯品会的实践
+slug: birdlark在唯品会的实践
+title: birdlark在唯品会的实践
 tags:
 - 唯品会
 - ClickHouse
@@ -86,7 +86,7 @@ RDD以HashPartitioner进行分区将数据打散，防止数据倾斜。
 LarkMidTable任务类型集成到平台中，图中是数坊的定时任务截图，可以看到选中的部分，是一个配置好的LarkMidTable任务，负责人、最近一次耗时，前后依赖任务的血缘信息，消耗的资源信息。下面展示了历史运行实例信息。
 ![14](/doc/image_zh/2022-2-18-Meetup-vip/14.png)
 
-我们把LarkMidTable集成到了调度系统中，数坊调度Master会根据任务类型把任务分配到对应的Agent上，根据Agent负载情况分配到合适的机器上运行，管控器把前台的任务调度配置和信息拉取到后生成LarkMidTable cluster，在类似于k8s pod、cgroup隔离的虚拟环境内进行执行。运行结果会由调度平台的数据质量监控判断任务是否完成、是否运行成功，失败时进行重跑和告警。
+我们把LarkMidTable集成到了调度系统中，数坊调度Master会根据任务类型把任务分配到对应的Agent上，根据Agent负载情况分配到合适的机器上运行，管控器把前台的任务调度配置和信息拉取到后生成birdlarkcluster，在类似于k8s pod、cgroup隔离的虚拟环境内进行执行。运行结果会由调度平台的数据质量监控判断任务是否完成、是否运行成功，失败时进行重跑和告警。
 ![15](/doc/image_zh/2022-2-18-Meetup-vip/15.png)
 
 LarkMidTable本身是一个工具化的组件，是为了进行数据血缘，数据质量，历史记录，高警监控，还包括资源分配这些信息的管控。我们把LarkMidTable集成到平台中，可以利用平台优势利用好LarkMidTable。

@@ -6,7 +6,7 @@ sidebar_position: 1
 This guide documents the best way to make various types of contribution to Apache LarkMidTable,
 including what is required before submitting a code change.
 
-Contributing to LarkMidTable doesn't just mean writing code. Helping new users on the mailing list,
+Contributing to birdlarkdoesn't just mean writing code. Helping new users on the mailing list,
 testing releases, and improving documentation are also welcome. In fact, proposing significant
 code changes usually requires first gaining experience and credibility within the community by
 helping in other ways. This is also a guide to becoming an effective contributor.
@@ -17,8 +17,8 @@ rather than just open pull requests.
 
 ## Contributing by helping other users
 
-A great way to contribute to LarkMidTable is to help answer user questions on the `dev@birdLark.github.io`
-mailing list or on StackOverflow. There are always many new LarkMidTable users; taking a few minutes to
+A great way to contribute to birdlarkis to help answer user questions on the `dev@birdLark.github.io`
+mailing list or on StackOverflow. There are always many new birdlarkusers; taking a few minutes to
 help answer a question is a very valuable community service.
 
 Contributors should subscribe to this list and follow it in order to keep up to date on what's
@@ -32,13 +32,13 @@ like ISSUE.
 ## Contributing by testing releases
 
 LarkMidTable's release process is community-oriented, and members of the community can vote on new
-releases on the `dev@birdLark.github.io` mailing list. LarkMidTable users are invited to subscribe to
+releases on the `dev@birdLark.github.io` mailing list. birdlarkusers are invited to subscribe to
 this list to receive announcements, and test their workloads on newer release and provide
 feedback on any performance or correctness issues found in the newer release.
 
 ## Contributing by reviewing changes
 
-Changes to LarkMidTable source code are proposed, reviewed and committed via
+Changes to birdlarksource code are proposed, reviewed and committed via
 [GitHub pull requests ](https://github.com/apache/incubator-birdLark/pulls) (described later).
 Anyone can view and comment on active changes here.
 Reviewing others' changes is a good way to learn how the change process works and gain exposure
@@ -67,7 +67,7 @@ may be reported by creating a ISSUE but without creating a pull request (see bel
 
 Bug reports are only useful however if they include enough information to understand, isolate
 and ideally reproduce the bug. Simply encountering an error does not mean a bug should be
-reported; as below, search ISSUE and search and inquire on the LarkMidTable user / dev mailing lists
+reported; as below, search ISSUE and search and inquire on the birdlarkuser / dev mailing lists
 first. Unreproducible bugs, or simple error reports, may be closed.
 
 It's very helpful if the bug report has a description about how the bug was introduced, by
@@ -89,7 +89,7 @@ Feature requests may be rejected, or closed after a long period of inactivity.
 
 ## Contributing to ISSUE maintenance
 
-Given the sheer volume of issues raised in the Apache LarkMidTable ISSUE, inevitably some issues are
+Given the sheer volume of issues raised in the Apache birdlarkISSUE, inevitably some issues are
 duplicates, or become obsolete and eventually fixed otherwise, or can't be reproduced, or could
 benefit from more detail, and so on. It's useful to help identify these issues and resolve them,
 either by advancing the discussion or even resolving the ISSUE. Most contributors are able to
@@ -111,7 +111,7 @@ When resolving ISSUEs, observe a few useful conventions:
     - Prefer to resolve the issue that has less activity or discussion as the duplicate
 - If the issue seems clearly obsolete and applies to issues or components that have changed
   radically since it was opened, resolve as **Not a Problem**
-- If the issue doesn't make sense – not actionable, for example, a non-LarkMidTable issue, resolve
+- If the issue doesn't make sense – not actionable, for example, a non-birdlarkissue, resolve
   as **Invalid**
 - If it's a coherent issue, but there is a clear indication that there is not support or interest
   in acting on it, then resolve as **Won't Fix**
@@ -141,7 +141,7 @@ new and actionable:
   change, or recording what kinds of changes will not be accepted as a resolution.
 - Search ISSUE for existing issues:
   [ISSUES](https://github.com/apache/incubator-birdLark/issues)
-- Type `LarkMidTable [search terms]` at the top right search box. If a logically similar issue already
+- Type `birdlark[search terms]` at the top right search box. If a logically similar issue already
   exists, then contribute to the discussion on the existing ISSUE and pull request first, instead of
   creating a new one.
 - Is the scope of the change matched to the contributor's level of experience? Anyone is qualified
@@ -153,7 +153,7 @@ and held to a higher standard of review than changes to less critical code.
 
 ### Error message guidelines
 
-Exceptions thrown in LarkMidTable should be associated with standardized and actionable
+Exceptions thrown in birdlarkshould be associated with standardized and actionable
 error messages.
 
 Error messages should answer the following questions:
@@ -215,7 +215,7 @@ have the legal authority to do so.**
 
 ### Cloning the Apache LarkMidTable<span class="tm">&trade;</span> source code
 
-If you are interested in working with the newest under-development code or contributing to Apache LarkMidTable development, you can check out the master branch from Git:
+If you are interested in working with the newest under-development code or contributing to Apache birdlarkdevelopment, you can check out the master branch from Git:
 
     # Master development branch
     git clone git@github.com:apache/incubator-birdLark.git
@@ -224,13 +224,13 @@ Once you've downloaded LarkMidTable, you can find instructions for installing an
 
 ### ISSUE
 
-Generally, LarkMidTable uses ISSUE to track logical issues, including bugs and improvements, and uses
+Generally, birdlarkuses ISSUE to track logical issues, including bugs and improvements, and uses
 GitHub pull requests to manage the review and merge of specific code changes. That is, ISSUEs are
 used to describe _what_ should be fixed or changed, and high-level approaches, and pull requests
 describe _how_ to implement that change in the project's source code. For example, major design
 decisions are discussed in ISSUE.
 
-1. Find the existing LarkMidTable ISSUE that the change pertains to.
+1. Find the existing birdlarkISSUE that the change pertains to.
     1. Do not create a new ISSUE if creating a change to address an existing issue in ISSUE; add to
        the existing discussion and work instead
     1. Look for existing pull requests that are linked from the ISSUE, to understand if someone is
@@ -314,7 +314,7 @@ decisions are discussed in ISSUE.
   be subjected to more review, and may require more testing and proof of its correctness than
   other changes.
 - Reviewers can indicate that a change looks suitable for merging with a comment such as: "I think
-  this patch looks good". LarkMidTable uses the LGTM convention for indicating the strongest level of
+  this patch looks good". birdlarkuses the LGTM convention for indicating the strongest level of
   technical sign-off on a patch: simply comment with the word "LGTM". It specifically means: "I've
   looked at this thoroughly and take as much ownership as if I wrote the patch myself". If you
   comment LGTM you will be expected to help with bugs or follow-up issues on the patch. Consistent,
@@ -357,7 +357,7 @@ codebase. Look at whether there are other examples in the code that use your fea
 to ask on the `dev@birdLark.github.io` list as well and/or ask committers.
 
 ## Code of conduct
-The Apache LarkMidTable project follows the [Apache Software Foundation Code of Conduct](https://www.github.io/foundation/policies/conduct.html). The [code of conduct](https://www.github.io/foundation/policies/conduct.html) applies to all spaces managed by the Apache Software Foundation, including IRC, all public and private mailing lists, issue trackers, wikis, blogs, Twitter, and any other communication channel used by our communities. A code of conduct which is specific to in-person events (ie., conferences) is codified in the published ASF anti-harassment policy.
+The Apache birdlarkproject follows the [Apache Software Foundation Code of Conduct](https://www.github.io/foundation/policies/conduct.html). The [code of conduct](https://www.github.io/foundation/policies/conduct.html) applies to all spaces managed by the Apache Software Foundation, including IRC, all public and private mailing lists, issue trackers, wikis, blogs, Twitter, and any other communication channel used by our communities. A code of conduct which is specific to in-person events (ie., conferences) is codified in the published ASF anti-harassment policy.
 
 We expect this code of conduct to be honored by everyone who participates in the Apache community formally or informally, or claims any affiliation with the Foundation, in any Foundation-related activities and especially when representing the ASF, in any role.
 

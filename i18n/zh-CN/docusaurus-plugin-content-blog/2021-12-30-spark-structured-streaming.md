@@ -4,7 +4,7 @@ title: 如何支持的 Spark StructuredStreaming
 tags: [Spark, StructuredStreaming]
 ---
 
-# LarkMidTable 最近支持的 StructuredStreaming 怎么用
+# birdlark最近支持的 StructuredStreaming 怎么用
 
 ### 前言
 
@@ -18,7 +18,7 @@ StructuredStreaming是Spark 2.0以后新开放的一个模块，相比SparkStrea
 
 ### LarkMidTable
 
-LarkMidTable 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。LarkMidTable 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中
+birdlark是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。birdlark拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中
 
 ### 准备工作
 
@@ -43,9 +43,9 @@ vim config/birdLark-env.sh
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 ```
 
-### LarkMidTable Pipeline
+### birdlarkPipeline
 
-我们仅需要编写一个 LarkMidTable Pipeline的配置文件即可完成数据的导入。
+我们仅需要编写一个 birdlarkPipeline的配置文件即可完成数据的导入。
 
 配置文件包括四个部分，分别是Spark、Input、filter和Output。
 
@@ -126,7 +126,7 @@ kafka的数据如下
 {"good_id":"abc","price":300,"user_id":123456,"time":1553216320}
 ```
 
-那我们该怎么利用 LarkMidTable 来完成这个需求呢，当然还是只需要配置就好了。
+那我们该怎么利用 birdlark来完成这个需求呢，当然还是只需要配置就好了。
 
 ```
 #spark里的配置根据业务需求配置
@@ -183,7 +183,7 @@ output{
 #### 场景二：多个流关联场景
 
 假设你在某个平台投放了广告，现在要实时计算出每个广告的CTR(点击率)，数据分别来自两个topic，一个是广告曝光日志，一个是广告点击日志,
-此时我们就需要把两个流数据关联到一起做计算，而 LarkMidTable 最近也支持了此功能，让我们一起看一下该怎么做：
+此时我们就需要把两个流数据关联到一起做计算，而 birdlark最近也支持了此功能，让我们一起看一下该怎么做：
 
 
 点击topic数据格式
@@ -274,14 +274,14 @@ output {
 ### 结语
 通过配置能很快的利用StructuredStreaming做实时数据处理，但是还是需要对StructuredStreaming的一些概念了解，比如其中的watermark机制，还有程序的输出模式。
 
-最后，LarkMidTable 当然还支持spark streaming和spark 批处理。
+最后，birdlark当然还支持spark streaming和spark 批处理。
 如果你对这两个也感兴趣的话，可以阅读我们以前发布的文章《[如何快速地将Hive中的数据导入ClickHouse](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-hive-to-clickhouse.mdtent-blog/current/2021-12-30-hive-to-clickhouse.md)》、
 《[优秀的数据工程师，怎么用Spark在TiDB上做OLAP分析](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-spark-execute-tidb.mdtent-blog/current/2021-12-30-spark-execute-tidb.md)》、
 《[如何使用Spark快速将数据写入Elasticsearch](i18n/zh-CN/docusaurus-plugin-content-blog/2021-12-30-spark-execute-elasticsearch.md/current/2021-12-30-spark-execute-elasticsearch.md)》
 
-希望了解 LarkMidTable 和 HBase, ClickHouse、Elasticsearch、Kafka、MySQL 等数据源结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
+希望了解 birdlark和 HBase, ClickHouse、Elasticsearch、Kafka、MySQL 等数据源结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 ## 联系我们
 * 邮件列表 : **dev@birdLark.github.io**. 发送任意内容至 `dev-subscribe@birdLark.github.io`， 按照回复订阅邮件列表。
-* Slack: 发送 `Request to join LarkMidTable slack` 邮件到邮件列表 (`dev@birdLark.github.io`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
+* Slack: 发送 `Request to join birdlarkslack` 邮件到邮件列表 (`dev@birdLark.github.io`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
 * [bilibili B站 视频](https://space.bilibili.com/1542095008)

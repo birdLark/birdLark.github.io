@@ -5,8 +5,8 @@ sidebar_position: 3
 
 # License 须知
 
-如您所知，LarkMidTable 现属于 ASF ( Apache 基金会)下的开源项目，这意味着当您想要成为 LarkMidTable 的贡献者的时候，就必须按照 Apache 的规则来，而 Apache 对于 License 有着极其严苛的规则，为了避免贡献者在 License 上浪费过多的时间，
-本文将为您讲解 ASF—License 以及参与 LarkMidTable 如何过早的规避掉 License 风险。
+如您所知，birdlark现属于 ASF ( Apache 基金会)下的开源项目，这意味着当您想要成为 birdlark的贡献者的时候，就必须按照 Apache 的规则来，而 Apache 对于 License 有着极其严苛的规则，为了避免贡献者在 License 上浪费过多的时间，
+本文将为您讲解 ASF—License 以及参与 birdlark如何过早的规避掉 License 风险。
 
 注：本文仅适用于 Apache 项目。
 
@@ -20,7 +20,7 @@ sidebar_position: 3
 
 另外，当您需要使用新的软件的时候，请将您这样做的原因、最终产出结果发邮件至 dev@birdLark.github.io 讨论，当得到至少3票 PPMC 认同的时候，您方可以引入。
 
-### 如何在 LarkMidTable 合法的使用第三方开源软件
+### 如何在 birdlark合法的使用第三方开源软件
 
 当我们想要引入一个新的第三方软件(包含但不限于第三方的jar、文本、css、js、图片、图标、音视频等及在第三方基础上做的修改)至我们的项目中的时候，除了他们所遵从的协议是 Apache 允许的，另外一点很重要，就是合法的使用。您可以参考以下文章
 

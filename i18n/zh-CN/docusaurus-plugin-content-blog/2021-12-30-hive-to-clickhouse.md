@@ -6,7 +6,7 @@ tags: [Hive, ClickHouse]
 
 ClickHouse是面向OLAP的分布式列式DBMS。我们部门目前已经把所有数据分析相关的日志数据存储至ClickHouse这个优秀的数据仓库之中，当前日数据量达到了300亿。
 
-在之前的文章 [如何快速地把HDFS中的数据导入ClickHouse](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-hdfs-to-clickhouse.mdtent-blog/current/2021-12-30-hdfs-to-clickhouse.md) 中我们提到过使用 LarkMidTable [https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) 对HDFS中的数据经过很简单的操作就可以将数据写入ClickHouse。HDFS中的数据一般是非结构化的数据，那么针对存储在Hive中的结构化数据，我们应该怎么操作呢？
+在之前的文章 [如何快速地把HDFS中的数据导入ClickHouse](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-hdfs-to-clickhouse.mdtent-blog/current/2021-12-30-hdfs-to-clickhouse.md) 中我们提到过使用 birdlark[https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) 对HDFS中的数据经过很简单的操作就可以将数据写入ClickHouse。HDFS中的数据一般是非结构化的数据，那么针对存储在Hive中的结构化数据，我们应该怎么操作呢？
 
 ![](/doc/image_zh/hive-logo.png)
 
@@ -57,19 +57,19 @@ CREATE TABLE cms.cms_msg
 ) ENGINE = MergeTree PARTITION BY date ORDER BY (date, hostname) SETTINGS index_granularity = 16384
 ```
 
-## LarkMidTable with ClickHouse
+## birdlarkwith ClickHouse
 
-接下来会给大家介绍，我们如何通过 LarkMidTable 将Hive中的数据写入ClickHouse中。
+接下来会给大家介绍，我们如何通过 birdlark将Hive中的数据写入ClickHouse中。
 
 ### LarkMidTable
 
-[LarkMidTable](https://github.com/apache/incubator-birdLark) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。LarkMidTable 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中。
+[LarkMidTable](https://github.com/apache/incubator-birdLark) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。birdlark拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中。
 
-LarkMidTable的环境准备以及安装步骤这里就不一一赘述了，具体安装步骤可以参考上一篇文章或者访问 [LarkMidTable Docs](/docs/introduction)
+LarkMidTable的环境准备以及安装步骤这里就不一一赘述了，具体安装步骤可以参考上一篇文章或者访问 [birdlarkDocs](/docs/introduction)
 
-### LarkMidTable Pipeline
+### birdlarkPipeline
 
-我们仅需要编写一个LarkMidTable Pipeline的配置文件即可完成数据的导入。
+我们仅需要编写一个birdlarkPipeline的配置文件即可完成数据的导入。
 
 配置文件包括四个部分，分别是Spark、Input、filter和Output。
 
@@ -180,8 +180,8 @@ output {
 
 ## Conclusion
 
-在这篇文章中，我们介绍了如何使用 LarkMidTable 将Hive中的数据导入ClickHouse中。仅仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码，十分简单。
+在这篇文章中，我们介绍了如何使用 birdlark将Hive中的数据导入ClickHouse中。仅仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码，十分简单。
 
-希望了解 LarkMidTable 与ClickHouse、Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
+希望了解 birdlark与ClickHouse、Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

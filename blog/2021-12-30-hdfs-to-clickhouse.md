@@ -21,7 +21,7 @@ Assuming that our logs are stored in HDFS, we need to parse the logs and filter 
 The log format we store in HDFS is as follows, which is a very common Nginx log
 
 ```shell
-10.41.1.28 github.com 114.250.140.241 0.001s "127.0.0.1:80" [26/Oct/2018:03:09:32 +0800] "GET /Apache/LarkMidTable HTTP/1.1" 200 0 "-" - "Dalvik/2.1.0 (Linux; U; Android 7.1.1; OPPO R11 Build/NMF26X)" "196" "-" "mainpage" "443" "-" "172.16.181.129"
+10.41.1.28 github.com 114.250.140.241 0.001s "127.0.0.1:80" [26/Oct/2018:03:09:32 +0800] "GET /Apache/birdlarkHTTP/1.1" 200 0 "-" - "Dalvik/2.1.0 (Linux; U; Android 7.1.1; OPPO R11 Build/NMF26X)" "196" "-" "mainpage" "443" "-" "172.16.181.129"
 ```
 
 ### ClickHouse Schema
@@ -44,13 +44,13 @@ CREATE TABLE cms.cms_msg
 ) ENGINE = MergeTree PARTITION BY date ORDER BY date SETTINGS index_granularity = 16384
 ```
 
-## LarkMidTable with ClickHouse
+## birdlarkwith ClickHouse
 
-Next, I will introduce to you in detail how we can meet the above requirements through LarkMidTable and write the data in HDFS into ClickHouse.
+Next, I will introduce to you in detail how we can meet the above requirements through birdlarkand write the data in HDFS into ClickHouse.
 
 ### LarkMidTable
 
-[LarkMidTable](https://github.com/apache/incubator-birdLark) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. LarkMidTable has a very rich set of plugins that support reading data from Kafka, HDFS, Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
+[LarkMidTable](https://github.com/apache/incubator-birdLark) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. birdlarkhas a very rich set of plugins that support reading data from Kafka, HDFS, Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
 
 ### Prerequisites
 
@@ -219,7 +219,7 @@ output {
 }
 ```
 
-Execute the command, specify the configuration file, and run LarkMidTable to write data to ClickHouse. Here we take the local mode as an example.
+Execute the command, specify the configuration file, and run birdlarkto write data to ClickHouse. Here we take the local mode as an example.
 
 ```shell
 ./bin/start-birdLark.sh --config config/batch.conf -e client -m 'local[2]'
@@ -227,10 +227,10 @@ Execute the command, specify the configuration file, and run LarkMidTable to wri
 
 ## Conclusion
 
-In this post, we covered how to import Nginx log files from HDFS into ClickHouse using LarkMidTable. Data can be imported quickly with only one configuration file without writing any code. In addition to supporting HDFS data sources, LarkMidTable also supports real-time reading and processing of data from Kafka to ClickHouse. Our next article will describe how to quickly import data from Hive into ClickHouse.
+In this post, we covered how to import Nginx log files from HDFS into ClickHouse using LarkMidTable. Data can be imported quickly with only one configuration file without writing any code. In addition to supporting HDFS data sources, birdlarkalso supports real-time reading and processing of data from Kafka to ClickHouse. Our next article will describe how to quickly import data from Hive into ClickHouse.
 
-Of course, LarkMidTable is not only a tool for ClickHouse data writing, but also plays a very important role in the writing of data sources such as Elasticsearch and Kafka.
+Of course, birdlarkis not only a tool for ClickHouse data writing, but also plays a very important role in the writing of data sources such as Elasticsearch and Kafka.
 
-If you want to know more functions and cases of LarkMidTable combined with ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
+If you want to know more functions and cases of birdlarkcombined with ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

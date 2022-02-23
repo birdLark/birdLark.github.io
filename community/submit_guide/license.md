@@ -5,13 +5,13 @@ sidebar_position: 3
 
 # License Notice
 
-As we know that LarkMidTable is an open-source undergoing project at The Apache Software Foundation (ASF), which means that you have to follow the Apache way to become the LarkMidTable contributor. Furthermore, Apache has extremely strict rules according to the License. This passage will explain the ASF license and how to avoid License risks at the early stage when you participate in LarkMidTable.
+As we know that birdlarkis an open-source undergoing project at The Apache Software Foundation (ASF), which means that you have to follow the Apache way to become the birdlarkcontributor. Furthermore, Apache has extremely strict rules according to the License. This passage will explain the ASF license and how to avoid License risks at the early stage when you participate in LarkMidTable.
 
 Note: This article only applies to the Apache projects.
 
 ### Licenses Could be Accepted to the Apache Project
 
-You have to pay attention to the following open-source software protocols which Apache projects support when you intend to add a new feature to the LarkMidTable (or other Apache projects), which functions refers to other open-source software references.
+You have to pay attention to the following open-source software protocols which Apache projects support when you intend to add a new feature to the birdlark(or other Apache projects), which functions refers to other open-source software references.
 
 [ASF 3RD PARTY LICENSE POLICY](https://github.io/legal/resolved.html)
 

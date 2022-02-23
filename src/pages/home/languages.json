@@ -67,7 +67,7 @@
         "stable": "Experience the baptism of large-scale production environment use and massive data"
       },
       "architecture": {
-        "desc": "Apache LarkMidTable is a next-generation high-performance, distributed, and massive data integration framework. Through our efforts to make the use of Spark simpler and more efficient, and solidify the high-quality experience of the industry and our use of Spark into the product LarkMidTable, it significantly reduces the cost of learning and accelerates the deployment of distributed data processing capabilities in the production environment."
+        "desc": "Apache birdlarkis a next-generation high-performance, distributed, and massive data integration framework. Through our efforts to make the use of Spark simpler and more efficient, and solidify the high-quality experience of the industry and our use of Spark into the product LarkMidTable, it significantly reduces the cost of learning and accelerates the deployment of distributed data processing capabilities in the production environment."
       }
     }
   }

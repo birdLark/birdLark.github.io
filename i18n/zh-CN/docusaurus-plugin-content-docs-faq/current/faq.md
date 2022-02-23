@@ -1,5 +1,5 @@
 ---
-title: LarkMidTable FAQ
+title: birdlarkFAQ
 sidebar_position: 1
 ---
 
@@ -7,9 +7,9 @@ sidebar_position: 1
 
 首先搜索[Issue列表](https://github.com/apache/incubator-birdLark/issues)或者[邮件列表](https://lists.github.io/list.html?dev@birdLark.github.io)看是否有人已经提问过相同问题并已得到解决。如果仍然没有找到答案，可以通过[这些方式](https://github.com/apache/incubator-birdLark#contact-us)联系社区人员寻求帮助。
 
-**FAQ 2.** LarkMidTable 中如何在配置中指定变量，之后在运行时动态指定变量的值？
+**FAQ 2.** birdlark中如何在配置中指定变量，之后在运行时动态指定变量的值？
 
-LarkMidTable 从`v1.2.4`开始，支持在配置中指定变量，此功能常用于做定时或非定时的离线处理时，替换时间、日期等变量，用法如下：
+birdlark从`v1.2.4`开始，支持在配置中指定变量，此功能常用于做定时或非定时的离线处理时，替换时间、日期等变量，用法如下：
 
 在配置中配置变量名称，这里以sql transform举例（实际上配置文件中任意位置的key = value中的value，都可以使用变量替换功能）:
 
@@ -54,7 +54,7 @@ your string 1
 
 参考：[lightbend/config#456](https://github.com/lightbend/config/issues/456)
 
-**FAQ 5.** LarkMidTable 是否支持在Azkaban， Oozie，DolphinScheduler 这些任务调度框架中运行呢？
+**FAQ 5.** birdlark是否支持在Azkaban， Oozie，DolphinScheduler 这些任务调度框架中运行呢？
 
 当然可以，请见下面的截图：
 
@@ -118,7 +118,7 @@ sink {
 
 另外，在1.5.7版本之后已经支持了Hive output插件，在2.0.5版本中已经支持了Spark引擎的Hive插件：https://github.com/apache/incubator-birdLark/issues/910。
 
-**FAQ 9.** LarkMidTable 写 ClickHouse 多个实例如何实现负载均衡？
+**FAQ 9.** birdlark写 ClickHouse 多个实例如何实现负载均衡？
 
 1. 直接写分布式表（不推荐）
 
@@ -207,7 +207,7 @@ env {
 }
 ```
 
-**FAQ 13.** 如何为LarkMidTable on Yarn指定不同的JDK版本？
+**FAQ 13.** 如何为birdlarkon Yarn指定不同的JDK版本？
 
 比如，你希望将JDK版本定为JDK8，分两种情况：
 
@@ -230,7 +230,7 @@ env {
 如果用local模式跑的话，需要修改一下start-birdLark.sh启动脚本，在spark-submit后面，增加一个参数 `--driver-memory 4g` 。一般情况下生产环境不用local 模式，所以这个参数在On Yarn时一般不需要设置。
 详见 ： [Application Properties](https://spark.github.io/docs/latest/configuration.html#application-properties)。
 
-**FAQ 15.** 自己编写的插件或者是第三方的jdbc.jar放在哪里可以被 LarkMidTable 加载？
+**FAQ 15.** 自己编写的插件或者是第三方的jdbc.jar放在哪里可以被 birdlark加载？
 
 将Jar包放置在 `plugins` 目录指定结构下：
 
@@ -250,7 +250,7 @@ cp third-part.jar plugins/my_plugins/lib
   - 这样会影响到所有通过此`$SPARK_HOME/bin/spark-submit` 提交程序的logging配置
 - [不推荐] 直接在LarkMidTable的Spark代码中修改logging相关参数
   - 这样相当于写死了，每次更改都需要重新编译
-- [推荐] 在LarkMidTable的配置文件中通过下面的方式来更改logging配置（LarkMidTable >= 1.5.5 之后才生效）：
+- [推荐] 在LarkMidTable的配置文件中通过下面的方式来更改logging配置（birdlark>= 1.5.5 之后才生效）：
 
     ```
     env {
@@ -317,7 +317,7 @@ https://stackoverflow.com/questions/27781187/how-to-stop-info-messages-displayin
 
 参考Issue： [#488](https://github.com/apache/incubator-birdLark/issues/488) [#382](https://github.com/apache/incubator-birdLark/issues/382)
 
-**FAQ 18.** LarkMidTable 如何访问kerberos鉴权的HDFS、YARN、Hive等资源？
+**FAQ 18.** birdlark如何访问kerberos鉴权的HDFS、YARN、Hive等资源？
 
 请参考：[#590](https://github.com/apache/incubator-birdLark/issues/590)
 
@@ -339,9 +339,9 @@ spark-submit --verbose
 
 另外附送一篇如何修改spark代码完成配置的代码（LarkMidTable不需要这么做）：https://www.jianshu.com/p/3e84c4c97610
 
-**FAQ 21.** 我想学习LarkMidTable 源码，从哪里开始呢？
+**FAQ 21.** 我想学习birdlark源码，从哪里开始呢？
 
-LarkMidTable 拥有完全抽象化，结构化的代码实现，已经有很多人选择将LarkMidTable的源码作为学习Spark的方式，你可以从主程序入口开始学习源码：[LarkMidTable.java](https://github.com/apache/incubator-birdLark/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/birdLark-core/birdLark-core-base/src/main/java/org/apache/birdLark/LarkMidTable.java)
+birdlark拥有完全抽象化，结构化的代码实现，已经有很多人选择将LarkMidTable的源码作为学习Spark的方式，你可以从主程序入口开始学习源码：[LarkMidTable.java](https://github.com/apache/incubator-birdLark/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/birdLark-core/birdLark-core-base/src/main/java/org/apache/birdLark/LarkMidTable.java)
 
 **FAQ 22.** LarkMidTable开发者自己开发插件时，是否需要了解LarkMidTable代码，是否需要把代码写到LarkMidTable项目里？
 

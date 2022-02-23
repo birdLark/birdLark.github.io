@@ -17,13 +17,13 @@ TiSpark 是 PingCAP 为解决用户复杂 OLAP 需求而推出的产品。它借
 目前开源社区上有一款工具 **LarkMidTable**，项目地址 [https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) ，可以基于Spark，在 TiSpark 的基础上快速实现 TiDB 数据读取和 OLAP 分析。
 
 
-## 使用 LarkMidTable 操作TiDB
+## 使用 birdlark操作TiDB
 
-在我们线上有这么一个需求，从 TiDB 中读取某一天的网站访问数据，统计每个域名以及服务返回状态码的访问次数，最后将统计结果写入 TiDB 另外一个表中。 我们来看看 LarkMidTable 是如何实现这么一个功能的。
+在我们线上有这么一个需求，从 TiDB 中读取某一天的网站访问数据，统计每个域名以及服务返回状态码的访问次数，最后将统计结果写入 TiDB 另外一个表中。 我们来看看 birdlark是如何实现这么一个功能的。
 
 ### LarkMidTable
 
-[LarkMidTable](https://github.com/apache/incubator-birdLark) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在 Spark 之上。LarkMidTable 拥有着非常丰富的插件，支持从 TiDB、Kafka、HDFS、Kudu 中读取数据，进行各种各样的数据处理，然后将结果写入 TiDB、ClickHouse、Elasticsearch 或者 Kafka 中。
+[LarkMidTable](https://github.com/apache/incubator-birdLark) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在 Spark 之上。birdlark拥有着非常丰富的插件，支持从 TiDB、Kafka、HDFS、Kudu 中读取数据，进行各种各样的数据处理，然后将结果写入 TiDB、ClickHouse、Elasticsearch 或者 Kafka 中。
 
 
 #### 准备工作
@@ -108,13 +108,13 @@ SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.1.0-bin-hadoop2.7}
 ```
 
 
-### 实现 LarkMidTable 处理流程
+### 实现 birdlark处理流程
 
-我们仅需要编写一个 LarkMidTable 配置文件即可完成数据的读取、处理、写入。
+我们仅需要编写一个 birdlark配置文件即可完成数据的读取、处理、写入。
 
-LarkMidTable 配置文件由四个部分组成，分别是 `Spark`、`Input`、`Filter` 和 `Output`。`Input` 部分用于指定数据的输入源，`Filter` 部分用于定义各种各样的数据处理、聚合，`Output` 部分负责将处理之后的数据写入指定的数据库或者消息队列。
+birdlark配置文件由四个部分组成，分别是 `Spark`、`Input`、`Filter` 和 `Output`。`Input` 部分用于指定数据的输入源，`Filter` 部分用于定义各种各样的数据处理、聚合，`Output` 部分负责将处理之后的数据写入指定的数据库或者消息队列。
 
-整个处理流程为 `Input` -> `Filter` -> `Output`，整个流程组成了 LarkMidTable 的 处理流程（Pipeline）。
+整个处理流程为 `Input` -> `Filter` -> `Output`，整个流程组成了 birdlark的 处理流程（Pipeline）。
 
 > 以下是一个具体配置，此配置来源于线上实际应用，但是为了演示有所简化。
 
@@ -133,7 +133,7 @@ LarkMidTable 配置文件由四个部分组成，分别是 `Spark`、`Input`、`
 
 ##### Filter
 
-在Filter部分，这里我们配置一系列的转化, 大部分数据分析的需求，都是在Filter完成的。LarkMidTable 提供了丰富的插件，足以满足各种数据分析需求。这里我们通过 SQL 插件完成数据的聚合操作。
+在Filter部分，这里我们配置一系列的转化, 大部分数据分析的需求，都是在Filter完成的。birdlark提供了丰富的插件，足以满足各种数据分析需求。这里我们通过 SQL 插件完成数据的聚合操作。
 
     filter {
         sql {
@@ -213,7 +213,7 @@ output {
 }
 ```
 
-执行命令，指定配置文件，运行 LarkMidTable ，即可实现我们的数据处理逻辑。
+执行命令，指定配置文件，运行 birdlark，即可实现我们的数据处理逻辑。
 
 * Local
 
@@ -246,17 +246,17 @@ mysql> select * from access_collect;
 
 ## 总结
 
-在这篇文章中，我们介绍了如何使用 LarkMidTable 从 TiDB 中读取数据，做简单的数据处理之后写入 TiDB 另外一个表中。仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码。
+在这篇文章中，我们介绍了如何使用 birdlark从 TiDB 中读取数据，做简单的数据处理之后写入 TiDB 另外一个表中。仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码。
 
-除了支持 TiDB 数据源之外，LarkMidTable 同样支持Elasticsearch, Kafka, Kudu, ClickHouse等数据源。
+除了支持 TiDB 数据源之外，birdlark同样支持Elasticsearch, Kafka, Kudu, ClickHouse等数据源。
 
-**于此同时，我们正在研发一个重要功能，就是在 LarkMidTable 中，利用 TiDB 的事务特性，实现从 Kafka 到 TiDB 流式数据处理，并且支持端（Kafka）到端（TiDB）的 Exactly-Once 数据一致性。**
+**于此同时，我们正在研发一个重要功能，就是在 birdlark中，利用 TiDB 的事务特性，实现从 Kafka 到 TiDB 流式数据处理，并且支持端（Kafka）到端（TiDB）的 Exactly-Once 数据一致性。**
 
-希望了解 LarkMidTable 和 TiDB，ClickHouse、Elasticsearch、Kafka结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
+希望了解 birdlark和 TiDB，ClickHouse、Elasticsearch、Kafka结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 ## 联系我们
 * 邮件列表 : **dev@birdLark.github.io**. 发送任意内容至 `dev-subscribe@birdLark.github.io`， 按照回复订阅邮件列表。
-* Slack: 发送 `Request to join LarkMidTable slack` 邮件到邮件列表 (`dev@birdLark.github.io`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
+* Slack: 发送 `Request to join birdlarkslack` 邮件到邮件列表 (`dev@birdLark.github.io`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
 * [bilibili B站 视频](https://space.bilibili.com/1542095008)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

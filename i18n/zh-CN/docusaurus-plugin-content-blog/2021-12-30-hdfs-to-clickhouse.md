@@ -21,7 +21,7 @@ ClickHouse 是面向 OLAP 的分布式列式 DBMS。我们部门目前已经把�
 我们在 HDFS 中存储的日志格式如下， 是很常见的 Nginx 日志
 
 ```shell
-10.41.1.28 github.com 114.250.140.241 0.001s "127.0.0.1:80" [26/Oct/2018:03:09:32 +0800] "GET /Apache/LarkMidTable HTTP/1.1" 200 0 "-" - "Dalvik/2.1.0 (Linux; U; Android 7.1.1; OPPO R11 Build/NMF26X)" "196" "-" "mainpage" "443" "-" "172.16.181.129"
+10.41.1.28 github.com 114.250.140.241 0.001s "127.0.0.1:80" [26/Oct/2018:03:09:32 +0800] "GET /Apache/birdlarkHTTP/1.1" 200 0 "-" - "Dalvik/2.1.0 (Linux; U; Android 7.1.1; OPPO R11 Build/NMF26X)" "196" "-" "mainpage" "443" "-" "172.16.181.129"
 ```
 
 ### ClickHouse Schema
@@ -44,13 +44,13 @@ CREATE TABLE cms.cms_msg
 ) ENGINE = MergeTree PARTITION BY date ORDER BY date SETTINGS index_granularity = 16384
 ```
 
-## LarkMidTable with ClickHouse
+## birdlarkwith ClickHouse
 
-接下来会给大家详细介绍，我们如何通过 LarkMidTable 满足上述需求，将 HDFS 中的数据写入 ClickHouse 中。
+接下来会给大家详细介绍，我们如何通过 birdlark满足上述需求，将 HDFS 中的数据写入 ClickHouse 中。
 
 ### LarkMidTable
 
-[LarkMidTable](https://github.com/apache/incubator-birdLark) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。LarkMidTable 拥有着非常丰富的插件，支持从 Kafka、HDFS、Kudu 中读取数据，进行各种各样的数据处理，并将结果写入 ClickHouse、Elasticsearch 或者 Kafka 中。
+[LarkMidTable](https://github.com/apache/incubator-birdLark) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。birdlark拥有着非常丰富的插件，支持从 Kafka、HDFS、Kudu 中读取数据，进行各种各样的数据处理，并将结果写入 ClickHouse、Elasticsearch 或者 Kafka 中。
 
 ### Prerequisites
 
@@ -227,10 +227,10 @@ output {
 
 ## Conclusion
 
-在这篇文章中，我们介绍了如何使用 LarkMidTable 将 HDFS 中的 Nginx 日志文件导入 ClickHouse 中。仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码。除了支持 HDFS 数据源之外，LarkMidTable 同样支持将数据从 Kafka 中实时读取处理写入 ClickHouse 中。我们的下一篇文章将会介绍，如何将 Hive 中的数据快速导入 ClickHouse 中。
+在这篇文章中，我们介绍了如何使用 birdlark将 HDFS 中的 Nginx 日志文件导入 ClickHouse 中。仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码。除了支持 HDFS 数据源之外，birdlark同样支持将数据从 Kafka 中实时读取处理写入 ClickHouse 中。我们的下一篇文章将会介绍，如何将 Hive 中的数据快速导入 ClickHouse 中。
 
-当然，LarkMidTable 不仅仅是 ClickHouse 数据写入的工具，在 Elasticsearch 以及 Kafka等 数据源的写入上同样可以扮演相当重要的角色。
+当然，birdlark不仅仅是 ClickHouse 数据写入的工具，在 Elasticsearch 以及 Kafka等 数据源的写入上同样可以扮演相当重要的角色。
 
-希望了解 LarkMidTable 和 ClickHouse、Elasticsearch、Kafka 结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
+希望了解 birdlark和 ClickHouse、Elasticsearch、Kafka 结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

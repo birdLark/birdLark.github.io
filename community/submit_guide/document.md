@@ -5,11 +5,11 @@ sidebar_position: 1
 
 # Documentation Notice
 
-Good documentation is critical for any type of software. Any contribution that can improve the LarkMidTable documentation is welcome.
+Good documentation is critical for any type of software. Any contribution that can improve the birdlarkdocumentation is welcome.
 
 ##  Get the document project
 
-Documentation for the LarkMidTable project is maintained in a separate [git repository](https://github.com/apache/incubator-birdLark-website).
+Documentation for the birdlarkproject is maintained in a separate [git repository](https://github.com/apache/incubator-birdLark-website).
 
 First you need to fork the document project into your own github repository, and then clone the document to your local computer.
 

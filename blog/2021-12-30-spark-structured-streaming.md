@@ -18,7 +18,7 @@ It can help you use StructuredStreaming to complete your needs efficiently and a
 
 ### LarkMidTable
 
-LarkMidTable is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. LarkMidTable has a very rich set of plug-ins, supports reading data from Kafka, HDFS, Kudu, performs various data processing, and writes the results to ClickHouse, Elasticsearch or Kafka
+birdlarkis a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. birdlarkhas a very rich set of plug-ins, supports reading data from Kafka, HDFS, Kudu, performs various data processing, and writes the results to ClickHouse, Elasticsearch or Kafka
 
 ### Ready to work
 
@@ -43,9 +43,9 @@ vim config/birdLark-env.sh
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 ```
 
-### LarkMidTable Pipeline
+### birdlarkPipeline
 
-We only need to write a configuration file of LarkMidTable Pipeline to complete the data import.
+We only need to write a configuration file of birdlarkPipeline to complete the data import.
 
 The configuration file includes four parts, namely Spark, Input, filter and Output.
 
@@ -126,7 +126,7 @@ The data of kafka is as follows
 {"good_id":"abc","price":300,"user_id":123456,"time":1553216320}
 ```
 
-So how do we use LarkMidTable to fulfill this requirement, of course, we only need to configure it.
+So how do we use birdlarkto fulfill this requirement, of course, we only need to configure it.
 
 ```
 #The configuration in spark is configured according to business requirements
@@ -183,7 +183,7 @@ The above configuration is complete, start LarkMidTable, and you can get the res
 #### Scenario 2: Multiple stream association scenarios
 
 Suppose you have placed an advertisement on a certain platform, and now you need to calculate the CTR (click-through rate) of each advertisement in real time. The data comes from two topics, one is the advertisement exposure log, and the other is the advertisement click log.
-At this point, we need to associate the two stream data together for calculation, and LarkMidTable also supports this function recently, let's take a look at how to do it:
+At this point, we need to associate the two stream data together for calculation, and birdlarkalso supports this function recently, let's take a look at how to do it:
 
 
 Click on topic data format
@@ -273,14 +273,14 @@ Through configuration, the case of stream association is also completed here.
 ### Conclusion
 Through configuration, you can quickly use StructuredStreaming for real-time data processing, but you still need to understand some concepts of StructuredStreaming, such as the watermark mechanism, and the output mode of the program.
 
-Finally, LarkMidTable also supports spark streaming and spark batching of course.
+Finally, birdlarkalso supports spark streaming and spark batching of course.
 If you are also interested in these two, you can read our previous article "[How to quickly import data from Hive into ClickHouse](2021-12-30-hive-to-clickhouse.md)",
 "[Excellent data engineer, how to use Spark to do OLAP analysis on TiDB] (2021-12-30-spark-execute-tidb.md)",
 "[How to use Spark to quickly write data to Elasticsearch] (2021-12-30-spark-execute-elasticsearch.md)"
 
-If you want to know more functions and cases of LarkMidTable combined with HBase, ClickHouse, Elasticsearch, Kafka, MySQL and other data sources, you can go directly to the official website [https://birdlark.github.io/](https://birdLark.apache. org/)
+If you want to know more functions and cases of birdlarkcombined with HBase, ClickHouse, Elasticsearch, Kafka, MySQL and other data sources, you can go directly to the official website [https://birdlark.github.io/](https://birdLark.apache. org/)
 
 ## 联系我们
 * Mailing list : **dev@birdLark.github.io**. Send anything to `dev-subscribe@birdLark.github.io` and subscribe to the mailing list according to the replies.
-* Slack: Send a `Request to join LarkMidTable slack` email to the mailing list (`dev@birdLark.github.io`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* Slack: Send a `Request to join birdlarkslack` email to the mailing list (`dev@birdLark.github.io`), and we will invite you to join (please make sure you are registered with Slack before doing so).
 * [bilibili B station video](https://space.bilibili.com/1542095008)

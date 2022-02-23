@@ -7,7 +7,7 @@ sidebar_position: 2
 
 强烈推荐订阅开发邮件列表，与社区保持最新信息同步，这一点非常重要。
 
-在使用 LarkMidTable 的过程中，如果您有任何问题或者想法、建议，都可以通过 Apache 邮件列表参与到 LarkMidTable 的社区建设中来。
+在使用 birdlark的过程中，如果您有任何问题或者想法、建议，都可以通过 Apache 邮件列表参与到 birdlark的社区建设中来。
 
 发送订阅邮件也非常简单，步骤如下:
 
@@ -15,11 +15,11 @@ sidebar_position: 2
 
 2. 接收确认邮件并回复。 完成步骤1后，您将收到一封来自 dev-help@birdLark.github.io 的确认邮件（如未收到，请确认邮件是否被自动归入垃圾邮件、推广邮件、订阅邮件等文件夹）。然后直接回复该邮件，或点击邮件里的链接快捷回复即可，主题和内容任意。
 
-3. 接收欢迎邮件。 完成以上步骤后，您会收到一封主题为 WELCOME to dev@birdLark.github.io 的欢迎邮件，至此您已成功订阅 Apache LarkMidTable 的邮件列表。
+3. 接收欢迎邮件。 完成以上步骤后，您会收到一封主题为 WELCOME to dev@birdLark.github.io 的欢迎邮件，至此您已成功订阅 Apache birdlark的邮件列表。
 
 # 取消订阅邮件列表
 
-如果您不再需要了解 LarkMidTable 的动态，可以取消订阅邮件列表。
+如果您不再需要了解 birdlark的动态，可以取消订阅邮件列表。
 
 取消订阅邮件列表步骤如下:
 
@@ -27,4 +27,4 @@ sidebar_position: 2
 
 2. 接收确认邮件并回复。 完成步骤1后，您将收到一封来自 dev-help@birdLark.github.io 的确认邮件（如未收到，请确认邮件是否被自动归入垃圾邮件、推广邮件、订阅邮件等文件夹）。然后直接回复该邮件，或点击邮件里的链接快捷回复即可，主题和内容任意。
 
-3. 接收告别邮件。 完成以上步骤后，您会收到一封主题为 GOODBYE from dev@birdLark.github.io 的告别邮件，至此您已成功取消订阅 Apache LarkMidTable 的邮件列表，以后将不会再接收来自 dev@birdLark.github.io 的邮件通知。
+3. 接收告别邮件。 完成以上步骤后，您会收到一封主题为 GOODBYE from dev@birdLark.github.io 的告别邮件，至此您已成功取消订阅 Apache birdlark的邮件列表，以后将不会再接收来自 dev@birdLark.github.io 的邮件通知。

@@ -1,11 +1,11 @@
-# Apache LarkMidTable Website
+# Apache birdlarkWebsite
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.github.io/licenses/LICENSE-2.0.html)
 
 [English](README.md) | [中文](README_ZH.md)
 
 This is the repository containing all the source code of `https://birdlark.github.io`.
-This guide will guide you how to contribute to the LarkMidTable website.
+This guide will guide you how to contribute to the birdlarkwebsite.
 
 ## Branch
 

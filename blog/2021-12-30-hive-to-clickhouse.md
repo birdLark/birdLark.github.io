@@ -6,7 +6,7 @@ tags: [Hive, ClickHouse]
 
 ClickHouse is a distributed columnar DBMS for OLAP. Our department has stored all log data related to data analysis in ClickHouse, an excellent data warehouse, and the current daily data volume has reached 30 billion.
 
-In the previous article [How to quickly import data from HDFS into ClickHouse] (2021-12-30-hdfs-to-clickhouse.md), we mentioned the use of LarkMidTable [https://github.com/apache/incubator -birdLark](https://github.com/apache/incubator-birdLark) After a very simple operation on the data in HDFS, the data can be written to ClickHouse. The data in HDFS is generally unstructured data, so what should we do with the structured data stored in Hive?
+In the previous article [How to quickly import data from HDFS into ClickHouse] (2021-12-30-hdfs-to-clickhouse.md), we mentioned the use of birdlark[https://github.com/apache/incubator -birdLark](https://github.com/apache/incubator-birdLark) After a very simple operation on the data in HDFS, the data can be written to ClickHouse. The data in HDFS is generally unstructured data, so what should we do with the structured data stored in Hive?
 
 ![](/doc/image_zh/hive-logo.png)
 
@@ -57,19 +57,19 @@ CREATE TABLE cms.cms_msg
 ) ENGINE = MergeTree PARTITION BY date ORDER BY (date, hostname) SETTINGS index_granularity = 16384
 ```
 
-## LarkMidTable with ClickHouse
+## birdlarkwith ClickHouse
 
 Next, I will introduce to you how we write data from Hive to ClickHouse through LarkMidTable.
 
 ### LarkMidTable
 
-[LarkMidTable](https://github.com/apache/incubator-birdLark) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. LarkMidTable has a very rich set of plug-ins that support reading data from Kafka, HDFS, and Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
+[LarkMidTable](https://github.com/apache/incubator-birdLark) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. birdlarkhas a very rich set of plug-ins that support reading data from Kafka, HDFS, and Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
 
-The environment preparation and installation steps of LarkMidTable will not be repeated here. For specific installation steps, please refer to the previous article or visit [LarkMidTable Docs](/docs/introduction)
+The environment preparation and installation steps of birdlarkwill not be repeated here. For specific installation steps, please refer to the previous article or visit [birdlarkDocs](/docs/introduction)
 
-### LarkMidTable Pipeline
+### birdlarkPipeline
 
-We only need to write a configuration file of LarkMidTable Pipeline to complete the data import.
+We only need to write a configuration file of birdlarkPipeline to complete the data import.
 
 The configuration file includes four parts, namely Spark, Input, filter and Output.
 
@@ -175,7 +175,7 @@ output {
 }
 ```
 
-Execute the command, specify the configuration file, and run LarkMidTable to write data to ClickHouse. Here we take the local mode as an example.
+Execute the command, specify the configuration file, and run birdlarkto write data to ClickHouse. Here we take the local mode as an example.
 
     ./bin/start-birdLark.sh --config config/batch.conf -e client -m 'local[2]'
 
@@ -184,6 +184,6 @@ Execute the command, specify the configuration file, and run LarkMidTable to wri
 
 In this post, we covered how to import data from Hive into ClickHouse using LarkMidTable. The data import can be completed quickly through only one configuration file without writing any code, which is very simple.
 
-If you want to know more functions and cases of LarkMidTable combined with ClickHouse, Elasticsearch, Kafka, Hadoop, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
+If you want to know more functions and cases of birdlarkcombined with ClickHouse, Elasticsearch, Kafka, Hadoop, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

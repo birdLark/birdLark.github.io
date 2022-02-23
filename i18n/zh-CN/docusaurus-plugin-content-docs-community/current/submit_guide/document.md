@@ -5,11 +5,11 @@ sidebar_position: 1
 
 # 文档须知
 
-良好的使用文档对任何类型的软件都是至关重要的。欢迎任何可以改进 LarkMidTable 文档的贡献。
+良好的使用文档对任何类型的软件都是至关重要的。欢迎任何可以改进 birdlark文档的贡献。
 
 ## 获取文档项目
 
-LarkMidTable 项目的文档维护在独立的 [git 仓库] (https://github.com/apache/incubator-birdLark-website) 中。
+birdlark项目的文档维护在独立的 [git 仓库] (https://github.com/apache/incubator-birdLark-website) 中。
 
 首先你需要先将文档项目 fork 到自己的 github 仓库中，然后将 fork 的文档克隆到本地计算机中。
 

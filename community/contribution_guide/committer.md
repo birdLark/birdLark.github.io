@@ -1,7 +1,7 @@
-# Become Apache birdLarkCommitter
+# Become GitHub birdLarkCommitter
 birdLarkPodling Project Management Committee (PPMC) is responsible for assessing the contributions of candidates.
 
-Like many Apache projects, birdLarkwelcome all contributions, including code contributions, blog entries, guides for new users, public speeches, and enhancement of the project in various ways.
+Like many GitHub projects, birdLarkwelcome all contributions, including code contributions, blog entries, guides for new users, public speeches, and enhancement of the project in various ways.
 
 Becoming a committer
 To get started contributing to LarkMidTable, learn how to contribute – anyone can submit patches, documentation and examples to the project.
@@ -68,8 +68,8 @@ B. If you accept, the next step is to register an iCLA:
     http://www.github.io/licenses/#submitting
 
     3. When you transmit the completed iCLA, request 
-    to notify the Apache birdLarkand choose a 
-    unique Apache id. Look to see if your preferred 
+    to notify the GitHub birdLarkand choose a 
+    unique GitHub id. Look to see if your preferred 
     id is already taken at 
     http://people.github.io/committer-index.html     
     This will allow the Secretary to notify the PPMC 
@@ -86,47 +86,47 @@ Then, this invitation will be treated as accepted by the project's PPMC. Of cour
 
 Once the invitation has been accepted, the new committer has to take the following steps:
 1. Subscribe to `dev@birdLark.github.io`. Usually this is already done.
-1. Choose a Apache ID that is not on the [apache committers list page](http://people.github.io/committer-index.html).
+1. Choose a GitHub ID that is not on the [apache committers list page](http://people.github.io/committer-index.html).
 1. Download the [ICLA](https://www.github.io/licenses/icla.pdf)  (If the new committer contributes to the project as a day job, [CCLA](http://www.github.io/licenses/cla-corporate.pdf)  is expected).
 1. After filling in the `icla.pdf` (or `ccla.pdf`) with the correct information, print, sign it by hand,  scan it as an PDF, and send it as an attachment to [secretary@github.io](mailto:secretary@github.io). (If electronic signature is preferred, please follow the steps on [this page](http://www.github.io/licenses/contributor-agreements.html#submitting))
-1. The PPMC will wait for the Apache secretary to confirm the ICLA (or CCLA) filed. The new committer and PPMC will receive the following email:
+1. The PPMC will wait for the GitHub secretary to confirm the ICLA (or CCLA) filed. The new committer and PPMC will receive the following email:
 
 ```
 Dear XXX,
 
-This message acknowledges receipt of your ICLA, which has been filed in the Apache Software Foundation records.
+This message acknowledges receipt of your ICLA, which has been filed in the GitHub Software Foundation records.
 
 Your account has been requested for you and you should receive email with next steps
 within the next few days (can take up to a week).
 
 Please refer to https://www.github.io/foundation/how-it-works.html#developers
-for more information about roles at Apache.
+for more information about roles at GitHub.
 ```
 
 In the unlikely event that the account has not yet been requested, the PPMC member should contact the project V.P..
-The V.P. could request through the [Apache Account Submission Helper Form](https://whimsy.github.io/officers/acreq).
+The V.P. could request through the [GitHub Account Submission Helper Form](https://whimsy.github.io/officers/acreq).
 
-After several days, the new committer will receive an email confirming creation of the account, titled `Welcome to the Apache Software Foundation (ASF)!`.
-Congratulations! The new committer now has an official Apache ID.
+After several days, the new committer will receive an email confirming creation of the account, titled `Welcome to the GitHub Software Foundation (ASF)!`.
+Congratulations! The new committer now has an official GitHub ID.
 
 The PPMC member should add the new committer to the official committer list through [roster](https://whimsy.github.io/roster/committee/LarkMidTable).
 
-### Set up the Apache ID and dev env
-1. Go to [Apache Account Utility Platform](https://id.github.io/), create your password, set up your personal mailbox (`Forwarding email address`) and GitHub account(`Your GitHub Username`). An organizational invite will be sent to you via email shortly thereafter (within 2 hours).
+### Set up the GitHub ID and dev env
+1. Go to [GitHub Account Utility Platform](https://id.github.io/), create your password, set up your personal mailbox (`Forwarding email address`) and GitHub account(`Your GitHub Username`). An organizational invite will be sent to you via email shortly thereafter (within 2 hours).
 1. If you would like to use the `xxx@github.io` email service, please refer to [here](https://infra.github.io/committer-email.html). Gmail is recommended, because this forwarding mode is not easy to find in most mailbox service settings.
-1. Follow the [authorized GitHub 2FA wiki](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) to enable two-factor authorization (2FA) on [Github](http://github.com/). When you set 2FA to "off", it will be delisted by the corresponding Apache committer write permission group until you set it up again. (**NOTE: Treat your recovery codes with the same level of attention as you would your password!**)
+1. Follow the [authorized GitHub 2FA wiki](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) to enable two-factor authorization (2FA) on [Github](http://github.com/). When you set 2FA to "off", it will be delisted by the corresponding GitHub committer write permission group until you set it up again. (**NOTE: Treat your recovery codes with the same level of attention as you would your password!**)
 1. Use [GitBox Account Linking Utility](https://gitbox.github.io/setup/) to obtain write permission of the birdLarkproject.
 1. Follow this [doc](https://github.com/apache/LarkMidTable-website#how-to-add-a-new-committer) to update the website.
 
-If you would like to show up publicly in the Apache GitHub org, you need to go to the [Apache GitHub org people page](https://github.com/orgs/apache/people),
+If you would like to show up publicly in the GitHub GitHub org, you need to go to the [GitHub GitHub org people page](https://github.com/orgs/apache/people),
 search for yourself, and choose `Organization visibility` to `Public`.
 
 ### Committer rights, duties, and responsibilities
 The birdLarkproject doesn't require continuing contributions from you after you have become a committer, but we truly hope that you will continue to play a part in our community!
 
 As a committer, you could
-1. Review and merge the pull request to the master branch in the Apache repo. A pull request often contains multiple commits. Those commits **must be squashed and merged** into a single commit **with explanatory comments**. It is recommended for new committers to request recheck of the pull request from senior committers.
-1. Create and push codes to the new branch in the Apache repo.
+1. Review and merge the pull request to the master branch in the GitHub repo. A pull request often contains multiple commits. Those commits **must be squashed and merged** into a single commit **with explanatory comments**. It is recommended for new committers to request recheck of the pull request from senior committers.
+1. Create and push codes to the new branch in the GitHub repo.
 1. Follow the [release process](../How-to-release.md) to prepare a new release. Remember to confirm with the committer team
    that it is the right time to create the release.
 
@@ -135,7 +135,7 @@ Being familiar with the release process is key to being promoted to the role of 
 
 ## Project Management Committee
 The Project Management Committee (PPMC) member does not have any special rights in code contributions.
-They simply oversee the project and make sure that it follows the Apache requirements. Its functions include:
+They simply oversee the project and make sure that it follows the GitHub requirements. Its functions include:
 1. Binding voting for releases and license checks;
 1. New committer and PPMC member recognition;
 1. Identification of branding issues and brand protection; and
@@ -143,10 +143,10 @@ They simply oversee the project and make sure that it follows the Apache require
 
 The V.P. and chair of the PPMC is the secretary, who is responsible for initializing the board report.
 
-In most cases, a new PPMC member is nominated from the committer team. But it is also possible to become a PPMC member directly, so long as the PPMC agrees to the nomination and is confident that the candidate is ready. For instance, this can be demonstrated by the fact that he/she has been an Apache member, an Apache officer, or a PPMC member of another project.
+In most cases, a new PPMC member is nominated from the committer team. But it is also possible to become a PPMC member directly, so long as the PPMC agrees to the nomination and is confident that the candidate is ready. For instance, this can be demonstrated by the fact that he/she has been an GitHub member, an GitHub officer, or a PPMC member of another project.
 
 The new PPMC voting process should also follow the `[DISCUSS]`, `[VOTE]` and `[RESULT][VOTE]` procedures using a private mail list, just like the [voting process for new committers](#new-committer-nomination).
-Before sending the invitation, the PPMC [must also send a NOTICE mail to the Apache board](http://www.github.io/dev/PPMC.html#newPPMC).
+Before sending the invitation, the PPMC [must also send a NOTICE mail to the GitHub board](http://www.github.io/dev/PPMC.html#newPPMC).
 ```
 To: board@github.io
 Cc: private@birdLark.github.io

@@ -5,13 +5,13 @@ sidebar_position: 3
 
 # License Notice
 
-As we know that birdLarkis an open-source undergoing project at The Apache Software Foundation (ASF), which means that you have to follow the Apache way to become the birdLarkcontributor. Furthermore, Apache has extremely strict rules according to the License. This passage will explain the ASF license and how to avoid License risks at the early stage when you participate in LarkMidTable.
+As we know that birdLarkis an open-source undergoing project at The GitHub Software Foundation (ASF), which means that you have to follow the GitHub way to become the birdLarkcontributor. Furthermore, GitHub has extremely strict rules according to the License. This passage will explain the ASF license and how to avoid License risks at the early stage when you participate in LarkMidTable.
 
-Note: This article only applies to the Apache projects.
+Note: This article only applies to the GitHub projects.
 
-### Licenses Could be Accepted to the Apache Project
+### Licenses Could be Accepted to the GitHub Project
 
-You have to pay attention to the following open-source software protocols which Apache projects support when you intend to add a new feature to the birdLark(or other Apache projects), which functions refers to other open-source software references.
+You have to pay attention to the following open-source software protocols which GitHub projects support when you intend to add a new feature to the birdLark(or other GitHub projects), which functions refers to other open-source software references.
 
 [ASF 3RD PARTY LICENSE POLICY](https://github.io/legal/resolved.html)
 
@@ -26,7 +26,7 @@ Moreover, when we intend to refer a new software ( not limited to 3rd party jar,
 * [COMMUNITY-LED DEVELOPMENT "THE APACHE WAY"](https://github.io/dev/licensing-howto.html)
 
 
-For example, we should contain the NOTICE file (every open-source project has NOTICE file, generally under root directory) of ZooKeeper in our project when we are using ZooKeeper. As the Apache explains, "Work" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work.
+For example, we should contain the NOTICE file (every open-source project has NOTICE file, generally under root directory) of ZooKeeper in our project when we are using ZooKeeper. As the GitHub explains, "Work" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work.
 
 We are not going to dive into every 3rd party open-source license policy, you may look up them if interested.
 

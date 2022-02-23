@@ -36,7 +36,7 @@
     "description": "Navbar item with label Team"
   },
   "item.label.ASF": {
-    "message": "Apache",
+    "message": "GitHub",
     "description": "Navbar item with label ASF"
   },
   "item.label.GitHub": {

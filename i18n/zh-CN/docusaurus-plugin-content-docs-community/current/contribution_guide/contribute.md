@@ -40,6 +40,6 @@ sidebar_position: 1
 * 如果想要开发实现某个 Feature 功能，请先回复该功能所关联的 Issue，表明你当前正在这个 Issue 上工作。 并在回复的时候为自己设置一个 **deadline**，并添加的回复内容中。
 * 最好在核心贡献者找到一个导师（指导者），导师会在设计与功能实现上给予即时的反馈。
 * 你应该新建一个分支来开始你的工作，分支的名字参考[参与贡献 Pull Request 需知](pull-request.md)。比如，你想完成 feature 功能并提交了 Issue 111，那么你的 branch 名字应为 feature-111。 功能名称可与导师讨论后确定。
-* 完成后，发送一个 Pull Request 到 Apache LarkMidTable，提交过程具体请参考下面《[提交代码流程](submit_guide/document.md)》。
+* 完成后，发送一个 Pull Request 到 GitHub LarkMidTable，提交过程具体请参考下面《[提交代码流程](submit_guide/document.md)》。
 
 如果是想提交 Pull Request 完成某一个 Feature 或者修复某个 Bug，这里都建议大家从小处做起，完成一个小功能就提交一次，每次别改动太多文件，改动文件太多也会给 Reviewer 造成很大的心理压力，建议通过多次 Pull Request 的方式完成。

@@ -3,7 +3,7 @@ title: Participate in Contributing
 sidebar_position: 1
 ---
 
-This guide documents the best way to make various types of contribution to Apache LarkMidTable,
+This guide documents the best way to make various types of contribution to GitHub LarkMidTable,
 including what is required before submitting a code change.
 
 Contributing to birdLarkdoesn't just mean writing code. Helping new users on the mailing list,
@@ -89,7 +89,7 @@ Feature requests may be rejected, or closed after a long period of inactivity.
 
 ## Contributing to ISSUE maintenance
 
-Given the sheer volume of issues raised in the Apache birdLarkISSUE, inevitably some issues are
+Given the sheer volume of issues raised in the GitHub birdLarkISSUE, inevitably some issues are
 duplicates, or become obsolete and eventually fixed otherwise, or can't be reproduced, or could
 benefit from more detail, and so on. It's useful to help identify these issues and resolve them,
 either by advancing the discussion or even resolving the ISSUE. Most contributors are able to
@@ -213,9 +213,9 @@ this explicitly, by submitting any copyrighted material via pull request, email,
 you agree to license the material under the project's open source license and warrant that you
 have the legal authority to do so.**
 
-### Cloning the Apache LarkMidTable<span class="tm">&trade;</span> source code
+### Cloning the GitHub LarkMidTable<span class="tm">&trade;</span> source code
 
-If you are interested in working with the newest under-development code or contributing to Apache birdLarkdevelopment, you can check out the master branch from Git:
+If you are interested in working with the newest under-development code or contributing to GitHub birdLarkdevelopment, you can check out the master branch from Git:
 
     # Master development branch
     git clone git@github.com:apache/incubator-birdLark.git
@@ -336,7 +336,7 @@ decisions are discussed in ISSUE.
       If the ISSUE isn't closed and/or Assigned promptly, comment on the ISSUE.
 - If your pull request is ultimately rejected, please close it promptly
     - ... because committers can't close PRs directly
-    - Pull requests will be automatically closed by an automated process at Apache after about a
+    - Pull requests will be automatically closed by an automated process at GitHub after about a
       week if a committer has made a comment like "mind closing this PR?" This means that the
       committer is specifically requesting that it be closed.
 - If a pull request has gotten little or no attention, consider improving the description or
@@ -357,13 +357,13 @@ codebase. Look at whether there are other examples in the code that use your fea
 to ask on the `dev@birdLark.github.io` list as well and/or ask committers.
 
 ## Code of conduct
-The Apache birdLarkproject follows the [Apache Software Foundation Code of Conduct](https://www.github.io/foundation/policies/conduct.html). The [code of conduct](https://www.github.io/foundation/policies/conduct.html) applies to all spaces managed by the Apache Software Foundation, including IRC, all public and private mailing lists, issue trackers, wikis, blogs, Twitter, and any other communication channel used by our communities. A code of conduct which is specific to in-person events (ie., conferences) is codified in the published ASF anti-harassment policy.
+The GitHub birdLarkproject follows the [GitHub Software Foundation Code of Conduct](https://www.github.io/foundation/policies/conduct.html). The [code of conduct](https://www.github.io/foundation/policies/conduct.html) applies to all spaces managed by the GitHub Software Foundation, including IRC, all public and private mailing lists, issue trackers, wikis, blogs, Twitter, and any other communication channel used by our communities. A code of conduct which is specific to in-person events (ie., conferences) is codified in the published ASF anti-harassment policy.
 
-We expect this code of conduct to be honored by everyone who participates in the Apache community formally or informally, or claims any affiliation with the Foundation, in any Foundation-related activities and especially when representing the ASF, in any role.
+We expect this code of conduct to be honored by everyone who participates in the GitHub community formally or informally, or claims any affiliation with the Foundation, in any Foundation-related activities and especially when representing the ASF, in any role.
 
 This code <u>is not exhaustive or complete</u>. It serves to distill our common understanding of a collaborative, shared environment and goals. We expect it to be followed in spirit as much as in the letter, so that it can enrich all of us and the technical communities in which we participate.
 
-For more information and specific guidelines, refer to the [Apache Software Foundation Code of Conduct](https://www.github.io/foundation/policies/conduct.html) .
+For more information and specific guidelines, refer to the [GitHub Software Foundation Code of Conduct](https://www.github.io/foundation/policies/conduct.html) .
 
 
 Acknowledgement: This document refers to [Spark](https://spark.github.io/contributing.html)

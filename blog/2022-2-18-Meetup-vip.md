@@ -1,6 +1,6 @@
 ---
-slug: The practice of birdlarkin Vip
-title: The practice of birdlarkin Vip
+slug: The practice of birdLarkin Vip
+title: The practice of birdLarkin Vip
 tags:
 - Vip
 - ClickHouse
@@ -9,14 +9,14 @@ tags:
 Guest speaker: Vip Senior Big Data Engineer Wang Yu
 Lecture preparation: Zhang Detong
 
-Introduction: Vip referenced birdlarkas early as version 1.0. We use birdlarkto perform some data interaction work between Hive and ClickHouse.
+Introduction: Vip referenced birdLarkas early as version 1.0. We use birdLarkto perform some data interaction work between Hive and ClickHouse.
 Today's presentation will focus on the following points:
 
 * Requirements and pain points of ClickHouse data import;
 * Selection of ClickHouse warehousing and warehousing tools;
 * Hive to ClickHouse;
 * ClickHouse to Hive;
-* Integration of birdlarkand Vipshop data platform;
+* Integration of birdLarkand Vipshop data platform;
 * Future outlook;
 
 # Requirements and pain points of ClickHouse data import
@@ -39,19 +39,19 @@ First, we introduce a data component to consider its performance. The granularit
 
 # Selection of ClickHouse and Hive warehousing and warehousing tools
 Based on the pain points in the data business, we have compared and selected data warehouse and warehouse tools. We mainly choose among open source tools, without considering commercial warehouse entry and exit tools, we mainly compare DataX, LarkMidTable, and write Spark programs and use jdbc to insert ClickHouse among the three options.
-birdlarkand Spark rely on Vipshop's own Yarn cluster, which can directly implement distributed reading and writing. DataX is non-distributed, and the startup process between Reader and Writer takes a long time, and the performance is ordinary. The performance of birdlarkand Spark for data processing can reach several times that of DataX.
-Data of more than one billion can run smoothly in birdlarkand Spark. DataX has great performance pressure after the amount of data is large, and it is difficult to process data of more than one billion.
-In terms of read and write plug-in scalability, birdlarksupports a variety of data sources and supports users to develop plug-ins. birdlarksupports data import into Redis.
-In terms of stability, since birdlarkand DataX are self-contained tools, the stability will be better. The stability aspect of Spark requires attention to code quality.
+birdLarkand Spark rely on Vipshop's own Yarn cluster, which can directly implement distributed reading and writing. DataX is non-distributed, and the startup process between Reader and Writer takes a long time, and the performance is ordinary. The performance of birdLarkand Spark for data processing can reach several times that of DataX.
+Data of more than one billion can run smoothly in birdLarkand Spark. DataX has great performance pressure after the amount of data is large, and it is difficult to process data of more than one billion.
+In terms of read and write plug-in scalability, birdLarksupports a variety of data sources and supports users to develop plug-ins. birdLarksupports data import into Redis.
+In terms of stability, since birdLarkand DataX are self-contained tools, the stability will be better. The stability aspect of Spark requires attention to code quality.
 ![5](/doc/image_zh/2022-2-18-Meetup-vip/5.png)
 
-The amount of data in our exposure table is in the billions of levels every day. We have the performance requirement to complete data processing within 5 minutes. We have the need to import and export data to Redis. We need import and export tools that can be connected to the data platform for task scheduling. . For the consideration of data volume, performance, scalability, and platform compatibility, we chose birdlarkas our data warehouse import and export tool.
+The amount of data in our exposure table is in the billions of levels every day. We have the performance requirement to complete data processing within 5 minutes. We have the need to import and export data to Redis. We need import and export tools that can be connected to the data platform for task scheduling. . For the consideration of data volume, performance, scalability, and platform compatibility, we chose birdLarkas our data warehouse import and export tool.
 # Import Hive data into ClickHouse
 The following will introduce our use of LarkMidTable.
 The picture is a Hive table, which is our three-level product dimension table, including category products, dimension categories, and user population information. The primary key of the table is a third-level category ct_third_id, and the following value is the bitmap of two uids, which is the bitmap type of the user id. We need to import this Hive table into Clickhouse.
 ![6](/doc/image_zh/2022-2-18-Meetup-vip/6.png)
 
-birdlarkis easy to install, and the official website documentation describes how to install it. The figure below shows the configuration of LarkMidTable. In the configuration, env, source and sink are essential. In the env part, the example in the figure is the Spark configuration. The configuration includes concurrency, etc. These parameters can be adjusted. The source part is the data source. The Hive data source is configured here, including a Hive Select statement. Spark runs the SQL in the source configuration to read the data. UDF is supported here for simple ETL; the sink part is configured with Clickhouse, and you can see output_type= rowbinary and rowbinary are the self-developed acceleration solutions of Vipshop; pre_sql and check_sql are self-developed functions for data verification, which will be described in detail later; clickhouse.socket_timeout and bulk_size can be adjusted according to the actual situation.
+birdLarkis easy to install, and the official website documentation describes how to install it. The figure below shows the configuration of LarkMidTable. In the configuration, env, source and sink are essential. In the env part, the example in the figure is the Spark configuration. The configuration includes concurrency, etc. These parameters can be adjusted. The source part is the data source. The Hive data source is configured here, including a Hive Select statement. Spark runs the SQL in the source configuration to read the data. UDF is supported here for simple ETL; the sink part is configured with Clickhouse, and you can see output_type= rowbinary and rowbinary are the self-developed acceleration solutions of Vipshop; pre_sql and check_sql are self-developed functions for data verification, which will be described in detail later; clickhouse.socket_timeout and bulk_size can be adjusted according to the actual situation.
 ![7](/doc/image_zh/2022-2-18-Meetup-vip/7.png)
 
 Run LarkMidTable, execute the sh script file, configure the conf file address and yarn information, and then you can.
@@ -66,35 +66,35 @@ In order to better fit the business, Vipshop will make some improvements to Lark
 Based on the 1.0 version of LarkMidTable, Vipshop has added RowBinary for acceleration, and it also makes it easier to import the binary files of HuperLogLog and BinaryBitmap from Hive to Clickhouse. We made changes in ClickHouse-jdbc, bulk_size, Hive-source. Use the extended api of CK-jdbc to write data to CK in rowbinary mode. Bulk_size introduces the control logic for writing to CK in rowbinary mode. Hive-source
 RDD is partitioned with HashPartitioner to break up data to prevent data from being skewed.
 
-We also let birdlarksupport multiple types. In order to circle the crowd, corresponding methods need to be implemented in Clickhouse, Preso, and Spark. We added Callback, HttpEntity, and RowBinaryStream that support Batch feature to Clickhouse-jdbc, added bitmap type mapping to Clickhouse-jdbc and Clickhouse-sink code, and implemented UDF of Clickhouse's Hyperloglog and Bitmap functions in Presto and Spark.
+We also let birdLarksupport multiple types. In order to circle the crowd, corresponding methods need to be implemented in Clickhouse, Preso, and Spark. We added Callback, HttpEntity, and RowBinaryStream that support Batch feature to Clickhouse-jdbc, added bitmap type mapping to Clickhouse-jdbc and Clickhouse-sink code, and implemented UDF of Clickhouse's Hyperloglog and Bitmap functions in Presto and Spark.
 In the previous configuration, the clickhouse-sink part can specify the table name, and here is the difference between writing to the local table and the distributed table. The performance of writing to a distributed table is worse than that of writing to a local table, which will put more pressure on the Clickhouse cluster. However, in scenarios such as exposure meter, flow meter, and ABTest, two tables are required to join, and both tables are in the order of billions. . At this time, we hope that the Join key falls on the local machine, and the Join cost is smaller. When we built the table, we configured the murmurHash64 rule in the distributed table distribution rules of Clickhouse, and then directly configured the distributed table in the sink of LarkMidTable, handed the writing rules to Clickhouse, and used the characteristics of the distributed table to write. Writing to the local table will put less pressure on Clickhouse, and the performance of writing will be better. In LarkMidTable, we go to Clickhouse's System.cluster table to obtain the table distribution information and machine distribution host according to the sink's local table. Then write to these hosts according to the equalization rule. Put the distributed writing of data into LarkMidTable.
 For the writing of local tables and distributed tables, our future transformation direction is to implement consistent hashing in LarkMidTable, write directly according to certain rules, such as Clickhouse, without relying on Clickhouse itself for data distribution, and improve Clickhouse's high CPU load problem.
 
 # ClickHouse data import into Hive
-We have the needs of people in the circle. Every day, Vipshop gathers 200,000 people in the supplier circle, such as people born in the 1980s, Gao Fushuai, and Bai Fumei. These Bitmap crowd information in Clickhouse needs to be exported to the Hive table, coordinated with other ETL tasks in Hive, and finally pushed to PIKA for use by external media. We made birdlarkback-push Clickhouse Bitmap crowd data to Hive.
+We have the needs of people in the circle. Every day, Vipshop gathers 200,000 people in the supplier circle, such as people born in the 1980s, Gao Fushuai, and Bai Fumei. These Bitmap crowd information in Clickhouse needs to be exported to the Hive table, coordinated with other ETL tasks in Hive, and finally pushed to PIKA for use by external media. We made birdLarkback-push Clickhouse Bitmap crowd data to Hive.
 ![11](/doc/image_zh/2022-2-18-Meetup-vip/11.png)
 
-The figure shows the birdlarkconfiguration. We configure the source as Clickhouse, the sink as Hive, and the data verification is also configured in Hive.
+The figure shows the birdLarkconfiguration. We configure the source as Clickhouse, the sink as Hive, and the data verification is also configured in Hive.
 ![12](/doc/image_zh/2022-2-18-Meetup-vip/12.png)
 
-Since we access birdlarkearlier, we have processed some modules, including adding plugin-spark-sink-hive module, plugin-spark-source-ClickHouse module, and rewriting Spark Row related methods so that they can be packaged through The Clickhouse data mapped by Schem, reconstruct the StructField and generate the DataFrame that finally needs to land on Hive. The latest version has many source and sink components, which is more convenient to use in LarkMidTable. It is now also possible to integrate the Flink connector directly in LarkMidTable.
+Since we access birdLarkearlier, we have processed some modules, including adding plugin-spark-sink-hive module, plugin-spark-source-ClickHouse module, and rewriting Spark Row related methods so that they can be packaged through The Clickhouse data mapped by Schem, reconstruct the StructField and generate the DataFrame that finally needs to land on Hive. The latest version has many source and sink components, which is more convenient to use in LarkMidTable. It is now also possible to integrate the Flink connector directly in LarkMidTable.
 
-# Integration of birdlarkand Vipshop Data Platform
+# Integration of birdLarkand Vipshop Data Platform
 Each company has its own scheduling system, such as Beluga, Zeus. The scheduling tool of Vipshop is Shufang, and the scheduling tool integrates the data transmission tool. The following is the architecture diagram of the scheduling system, which includes the entry and exit of various types of data.
 ![13](/doc/image_zh/2022-2-18-Meetup-vip/13.png)
 
-The birdlarktask type is integrated into the platform. The picture is a screenshot of the scheduled task of Shufang. You can see that the selected part is a configured birdlarktask. resource information. The following shows the historical running instance information.
+The birdLarktask type is integrated into the platform. The picture is a screenshot of the scheduled task of Shufang. You can see that the selected part is a configured birdLarktask. resource information. The following shows the historical running instance information.
 ![14](/doc/image_zh/2022-2-18-Meetup-vip/14.png)
 
-We integrated birdlarkinto the scheduling system. The Shufang Scheduling Master will assign tasks to the corresponding Agents according to the task types, and assign them to the appropriate machines to run according to the Agent load. The controller pulls the task scheduling configuration and information in the foreground. After arriving, a birdlarkcluster is generated and executed in a virtual environment similar to k8s pod and cgroup isolation. The running result will be judged by the data quality monitoring of the scheduling platform whether the task is completed and whether the operation is successful, and if it fails, it will rerun and alarm.
+We integrated birdLarkinto the scheduling system. The Shufang Scheduling Master will assign tasks to the corresponding Agents according to the task types, and assign them to the appropriate machines to run according to the Agent load. The controller pulls the task scheduling configuration and information in the foreground. After arriving, a birdLarkcluster is generated and executed in a virtual environment similar to k8s pod and cgroup isolation. The running result will be judged by the data quality monitoring of the scheduling platform whether the task is completed and whether the operation is successful, and if it fails, it will rerun and alarm.
 ![15](/doc/image_zh/2022-2-18-Meetup-vip/15.png)
 
-birdlarkitself is a tool-based component, which is used to manage and control data blood relationship, data quality, historical records, high-alert monitoring, and resource allocation. We integrate birdlarkinto the platform, and we can take advantage of the platform to take advantage of LarkMidTable.
-birdlarkis used for processing in the deposit crowd. By managing data, we divide the circled people into different people according to their paths and usage conditions, or thousands of people and thousands of faces, tag users, and push a certain type of people circled to users, analysts and suppliers.
+birdLarkitself is a tool-based component, which is used to manage and control data blood relationship, data quality, historical records, high-alert monitoring, and resource allocation. We integrate birdLarkinto the platform, and we can take advantage of the platform to take advantage of LarkMidTable.
+birdLarkis used for processing in the deposit crowd. By managing data, we divide the circled people into different people according to their paths and usage conditions, or thousands of people and thousands of faces, tag users, and push a certain type of people circled to users, analysts and suppliers.
 ![16](/doc/image_zh/2022-2-18-Meetup-vip/16.png)
 
 The traffic enters Kafka, enters the warehouse through Flink, and then forms a user label table through ETL. After the user label table is generated, we use the BitMap method implemented by Presto to type the data into a wide table in Hive. Users create tasks by box-selecting entries on the crowd system page, submit to Tengqun, and generate SQL query Clickhouse BitMap. Clickhouse's BitMap query speed is very fast. Due to its inherent advantages, we need to import Hive's BitMap table into Clickhouse through LarkMidTable. After the crowd is circled, we need to land the table to form a partition or a record of Clickhouse, and then store the resulting BitMap table in Hive through LarkMidTable. Finally, the synchronization tool will synchronize Hive's BitMap crowd results to the external media repository Pika. Around 20w people are circled every day.
-During the whole process, birdlarkis responsible for exporting the data from Hive to Clickhouse. After the ETL process of Clickhouse is completed, birdlarkexports the data from Clickhouse to Hive.
-In order to fulfill this requirement, we implemented UDFs of ClickHouse's Hyperloglog and BitMap functions on Presto and Spark; we also developed the birdlarkinterface, so that the crowds circled by users using the Bitmap method in ClickHouse can be directly written to the Hive table through birdlark, without an intermediate landing step. Users can also call the birdlarkinterface through spark to circle the crowd or reverse the crowd bitmap in Hive, so that the data can be directly transmitted to the ClickHouse result table without intermediate landing.
+During the whole process, birdLarkis responsible for exporting the data from Hive to Clickhouse. After the ETL process of Clickhouse is completed, birdLarkexports the data from Clickhouse to Hive.
+In order to fulfill this requirement, we implemented UDFs of ClickHouse's Hyperloglog and BitMap functions on Presto and Spark; we also developed the birdLarkinterface, so that the crowds circled by users using the Bitmap method in ClickHouse can be directly written to the Hive table through birdLark, without an intermediate landing step. Users can also call the birdLarkinterface through spark to circle the crowd or reverse the crowd bitmap in Hive, so that the data can be directly transmitted to the ClickHouse result table without intermediate landing.
 # Follow-up
 In the future, we will further improve the problem of high CPU load when Clickhouse writes data. In the next step, we will implement the CK-local mode of Clickhouse data source and read end in LarkMidTable, separate read and write, and reduce Clickhouse pressure. In the future we will also add more sink support, such as data push to Pika and corresponding data checking.

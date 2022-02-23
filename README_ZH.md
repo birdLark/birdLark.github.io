@@ -1,10 +1,10 @@
-# Apache birdlark Website
+# Apache birdLark Website
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.github.io/licenses/LICENSE-2.0.html)
 
 [English](README.md) | [中文](README_ZH.md)
 
-这是包含 `https://birdlark.github.io` 的所有源代码的存储库。
+这是包含 `https://birdLark.github.io` 的所有源代码的存储库。
 本指南将指导您如何为LarkMidTable的网站做出贡献。
 
 ## 分支
@@ -13,7 +13,7 @@ main为默认主分支，修改请先fork到自己的仓库，然后在main分�
 
 ```
 main  默认分支
-asf-site    官网正式环境  通过https://birdlark.github.io 访问
+asf-site    官网正式环境  通过https://birdLark.github.io 访问
 asf-staging 官网测试环境  通过https://birdLark.staged.github.io 访问
 ```
 
@@ -111,7 +111,7 @@ css等样式文件放在`src/css`目录下
 
 ### 3.5 首页页面修改
 
-访问页面  https://birdlark.github.io/
+访问页面  https://birdLark.github.io/
 
 位于 `src/pages/home`
 
@@ -124,7 +124,7 @@ css等样式文件放在`src/css`目录下
 
 ### 3.6 团队页面修改
 
-访问页面  https://birdlark.github.io/zh-CN/team
+访问页面  https://birdLark.github.io/zh-CN/team
 
 位于 `src/pages/team`
 
@@ -137,7 +137,7 @@ css等样式文件放在`src/css`目录下
 
 ### 3.7  用户 列表页面修改
 
-访问页面  https://birdlark.github.io/zh-CN/user/
+访问页面  https://birdLark.github.io/zh-CN/user/
 
 位于 `src/pages/user`
 
@@ -152,7 +152,7 @@ css等样式文件放在`src/css`目录下
 
 ### 3.8 version 列表页面修改
 
-访问页面  https://birdlark.github.io/zh-CN/versions/
+访问页面  https://birdLark.github.io/zh-CN/versions/
 
 位于 `src/pages/versions`
 

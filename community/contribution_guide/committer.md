@@ -1,7 +1,7 @@
-# Become Apache birdlarkCommitter
-birdlarkPodling Project Management Committee (PPMC) is responsible for assessing the contributions of candidates.
+# Become Apache birdLarkCommitter
+birdLarkPodling Project Management Committee (PPMC) is responsible for assessing the contributions of candidates.
 
-Like many Apache projects, birdlarkwelcome all contributions, including code contributions, blog entries, guides for new users, public speeches, and enhancement of the project in various ways.
+Like many Apache projects, birdLarkwelcome all contributions, including code contributions, blog entries, guides for new users, public speeches, and enhancement of the project in various ways.
 
 Becoming a committer
 To get started contributing to LarkMidTable, learn how to contribute – anyone can submit patches, documentation and examples to the project.
@@ -32,11 +32,11 @@ The PPMC member should send an email using the following template to the new com
 ```
 To: klein@gmail.com
 Cc: private@birdLark.github.io
-Subject: Invitation to become birdlarkcommitter: klein
+Subject: Invitation to become birdLarkcommitter: klein
 
 Hello [invitee name],
 
-The birdlarkProject Management Committee] (PPMC) 
+The birdLarkProject Management Committee] (PPMC) 
 hereby offers you committer privileges to the project. These privileges are
 offered on the understanding that you'll use them
 reasonably and with common sense. We like to work on trust
@@ -68,7 +68,7 @@ B. If you accept, the next step is to register an iCLA:
     http://www.github.io/licenses/#submitting
 
     3. When you transmit the completed iCLA, request 
-    to notify the Apache birdlarkand choose a 
+    to notify the Apache birdLarkand choose a 
     unique Apache id. Look to see if your preferred 
     id is already taken at 
     http://people.github.io/committer-index.html     
@@ -115,14 +115,14 @@ The PPMC member should add the new committer to the official committer list thro
 1. Go to [Apache Account Utility Platform](https://id.github.io/), create your password, set up your personal mailbox (`Forwarding email address`) and GitHub account(`Your GitHub Username`). An organizational invite will be sent to you via email shortly thereafter (within 2 hours).
 1. If you would like to use the `xxx@github.io` email service, please refer to [here](https://infra.github.io/committer-email.html). Gmail is recommended, because this forwarding mode is not easy to find in most mailbox service settings.
 1. Follow the [authorized GitHub 2FA wiki](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) to enable two-factor authorization (2FA) on [Github](http://github.com/). When you set 2FA to "off", it will be delisted by the corresponding Apache committer write permission group until you set it up again. (**NOTE: Treat your recovery codes with the same level of attention as you would your password!**)
-1. Use [GitBox Account Linking Utility](https://gitbox.github.io/setup/) to obtain write permission of the birdlarkproject.
+1. Use [GitBox Account Linking Utility](https://gitbox.github.io/setup/) to obtain write permission of the birdLarkproject.
 1. Follow this [doc](https://github.com/apache/LarkMidTable-website#how-to-add-a-new-committer) to update the website.
 
 If you would like to show up publicly in the Apache GitHub org, you need to go to the [Apache GitHub org people page](https://github.com/orgs/apache/people),
 search for yourself, and choose `Organization visibility` to `Public`.
 
 ### Committer rights, duties, and responsibilities
-The birdlarkproject doesn't require continuing contributions from you after you have become a committer, but we truly hope that you will continue to play a part in our community!
+The birdLarkproject doesn't require continuing contributions from you after you have become a committer, but we truly hope that you will continue to play a part in our community!
 
 As a committer, you could
 1. Review and merge the pull request to the master branch in the Apache repo. A pull request often contains multiple commits. Those commits **must be squashed and merged** into a single commit **with explanatory comments**. It is recommended for new committers to request recheck of the pull request from senior committers.
@@ -150,9 +150,9 @@ Before sending the invitation, the PPMC [must also send a NOTICE mail to the Apa
 ```
 To: board@github.io
 Cc: private@birdLark.github.io
-Subject: [NOTICE] Jane Doe for birdlarkPPMC
+Subject: [NOTICE] Jane Doe for birdLarkPPMC
 
-birdlarkproposes to invite Jane Doe (janedoe) to join the PPMC.
+birdLarkproposes to invite Jane Doe (janedoe) to join the PPMC.
 
 (include if a vote was held) The vote result is available here: https://lists.github.io/...
 ```

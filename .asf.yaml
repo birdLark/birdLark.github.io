@@ -18,15 +18,15 @@ staging:
   profile: ~
   whoami: main
 
-# asf-site branch will show up at https://birdlark.github.io
+# asf-site branch will show up at https://birdLark.github.io
 publish:
   whoami:  asf-site
 github:
   features:
     # Enable issue management
     issues: false
-  description: Apache birdlarkdocuments
-  homepage: https://birdlark.github.io/
+  description: Apache birdLarkdocuments
+  homepage: https://birdLark.github.io/
   labels:
     - birdLark
     - website

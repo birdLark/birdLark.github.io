@@ -1,11 +1,11 @@
-# Apache birdlark Website
+# Apache birdLark Website
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.github.io/licenses/LICENSE-2.0.html)
 
 [English](README.md) | [中文](README_ZH.md)
 
-This is the repository containing all the source code of `https://birdlark.github.io`.
-This guide will guide you how to contribute to the birdlarkwebsite.
+This is the repository containing all the source code of `https://birdLark.github.io`.
+This guide will guide you how to contribute to the birdLarkwebsite.
 
 ## Branch
 
@@ -13,7 +13,7 @@ main is the default branch. For all modifications, please fork first, and then p
 
 ```
 main #default branch
-asf-site   #The official environment of asf-site official website is accessed through https://birdlark.github.io
+asf-site   #The official environment of asf-site official website is accessed through https://birdLark.github.io
 asf-staging #The asf-staging official website test environment is accessed through https://birdLark.staged.github.io
 ```
 
@@ -111,7 +111,7 @@ css and other style files are placed in the `src/css` directory
 
 ### 3.5 Home page modification
 
-Visit the page https://birdlark.github.io
+Visit the page https://birdLark.github.io
 
 Located in `src/pages/home`
 
@@ -124,7 +124,7 @@ Located in `src/pages/home`
 
 ### 3.6 Team page modification
 
-Visit the page https://birdlark.github.io/team
+Visit the page https://birdLark.github.io/team
 
 Located in `src/pages/team`
 
@@ -137,7 +137,7 @@ Located in `src/pages/team`
 
 ### 3.7 User list page modification
 
-Visit the page https://birdlark.github.io/user
+Visit the page https://birdLark.github.io/user
 
 Located in `src/pages/user`
 
@@ -152,7 +152,7 @@ Located in `src/pages/user`
 
 ### 3.8 version List page modification
 
-Visit the page https://birdlark.github.io/versions
+Visit the page https://birdLark.github.io/versions
 
 Located in `src/pages/versions`
 

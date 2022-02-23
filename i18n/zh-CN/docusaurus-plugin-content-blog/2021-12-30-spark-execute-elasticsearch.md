@@ -14,14 +14,14 @@ tags: [Spark, Kafka, Elasticsearch]
 
 我们部门之前利用Spark对Nginx日志进行分析，统计我们的Web服务访问情况，将Nginx日志每分钟聚合一次最后将结果写入Elasticsearch，然后利用Kibana配置实时监控Dashboard。Elasticsearch和Kibana都很方便、实用，但是随着类似需求越来越多，如何快速通过Spark将数据写入Elasticsearch成为了我们的一大问题。
 
-今天给大家推荐一款能够实现数据快速写入的黑科技 birdlark[https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) 一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上，简单易用，灵活配置，无需开发。
+今天给大家推荐一款能够实现数据快速写入的黑科技 birdLark[https://github.com/apache/incubator-birdLark](https://github.com/apache/incubator-birdLark) 一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上，简单易用，灵活配置，无需开发。
 
 ![](/doc/image_zh/wd-struct.png)
 
 
 ## Kafka to Elasticsearch
 
-和Logstash一样，LarkMidTable同样支持多种类型的数据输入，这里我们以最常见的Kakfa作为输入源为例，讲解如何使用 birdlark将数据快速写入Elasticsearch
+和Logstash一样，LarkMidTable同样支持多种类型的数据输入，这里我们以最常见的Kakfa作为输入源为例，讲解如何使用 birdLark将数据快速写入Elasticsearch
 
 ### Log Sample
 
@@ -41,9 +41,9 @@ datetime String
 count int
 ```
 
-## birdlarkwith Elasticsearch
+## birdLarkwith Elasticsearch
 
-接下来会给大家详细介绍，我们如何通过 birdlark读取Kafka中的数据，对数据进行解析以及聚合，最后将处理结果写入Elasticsearch中。
+接下来会给大家详细介绍，我们如何通过 birdLark读取Kafka中的数据，对数据进行解析以及聚合，最后将处理结果写入Elasticsearch中。
 
 ### LarkMidTable
 
@@ -71,9 +71,9 @@ vim config/birdLark-env.sh
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 ```
 
-### birdlarkPipeline
+### birdLarkPipeline
 
-与Logstash一样，我们仅需要编写一个birdlarkPipeline的配置文件即可完成数据的导入，相信了解Logstash的朋友可以很快入手 birdlark配置。
+与Logstash一样，我们仅需要编写一个birdLarkPipeline的配置文件即可完成数据的导入，相信了解Logstash的朋友可以很快入手 birdLark配置。
 
 配置文件包括四个部分，分别是Spark、Input、filter和Output。
 
@@ -216,16 +216,16 @@ output {
 
 ## Conclusion
 
-在这篇文章中，我们介绍了如何通过 birdlark将Kafka中的数据写入Elasticsearch中。仅仅通过一个配置文件便可快速运行一个Spark Application，完成数据的处理、写入，无需编写任何代码，十分简单。
+在这篇文章中，我们介绍了如何通过 birdLark将Kafka中的数据写入Elasticsearch中。仅仅通过一个配置文件便可快速运行一个Spark Application，完成数据的处理、写入，无需编写任何代码，十分简单。
 
-当数据处理过程中有遇到Logstash无法支持的场景或者Logstah性能无法达到预期的情况下，都可以尝试使用 birdlark解决问题。
+当数据处理过程中有遇到Logstash无法支持的场景或者Logstah性能无法达到预期的情况下，都可以尝试使用 birdLark解决问题。
 
-希望了解 birdlark与Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
+希望了解 birdLark与Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://birdLark.github.io/](https://birdLark.github.io/)
 
 
 **我们近期会再发布一篇《如何用Spark和Elasticsearch做交互式数据分析》，敬请期待.**
 
 ## Contract us
 * 邮件列表 : **dev@birdLark.github.io**. 发送任意内容至 `dev-subscribe@birdLark.github.io`， 按照回复订阅邮件列表。
-* Slack: 发送 `Request to join birdlarkslack` 邮件到邮件列表 (`dev@birdLark.github.io`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
+* Slack: 发送 `Request to join birdLarkslack` 邮件到邮件列表 (`dev@birdLark.github.io`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
 * [bilibili B站 视频](https://space.bilibili.com/1542095008)

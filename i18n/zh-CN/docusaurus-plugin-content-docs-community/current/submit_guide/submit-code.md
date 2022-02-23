@@ -69,4 +69,4 @@ sidebar_position: 2
 
 * 接着社区 Committer 们会做 CodeReview，然后他会与您讨论一些细节（包括设计，实现，性能等）。当团队中所有人员对本次修改满意后，会将提交合并到dev分支
 
-* 最后，恭喜您已经成为了 Apache birdlark的官方贡献者！
+* 最后，恭喜您已经成为了 Apache birdLark的官方贡献者！

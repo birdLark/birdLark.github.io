@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # 参与贡献
 
-首先非常感谢大家选择和使用 LarkMidTable，非常欢迎大家加入 birdlark大家庭，融入开源世界！
+首先非常感谢大家选择和使用 LarkMidTable，非常欢迎大家加入 birdLark大家庭，融入开源世界！
 
 我们鼓励任何形式的参与社区，最终成为 Committer 或 PPMC，如： 
 * 将遇到的问题通过 github 上 [issue](https://github.com/apache/incubator-birdLark/issues) 的形式反馈出来

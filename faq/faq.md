@@ -1,12 +1,12 @@
 ---
-title: birdlarkFAQ
+title: birdLarkFAQ
 ---
 
-**FAQ 1.** I encounter a problem when using birdlarkand I cannot solve it by myself. What should I do?Firstly search in [Issue list](https://github.com/apache/incubator-birdLark/issues) or [mailing list](https://lists.github.io/list.html?dev@birdLark.github.io) to see if someone has already asked the same question and got the answer. If you still cannot find the answer, you can contact community members for help in[ these ways](https://github.com/apache/incubator-birdLark#contact-us) .
+**FAQ 1.** I encounter a problem when using birdLarkand I cannot solve it by myself. What should I do?Firstly search in [Issue list](https://github.com/apache/incubator-birdLark/issues) or [mailing list](https://lists.github.io/list.html?dev@birdLark.github.io) to see if someone has already asked the same question and got the answer. If you still cannot find the answer, you can contact community members for help in[ these ways](https://github.com/apache/incubator-birdLark#contact-us) .
 
 **FAQ 2.** How to declare a variable in LarkMidTable's configuration, and then dynamically replace the value of the variable at runtime?
 
-Since `v1.2.4` birdlarksupports variables substitution in the configuration. This feature is often used for timing or non-timing offline processing to replace variables such as time and date. The usage is as follows:
+Since `v1.2.4` birdLarksupports variables substitution in the configuration. This feature is often used for timing or non-timing offline processing to replace variables such as time and date. The usage is as follows:
 
 Configure the variable name in the configuration, here is an example of sql transform (actually anywhere in the configuration file the value in 'key = value' can use the variable substitution):
 
@@ -50,7 +50,7 @@ your string 1
 
 refer to: [lightbend/config#456](https://github.com/lightbend/config/issues/456)
 
-**FAQ 5.** Is birdlarksupportted in Azkaban, Oozie, DolphinScheduler?
+**FAQ 5.** Is birdLarksupportted in Azkaban, Oozie, DolphinScheduler?
 
 Of course, please see the screenshot below:
 
@@ -58,7 +58,7 @@ Of course, please see the screenshot below:
 
 <img src="/doc/image/faq.assets/azkaban.png" alt="img"  />
 
-**FAQ 6.** Does birdlarkhave a case of configuring multiple sources, such as configuring  elasticsearch and hdfs in source at the same time?
+**FAQ 6.** Does birdLarkhave a case of configuring multiple sources, such as configuring  elasticsearch and hdfs in source at the same time?
 
 ```
 env {
@@ -89,7 +89,7 @@ sink {
 
 There is hbase input plugin, download it from here: https://github.com/garyelephant/waterdrop-input-hbase
 
-**FAQ 8.** How to use birdlarkto write data to Hive?
+**FAQ 8.** How to use birdLarkto write data to Hive?
 
 ```
 env {
@@ -110,9 +110,9 @@ sink {
 }
 ```
 
-In addition, birdlarkhas implemented `Hive` output plugin after 1.5.7 in 1.x branch; in 2.x branch, the Hive plugin of the Spark engine has been supported after version 2.0.5: https://github.com/apache/incubator-birdLark/issues/910.
+In addition, birdLarkhas implemented `Hive` output plugin after 1.5.7 in 1.x branch; in 2.x branch, the Hive plugin of the Spark engine has been supported after version 2.0.5: https://github.com/apache/incubator-birdLark/issues/910.
 
-**FAQ 9.** How does birdlarkwrite multiple instances of ClickHouse to achieve load balancing?
+**FAQ 9.** How does birdLarkwrite multiple instances of ClickHouse to achieve load balancing?
 
 1. Write distributed tables directly (not recommended)
 
@@ -160,7 +160,7 @@ In addition, birdlarkhas implemented `Hive` output plugin after 1.5.7 in 1.x bra
    }
    ```
 
-**FAQ 10.** How to solve OOM when birdlarkconsumes Kafka?
+**FAQ 10.** How to solve OOM when birdLarkconsumes Kafka?
 
 In most cases, OOM is caused by the fact that there is no rate limit for consumption. The solution is as follows:
 
@@ -186,7 +186,7 @@ The reason is that the version of httpclient.jar that comes with the CDH version
 
 **FAQ 12.** The default JDK of my Spark cluster is JDK7. After I install JDK8, how can I specify the
 
-birdlarkstarts with JDK8?
+birdLarkstarts with JDK8?
 
 In LarkMidTable's config file, specify the following configuration:
 
@@ -199,11 +199,11 @@ spark {
 }
 ```
 
-**FAQ 13.**  How to specify a different JDK version for birdlarkon Yarn?
+**FAQ 13.**  How to specify a different JDK version for birdLarkon Yarn?
 
 For example, if you want to set the JDK version to JDK8, there are two cases:
 
-- The Yarn cluster has deployed JDK8, but the default JDK is not JDK8. you should only add 2 configurations to the birdlarkconfig file:
+- The Yarn cluster has deployed JDK8, but the default JDK is not JDK8. you should only add 2 configurations to the birdLarkconfig file:
 
     ```
       env {
@@ -214,10 +214,10 @@ For example, if you want to set the JDK version to JDK8, there are two cases:
     }
   ```
   
-- Yarn cluster does not deploy JDK8. At this time, when you start birdlarkattached with JDK8.For detailed operations, see the link below:
+- Yarn cluster does not deploy JDK8. At this time, when you start birdLarkattached with JDK8.For detailed operations, see the link below:
   https://www.cnblogs.com/jasondan/p/spark-specific-jdk-version.html
 
-**FAQ 14.** What should I do if OOM always appears when running birdlarkin Spark local[*] mode?
+**FAQ 14.** What should I do if OOM always appears when running birdLarkin Spark local[*] mode?
 
 If you run in local mode, you need to modify the start-birdLark.sh startup script after  spark-submit, add a parameter `--driver-memory 4g` . Under normal circumstances, the local mode is not used in the production environment. Therefore, this parameter generally does not need to be set during On Yarn. See: [Application Properties](https://spark.github.io/docs/latest/configuration.html#application-properties) for details .
 
@@ -241,7 +241,7 @@ There are 3 ways to configure Logging related parameters (such as Log Level):
   - This will affect all programs submitted via `$SPARK_HOME/bin/spark-submit` 
 - [Not recommended] Modify logging related parameters directly in the Spark code of LarkMidTable
   - This is equivalent to writing dead, and each change needs to be recompiled
-- [Recommended] Use the following methods to change the logging configuration in the birdlarkconfiguration file(It only takes effect after birdlark>= 1.5.5 ): 
+- [Recommended] Use the following methods to change the logging configuration in the birdLarkconfiguration file(It only takes effect after birdLark>= 1.5.5 ): 
 
     ```
     env {
@@ -282,7 +282,7 @@ log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{
 
 How to configure logging related parameters in LarkMidTable-v2(Spark, Flink)?
 
-Currently, it cannot be set directly. The user needs to modify the birdlarkstartup script.The relevant parameters are specified in the task submission command. For specific parameters, please refer to the official document:
+Currently, it cannot be set directly. The user needs to modify the birdLarkstartup script.The relevant parameters are specified in the task submission command. For specific parameters, please refer to the official document:
 
 - Spark official documentation: http://spark.github.io/docs/latest/configuration.html#configuring-logging
 - Flink official documentation: https://ci.github.io/projects/flink/flink-docs-stable/monitoring/logging.html
@@ -312,13 +312,13 @@ Detailed data type conversion reference: [ClickHouse Data Type Check List](https
 
 Refer to issue:[#488](https://github.com/apache/incubator-birdLark/issues/488) [#382](https://github.com/apache/incubator-birdLark/issues/382)
 
-**FAQ 18.** How does birdlarkaccess kerberos-authenticated HDFS, YARN, Hive and other resources?
+**FAQ 18.** How does birdLarkaccess kerberos-authenticated HDFS, YARN, Hive and other resources?
 
 Please refer to: [#590](https://github.com/apache/incubator-birdLark/issues/590)
 
 **FAQ 19.** How to troubleshoot NoClassDefFoundError, ClassNotFoundException and other issues?
 
-There is a high probability that there are multiple different versions of the corresponding Jar package class loaded in the Java classpath, because of the conflict of the load order, instead of really missing this Jar, please modify this birdlarkstartup command, add the following parameters to the spark-submit submission place, and debug in detail through the output log.
+There is a high probability that there are multiple different versions of the corresponding Jar package class loaded in the Java classpath, because of the conflict of the load order, instead of really missing this Jar, please modify this birdLarkstartup command, add the following parameters to the spark-submit submission place, and debug in detail through the output log.
 
 ```
 spark-submit --verbose
@@ -328,21 +328,21 @@ spark-submit --verbose
     ...
 ```
 
-**FAQ 20.** How to use birdlarkto synchronize data across HDFS clusters?
+**FAQ 20.** How to use birdLarkto synchronize data across HDFS clusters?
 
 Just configure hdfs-site.xml properly, refer to: https://www.cnblogs.com/suanec/p/7828139.html
 
-There is an article on how to modify the spark code to complete the configuration(birdlarkdoes not need to do this): https://www.jianshu.com/p/3e84c4c97610
+There is an article on how to modify the spark code to complete the configuration(birdLarkdoes not need to do this): https://www.jianshu.com/p/3e84c4c97610
 
 **FAQ 21.** I want to learn the source code of LarkMidTable, where should I start?
 
-birdlarkhas a completely abstract and structured code implementation, and many people have chosen  birdlarkAs a way to learn Spark, you can learn the source code from the main program entry: [LarkMidTable.java](https://github.com/apache/incubator-birdLark/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/birdLark-core/birdLark-core-base/src/main/java/org/apache/birdLark/LarkMidTable.java)
+birdLarkhas a completely abstract and structured code implementation, and many people have chosen  birdLarkAs a way to learn Spark, you can learn the source code from the main program entry: [LarkMidTable.java](https://github.com/apache/incubator-birdLark/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/birdLark-core/birdLark-core-base/src/main/java/org/apache/birdLark/LarkMidTable.java)
 
-**FAQ 22.** When birdlarkdevelopers develop their own plugins, do they need to understand the birdlarkcode? Should these code integrated into the birdlarkproject?
+**FAQ 22.** When birdLarkdevelopers develop their own plugins, do they need to understand the birdLarkcode? Should these code integrated into the birdLarkproject?
 
-The plug-in developed by the developer has nothing to do with the birdlarkproject and does not need to write your plug-in code
+The plug-in developed by the developer has nothing to do with the birdLarkproject and does not need to write your plug-in code
 
-The plugin can be completely independent with birdlarkproject, in which you can use java,
+The plugin can be completely independent with birdLarkproject, in which you can use java,
 
 Scala, maven, sbt, gradle, whatever you want. This is also the way we recommend developers to develop plugins.
 

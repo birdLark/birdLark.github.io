@@ -19,11 +19,11 @@ At present, there is a tool **LarkMidTable** in the open source community, the p
 
 ## Operating TiDB with LarkMidTable
 
-We have such a requirement online. Read the website access data of a certain day from TiDB, count the number of visits of each domain name and the status code returned by the service, and finally write the statistical results to another table in TiDB. Let's see how birdlarkimplements such a function.
+We have such a requirement online. Read the website access data of a certain day from TiDB, count the number of visits of each domain name and the status code returned by the service, and finally write the statistical results to another table in TiDB. Let's see how birdLarkimplements such a function.
 
 ### LarkMidTable
 
-[LarkMidTable](https://github.com/apache/incubator-birdLark) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. birdlarkhas a very rich set of plugins that support reading data from TiDB, Kafka, HDFS, Kudu, perform various data processing, and then write the results to TiDB, ClickHouse, Elasticsearch or Kafka.
+[LarkMidTable](https://github.com/apache/incubator-birdLark) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. birdLarkhas a very rich set of plugins that support reading data from TiDB, Kafka, HDFS, Kudu, perform various data processing, and then write the results to TiDB, ClickHouse, Elasticsearch or Kafka.
 
 
 #### Ready to work
@@ -108,11 +108,11 @@ SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.1.0-bin-hadoop2.7}
 ```
 
 
-### Implement the birdlarkprocessing flow
+### Implement the birdLarkprocessing flow
 
-We only need to write a birdlarkconfiguration file to read, process, and write data.
+We only need to write a birdLarkconfiguration file to read, process, and write data.
 
-The birdlarkconfiguration file consists of four parts, `Spark`, `Input`, `Filter` and `Output`. The `Input` part is used to specify the input source of the data, the `Filter` part is used to define various data processing and aggregation, and the `Output` part is responsible for writing the processed data to the specified database or message queue.
+The birdLarkconfiguration file consists of four parts, `Spark`, `Input`, `Filter` and `Output`. The `Input` part is used to specify the input source of the data, the `Filter` part is used to define various data processing and aggregation, and the `Output` part is responsible for writing the processed data to the specified database or message queue.
 
 The whole processing flow is `Input` -> `Filter` -> `Output`, which constitutes the processing flow (Pipeline) of LarkMidTable.
 
@@ -133,7 +133,7 @@ This part of the configuration defines the input source. The following is to rea
 
 ##### Filter
 
-In the Filter section, here we configure a series of transformations, most of the data analysis requirements are completed in the Filter. birdlarkprovides a wealth of plug-ins enough to meet various data analysis needs. Here we complete the data aggregation operation through the SQL plugin.
+In the Filter section, here we configure a series of transformations, most of the data analysis requirements are completed in the Filter. birdLarkprovides a wealth of plug-ins enough to meet various data analysis needs. Here we complete the data aggregation operation through the SQL plugin.
 
     filter {
         sql {
@@ -212,7 +212,7 @@ output {
 }
 ```
 
-Execute the command, specify the configuration file, and run birdlarkto implement our data processing logic.
+Execute the command, specify the configuration file, and run birdLarkto implement our data processing logic.
 
 * Local
 
@@ -245,17 +245,17 @@ mysql> select * from access_collect;
 
 ## Conclusion
 
-In this article, we introduced how to use birdlarkto read data from TiDB, do simple data processing and write it to another table in TiDB. Data can be imported quickly with only one configuration file without writing any code.
+In this article, we introduced how to use birdLarkto read data from TiDB, do simple data processing and write it to another table in TiDB. Data can be imported quickly with only one configuration file without writing any code.
 
-In addition to supporting TiDB data sources, birdlarkalso supports Elasticsearch, Kafka, Kudu, ClickHouse and other data sources.
+In addition to supporting TiDB data sources, birdLarkalso supports Elasticsearch, Kafka, Kudu, ClickHouse and other data sources.
 
-**At the same time, we are developing an important function, which is to use the transaction features of TiDB in birdlarkto realize streaming data processing from Kafka to TiDB, and support Exactly-Once data from end (Kafka) to end (TiDB). consistency. **
+**At the same time, we are developing an important function, which is to use the transaction features of TiDB in birdLarkto realize streaming data processing from Kafka to TiDB, and support Exactly-Once data from end (Kafka) to end (TiDB). consistency. **
 
-If you want to know more functions and cases of birdlarkcombined with TiDB, ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
+If you want to know more functions and cases of birdLarkcombined with TiDB, ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://birdLark.github.io/](https://birdLark.github.io/)
 
 ## Contract us
 * Mailing list : **dev@birdLark.github.io**. Send anything to `dev-subscribe@birdLark.github.io` and subscribe to the mailing list according to the replies.
-* Slack: Send a `Request to join birdlarkslack` email to the mailing list (`dev@birdLark.github.io`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* Slack: Send a `Request to join birdLarkslack` email to the mailing list (`dev@birdLark.github.io`), and we will invite you to join (please make sure you are registered with Slack before doing so).
 * [bilibili B station video](https://space.bilibili.com/1542095008)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

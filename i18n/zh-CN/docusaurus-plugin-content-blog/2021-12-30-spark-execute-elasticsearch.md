@@ -220,7 +220,7 @@ output {
 
 当数据处理过程中有遇到Logstash无法支持的场景或者Logstah性能无法达到预期的情况下，都可以尝试使用 LarkMidTable 解决问题。
 
-希望了解 LarkMidTable 与Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://birdLark.apache.org/](https://birdLark.apache.org/)
+希望了解 LarkMidTable 与Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 
 **我们近期会再发布一篇《如何用Spark和Elasticsearch做交互式数据分析》，敬请期待.**

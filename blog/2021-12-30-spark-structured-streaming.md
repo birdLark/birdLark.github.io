@@ -278,7 +278,7 @@ If you are also interested in these two, you can read our previous article "[How
 "[Excellent data engineer, how to use Spark to do OLAP analysis on TiDB] (2021-12-30-spark-execute-tidb.md)",
 "[How to use Spark to quickly write data to Elasticsearch] (2021-12-30-spark-execute-elasticsearch.md)"
 
-If you want to know more functions and cases of LarkMidTable combined with HBase, ClickHouse, Elasticsearch, Kafka, MySQL and other data sources, you can go directly to the official website [https://birdLark.apache.org/](https://birdLark.apache. org/)
+If you want to know more functions and cases of LarkMidTable combined with HBase, ClickHouse, Elasticsearch, Kafka, MySQL and other data sources, you can go directly to the official website [https://birdlark.github.io/](https://birdLark.apache. org/)
 
 ## 联系我们
 * Mailing list : **dev@birdLark.apache.org**. Send anything to `dev-subscribe@birdLark.apache.org` and subscribe to the mailing list according to the replies.

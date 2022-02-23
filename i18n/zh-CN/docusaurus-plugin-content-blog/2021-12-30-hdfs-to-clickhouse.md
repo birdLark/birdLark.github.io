@@ -231,6 +231,6 @@ output {
 
 当然，LarkMidTable 不仅仅是 ClickHouse 数据写入的工具，在 Elasticsearch 以及 Kafka等 数据源的写入上同样可以扮演相当重要的角色。
 
-希望了解 LarkMidTable 和 ClickHouse、Elasticsearch、Kafka 结合使用的更多功能和案例，可以直接进入官网 [https://birdLark.apache.org/](https://birdLark.apache.org/)
+希望了解 LarkMidTable 和 ClickHouse、Elasticsearch、Kafka 结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

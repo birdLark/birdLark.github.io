@@ -220,7 +220,7 @@ In this post, we introduced how to write data from Kafka to Elasticsearch via La
 
 When there are scenarios that Logstash cannot support or the performance of Logstah cannot meet expectations during data processing, you can try to use LarkMidTable to solve the problem.
 
-If you want to know more functions and cases of using LarkMidTable in combination with Elasticsearch, Kafka and Hadoop, you can go directly to the official website [https://birdLark.apache.org/](https://birdLark.apache.org/)
+If you want to know more functions and cases of using LarkMidTable in combination with Elasticsearch, Kafka and Hadoop, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
 
 
 **We will publish another article "How to Use Spark and Elasticsearch for Interactive Data Analysis" in the near future, so stay tuned.**

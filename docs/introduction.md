@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # LarkMidTable
 
-<img src="https://birdLark.apache.org/image/logo.png" alt="birdLark logo" width="200px" height="200px" align="right" />
+<img src="https://birdlark.github.io/image/logo.png" alt="birdLark logo" width="200px" height="200px" align="right" />
 
 [![Slack](https://img.shields.io/badge/slack-%23birdLark-4f8eba?logo=slack)](https://join.slack.com/t/apachebirdLark/shared_invite/zt-123jmewxe-RjB_DW3M3gV~xL91pZ0oVQ)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ASFLarkMidTable.svg?label=Follow&logo=twitter)](https://twitter.com/ASFLarkMidTable)
@@ -91,13 +91,13 @@ Download address for run-directly software package :https://github.com/apache/in
 ## Quick start
 
 **Spark**
-https://birdLark.apache.org/docs/spark/quick-start
+https://birdlark.github.io/docs/spark/quick-start
 
 **Flink**
-https://birdLark.apache.org/docs/flink/quick-start
+https://birdlark.github.io/docs/flink/quick-start
 
 Detailed documentation on LarkMidTable
-https://birdLark.apache.org/docs/introduction
+https://birdlark.github.io/docs/introduction
 
 ## Application practice cases
 
@@ -136,7 +136,7 @@ volume average daily, and later writing the data to Clickhouse.
 
 Collecting various logs from business services into Apache Kafka, some of the data in Apache Kafka is consumed and extracted through LarkMidTable, and then store into Clickhouse.
 
-For more use cases, please refer to: https://birdLark.apache.org/blog
+For more use cases, please refer to: https://birdlark.github.io/blog
 
 # Code of conduct
 

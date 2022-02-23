@@ -251,7 +251,7 @@ In addition to supporting TiDB data sources, LarkMidTable also supports Elastics
 
 **At the same time, we are developing an important function, which is to use the transaction features of TiDB in LarkMidTable to realize streaming data processing from Kafka to TiDB, and support Exactly-Once data from end (Kafka) to end (TiDB). consistency. **
 
-If you want to know more functions and cases of LarkMidTable combined with TiDB, ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://birdLark.apache.org/](https://birdLark.apache.org/)
+If you want to know more functions and cases of LarkMidTable combined with TiDB, ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
 
 ## Contract us
 * Mailing list : **dev@birdLark.apache.org**. Send anything to `dev-subscribe@birdLark.apache.org` and subscribe to the mailing list according to the replies.

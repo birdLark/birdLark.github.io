@@ -184,6 +184,6 @@ Execute the command, specify the configuration file, and run LarkMidTable to wri
 
 In this post, we covered how to import data from Hive into ClickHouse using LarkMidTable. The data import can be completed quickly through only one configuration file without writing any code, which is very simple.
 
-If you want to know more functions and cases of LarkMidTable combined with ClickHouse, Elasticsearch, Kafka, Hadoop, you can go directly to the official website [https://birdLark.apache.org/](https://birdLark.apache.org/)
+If you want to know more functions and cases of LarkMidTable combined with ClickHouse, Elasticsearch, Kafka, Hadoop, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

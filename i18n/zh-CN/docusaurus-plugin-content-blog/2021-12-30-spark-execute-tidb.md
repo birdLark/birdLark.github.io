@@ -252,7 +252,7 @@ mysql> select * from access_collect;
 
 **于此同时，我们正在研发一个重要功能，就是在 LarkMidTable 中，利用 TiDB 的事务特性，实现从 Kafka 到 TiDB 流式数据处理，并且支持端（Kafka）到端（TiDB）的 Exactly-Once 数据一致性。**
 
-希望了解 LarkMidTable 和 TiDB，ClickHouse、Elasticsearch、Kafka结合使用的更多功能和案例，可以直接进入官网 [https://birdLark.apache.org/](https://birdLark.apache.org/)
+希望了解 LarkMidTable 和 TiDB，ClickHouse、Elasticsearch、Kafka结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 ## 联系我们
 * 邮件列表 : **dev@birdLark.apache.org**. 发送任意内容至 `dev-subscribe@birdLark.apache.org`， 按照回复订阅邮件列表。

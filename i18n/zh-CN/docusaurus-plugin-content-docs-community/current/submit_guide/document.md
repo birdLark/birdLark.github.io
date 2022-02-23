@@ -91,7 +91,7 @@ css等样式文件放在`src/css`目录下
 > 除了首页、团队、用户、Docs>All Version 模块页面外，其余页面都能通过底部的'Edit this page'按钮 直接跳转至对应的github的资源修改页
 
 ### 首页页面修改
-访问页面  https://birdLark.apache.org/
+访问页面  https://birdlark.github.io/
 位于 `src/pages/home`
 
 ```
@@ -100,7 +100,7 @@ css等样式文件放在`src/css`目录下
 │      index.less  首页样式
 ```
 ### 团队页面修改
-访问页面  https://birdLark.apache.org/zh-CN/team
+访问页面  https://birdlark.github.io/zh-CN/team
 位于 `src/pages/team`
 ```
 ├─team
@@ -109,7 +109,7 @@ css等样式文件放在`src/css`目录下
 │ index.less
 ```
 ### 用户 列表页面修改
-访问页面  https://birdLark.apache.org/zh-CN/user/
+访问页面  https://birdlark.github.io/zh-CN/user/
 ```
 位于 `src/pages/user`
 └─versions
@@ -121,7 +121,7 @@ css等样式文件放在`src/css`目录下
 ```
 
 ### version 列表页面修改
-访问页面  https://birdLark.apache.org/zh-CN/versions/
+访问页面  https://birdlark.github.io/zh-CN/versions/
 ```
 位于 `src/pages/versions`
 └─versions

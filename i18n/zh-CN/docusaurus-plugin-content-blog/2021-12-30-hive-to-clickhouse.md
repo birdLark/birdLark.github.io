@@ -182,6 +182,6 @@ output {
 
 在这篇文章中，我们介绍了如何使用 LarkMidTable 将Hive中的数据导入ClickHouse中。仅仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码，十分简单。
 
-希望了解 LarkMidTable 与ClickHouse、Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://birdLark.apache.org/](https://birdLark.apache.org/)
+希望了解 LarkMidTable 与ClickHouse、Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

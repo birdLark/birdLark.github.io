@@ -279,7 +279,7 @@ output {
 《[优秀的数据工程师，怎么用Spark在TiDB上做OLAP分析](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-spark-execute-tidb.mdtent-blog/current/2021-12-30-spark-execute-tidb.md)》、
 《[如何使用Spark快速将数据写入Elasticsearch](i18n/zh-CN/docusaurus-plugin-content-blog/2021-12-30-spark-execute-elasticsearch.md/current/2021-12-30-spark-execute-elasticsearch.md)》
 
-希望了解 LarkMidTable 和 HBase, ClickHouse、Elasticsearch、Kafka、MySQL 等数据源结合使用的更多功能和案例，可以直接进入官网 [https://birdLark.apache.org/](https://birdLark.apache.org/)
+希望了解 LarkMidTable 和 HBase, ClickHouse、Elasticsearch、Kafka、MySQL 等数据源结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 ## 联系我们
 * 邮件列表 : **dev@birdLark.apache.org**. 发送任意内容至 `dev-subscribe@birdLark.apache.org`， 按照回复订阅邮件列表。

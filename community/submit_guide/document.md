@@ -91,7 +91,7 @@ css and other style files are placed in the `src/css` directory
 > Except for the homepage, team, user, Docs>All Version module page, all other pages can be directly jumped to the corresponding github resource modification page through the'Edit this page' button at the bottom
 
 ### Home page modification
-Visit the page https://birdLark.apache.org
+Visit the page https://birdlark.github.io
 Located in `src/pages/home`
 
 ```
@@ -100,7 +100,7 @@ Located in `src/pages/home`
 │ index.less     // homepage style
 ```
 ### Team page modification
-Visit the page https://birdLark.apache.org/team
+Visit the page https://birdlark.github.io/team
 Located in `src/pages/team`
 ```
 ├─team
@@ -109,7 +109,7 @@ Located in `src/pages/team`
 │ index.less
 ```
 ### User list page modification
-Visit the page https://birdLark.apache.org/user
+Visit the page https://birdlark.github.io/user
 ```
 Located in `src/pages/user`
 └─versions
@@ -121,7 +121,7 @@ Located in `src/pages/user`
 ```
 
 ### version List page modification
-Visit the page https://birdLark.apache.org/versions
+Visit the page https://birdlark.github.io/versions
 ```
 Located in `src/pages/versions`
 └─versions

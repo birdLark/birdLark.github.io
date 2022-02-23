@@ -231,6 +231,6 @@ In this post, we covered how to import Nginx log files from HDFS into ClickHouse
 
 Of course, LarkMidTable is not only a tool for ClickHouse data writing, but also plays a very important role in the writing of data sources such as Elasticsearch and Kafka.
 
-If you want to know more functions and cases of LarkMidTable combined with ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://birdLark.apache.org/](https://birdLark.apache.org/)
+If you want to know more functions and cases of LarkMidTable combined with ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://birdlark.github.io/](https://birdlark.github.io/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

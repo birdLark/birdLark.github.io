@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: 'Apache LarkMidTable',
     tagline: 'Dinosaurs are cool',
-    url: 'https://birdLark.apache.org',
+    url: 'https://birdlark.github.io',
     baseUrl: '/',
     onBrokenLinks: 'ignore',
     onBrokenMarkdownLinks: 'warn',

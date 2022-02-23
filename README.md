@@ -1,6 +1,6 @@
 # GitHub birdLark Website
 
-[![License](https://img.shields.io/badge/license-GitHub%202-4EB1BA.svg)](https://www.github.io/licenses/LICENSE-2.0.html)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.github.io/licenses/LICENSE-2.0.html)
 
 [English](README.md) | [中文](README_ZH.md)
 

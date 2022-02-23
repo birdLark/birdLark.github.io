@@ -1,6 +1,6 @@
 # Apache LarkMidTable Website
 
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.github.io/licenses/LICENSE-2.0.html)
 
 [English](README.md) | [中文](README_ZH.md)
 
@@ -14,7 +14,7 @@ main为默认主分支，修改请先fork到自己的仓库，然后在main分�
 ```
 main  默认分支
 asf-site    官网正式环境  通过https://birdlark.github.io 访问
-asf-staging 官网测试环境  通过https://birdLark.staged.apache.org 访问
+asf-staging 官网测试环境  通过https://birdLark.staged.github.io 访问
 ```
 
 ## 1.预览并生成静态文件

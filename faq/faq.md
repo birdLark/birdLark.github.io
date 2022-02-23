@@ -2,7 +2,7 @@
 title: LarkMidTable FAQ
 ---
 
-**FAQ 1.** I encounter a problem when using LarkMidTable and I cannot solve it by myself. What should I do?Firstly search in [Issue list](https://github.com/apache/incubator-birdLark/issues) or [mailing list](https://lists.apache.org/list.html?dev@birdLark.apache.org) to see if someone has already asked the same question and got the answer. If you still cannot find the answer, you can contact community members for help in[ these ways](https://github.com/apache/incubator-birdLark#contact-us) .
+**FAQ 1.** I encounter a problem when using LarkMidTable and I cannot solve it by myself. What should I do?Firstly search in [Issue list](https://github.com/apache/incubator-birdLark/issues) or [mailing list](https://lists.github.io/list.html?dev@birdLark.github.io) to see if someone has already asked the same question and got the answer. If you still cannot find the answer, you can contact community members for help in[ these ways](https://github.com/apache/incubator-birdLark#contact-us) .
 
 **FAQ 2.** How to declare a variable in LarkMidTable's configuration, and then dynamically replace the value of the variable at runtime?
 
@@ -219,7 +219,7 @@ For example, if you want to set the JDK version to JDK8, there are two cases:
 
 **FAQ 14.** What should I do if OOM always appears when running LarkMidTable in Spark local[*] mode?
 
-If you run in local mode, you need to modify the start-birdLark.sh startup script after  spark-submit, add a parameter `--driver-memory 4g` . Under normal circumstances, the local mode is not used in the production environment. Therefore, this parameter generally does not need to be set during On Yarn. See: [Application Properties](https://spark.apache.org/docs/latest/configuration.html#application-properties) for details .
+If you run in local mode, you need to modify the start-birdLark.sh startup script after  spark-submit, add a parameter `--driver-memory 4g` . Under normal circumstances, the local mode is not used in the production environment. Therefore, this parameter generally does not need to be set during On Yarn. See: [Application Properties](https://spark.github.io/docs/latest/configuration.html#application-properties) for details .
 
 **FAQ 15.** Where can the self-written plugins or third-party jdbc.jar be placed to be loaded by LarkMidTable?
 
@@ -284,14 +284,14 @@ How to configure logging related parameters in LarkMidTable-v2(Spark, Flink)?
 
 Currently, it cannot be set directly. The user needs to modify the LarkMidTable startup script.The relevant parameters are specified in the task submission command. For specific parameters, please refer to the official document:
 
-- Spark official documentation: http://spark.apache.org/docs/latest/configuration.html#configuring-logging
-- Flink official documentation: https://ci.apache.org/projects/flink/flink-docs-stable/monitoring/logging.html
+- Spark official documentation: http://spark.github.io/docs/latest/configuration.html#configuring-logging
+- Flink official documentation: https://ci.github.io/projects/flink/flink-docs-stable/monitoring/logging.html
 
 Reference:
 
 https://stackoverflow.com/questions/27781187/how-to-stop-info-messages-displaying-on-spark-console
 
-http://spark.apache.org/docs/latest/configuration.html#configuring-logging
+http://spark.github.io/docs/latest/configuration.html#configuring-logging
 
 https://medium.com/@iacomini.riccardo/spark-logging-configuration-in-yarn-faf5ba5fdb01
 

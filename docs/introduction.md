@@ -140,9 +140,9 @@ For more use cases, please refer to: https://birdlark.github.io/blog
 
 # Code of conduct
 
-This project adheres to the Contributor Covenant [code of conduct](https://www.apache.org/foundation/policies/conduct).
+This project adheres to the Contributor Covenant [code of conduct](https://www.github.io/foundation/policies/conduct).
 By participating, you are expected to uphold this code. Please follow
-the [REPORTING GUIDELINES](https://www.apache.org/foundation/policies/conduct#reporting-guidelines) to report
+the [REPORTING GUIDELINES](https://www.github.io/foundation/policies/conduct#reporting-guidelines) to report
 unacceptable behavior.
 
 ## Developer
@@ -153,7 +153,7 @@ Thanks to all developers!
 
 ## Contact Us
 
-* Mail list: **dev@birdLark.apache.org**. Mail to `dev-subscribe@birdLark.apache.org`, follow the reply to subscribe
+* Mail list: **dev@birdLark.github.io**. Mail to `dev-subscribe@birdLark.github.io`, follow the reply to subscribe
   the mail list.
 * Slack: https://join.slack.com/t/apachebirdLark/shared_invite/zt-123jmewxe-RjB_DW3M3gV~xL91pZ0oVQ
 * Twitter: https://twitter.com/ASFLarkMidTable

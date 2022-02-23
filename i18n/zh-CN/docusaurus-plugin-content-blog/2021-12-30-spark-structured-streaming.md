@@ -32,8 +32,8 @@ LarkMidTable 是一个非常易用，高性能，能够应对海量数据的实�
 
 ```
 cd /usr/local
-wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
-tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+wget https://archive.github.io/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+tar -xvf https://archive.github.io/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
 wget https://github.com/InterestingLab/birdLark/releases/download/v1.3.0/birdLark-1.3.0.zip
 unzip birdLark-1.3.0.zip
 cd birdLark-1.3.0
@@ -74,7 +74,7 @@ kafkaStream {
 }
 ```
 
-通过上面的配置就可以读取kafka里的数据了 ，topics是要订阅的kafka的topic，同时订阅多个topic可以以逗号隔开，consumer.bootstrap.servers就是Kafka的服务器列表，schema是可选项，因为StructuredStreaming从kafka读取到的值(官方固定字段value)是binary类型的，详见http://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html
+通过上面的配置就可以读取kafka里的数据了 ，topics是要订阅的kafka的topic，同时订阅多个topic可以以逗号隔开，consumer.bootstrap.servers就是Kafka的服务器列表，schema是可选项，因为StructuredStreaming从kafka读取到的值(官方固定字段value)是binary类型的，详见http://spark.github.io/docs/latest/structured-streaming-kafka-integration.html
 但是如果你确定你kafka里的数据是json字符串的话，你可以指定schema，input插件将按照你指定的schema解析
 
 #### Filter
@@ -106,7 +106,7 @@ output{
 }
 ```
 
-`topic` 是你要输出的topic，` producer.bootstrap.servers`是kafka集群列表，`streaming_output_mode`是StructuredStreaming的一个输出模式参数，有三种类型`append|update|complete`，具体使用参见文档http://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-modes
+`topic` 是你要输出的topic，` producer.bootstrap.servers`是kafka集群列表，`streaming_output_mode`是StructuredStreaming的一个输出模式参数，有三种类型`append|update|complete`，具体使用参见文档http://spark.github.io/docs/latest/structured-streaming-programming-guide.html#output-modes
 
 `checkpointLocation`是StructuredStreaming的checkpoint路径，如果配置了的话，这个目录会存储程序的运行信息，比如程序退出再启动的话会接着上次的offset进行消费。
 
@@ -231,7 +231,7 @@ filter {
     
     #左关联右表必须设置watermark
     #右关左右表必须设置watermark
-    #http://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#inner-joins-with-optional-watermarking
+    #http://spark.github.io/docs/latest/structured-streaming-programming-guide.html#inner-joins-with-optional-watermarking
     Watermark {
               source_table_name = "click_table" #这里可以指定为某个临时表添加watermark，不指定的话就是为input中的第一个
               time_field = "time"
@@ -282,6 +282,6 @@ output {
 希望了解 LarkMidTable 和 HBase, ClickHouse、Elasticsearch、Kafka、MySQL 等数据源结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 ## 联系我们
-* 邮件列表 : **dev@birdLark.apache.org**. 发送任意内容至 `dev-subscribe@birdLark.apache.org`， 按照回复订阅邮件列表。
-* Slack: 发送 `Request to join LarkMidTable slack` 邮件到邮件列表 (`dev@birdLark.apache.org`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
+* 邮件列表 : **dev@birdLark.github.io**. 发送任意内容至 `dev-subscribe@birdLark.github.io`， 按照回复订阅邮件列表。
+* Slack: 发送 `Request to join LarkMidTable slack` 邮件到邮件列表 (`dev@birdLark.github.io`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
 * [bilibili B站 视频](https://space.bilibili.com/1542095008)

@@ -5,7 +5,7 @@ sidebar_position: 1
 
 **FAQ 1.** 使用LarkMidTable时遇到问题，我自己解决不了，我应该怎么办？
 
-首先搜索[Issue列表](https://github.com/apache/incubator-birdLark/issues)或者[邮件列表](https://lists.apache.org/list.html?dev@birdLark.apache.org)看是否有人已经提问过相同问题并已得到解决。如果仍然没有找到答案，可以通过[这些方式](https://github.com/apache/incubator-birdLark#contact-us)联系社区人员寻求帮助。
+首先搜索[Issue列表](https://github.com/apache/incubator-birdLark/issues)或者[邮件列表](https://lists.github.io/list.html?dev@birdLark.github.io)看是否有人已经提问过相同问题并已得到解决。如果仍然没有找到答案，可以通过[这些方式](https://github.com/apache/incubator-birdLark#contact-us)联系社区人员寻求帮助。
 
 **FAQ 2.** LarkMidTable 中如何在配置中指定变量，之后在运行时动态指定变量的值？
 
@@ -228,7 +228,7 @@ env {
 **FAQ 14.** Spark local[*] 模式下跑LarkMidTable，总是出现OOM怎么办？
 
 如果用local模式跑的话，需要修改一下start-birdLark.sh启动脚本，在spark-submit后面，增加一个参数 `--driver-memory 4g` 。一般情况下生产环境不用local 模式，所以这个参数在On Yarn时一般不需要设置。
-详见 ： [Application Properties](https://spark.apache.org/docs/latest/configuration.html#application-properties)。
+详见 ： [Application Properties](https://spark.github.io/docs/latest/configuration.html#application-properties)。
 
 **FAQ 15.** 自己编写的插件或者是第三方的jdbc.jar放在哪里可以被 LarkMidTable 加载？
 
@@ -293,14 +293,14 @@ LarkMidTable-v2(Spark, Flink) 如何配置logging相关参数？
 
 目前暂时还不能直接设置，需要用户修改LarkMidTable启动脚本，在Spark或者Flink的提交任务命令中指定相关参数，具体参数可参照官方文档：
 
-- Spark 官方文档：http://spark.apache.org/docs/latest/configuration.html#configuring-logging
-- Flink官方文档：https://ci.apache.org/projects/flink/flink-docs-stable/monitoring/logging.html
+- Spark 官方文档：http://spark.github.io/docs/latest/configuration.html#configuring-logging
+- Flink官方文档：https://ci.github.io/projects/flink/flink-docs-stable/monitoring/logging.html
 
 Reference:
 
 https://stackoverflow.com/questions/27781187/how-to-stop-info-messages-displaying-on-spark-console
 
-http://spark.apache.org/docs/latest/configuration.html#configuring-logging
+http://spark.github.io/docs/latest/configuration.html#configuring-logging
 
 https://medium.com/@iacomini.riccardo/spark-logging-configuration-in-yarn-faf5ba5fdb01
 

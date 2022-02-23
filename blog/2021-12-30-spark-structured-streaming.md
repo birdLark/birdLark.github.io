@@ -32,8 +32,8 @@ The following are simple steps, the specific installation can refer to [Quick St
 
 ```
 cd /usr/local
-wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
-tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+wget https://archive.github.io/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+tar -xvf https://archive.github.io/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
 wget https://github.com/InterestingLab/birdLark/releases/download/v1.3.0/birdLark-1.3.0.zip
 unzip birdLark-1.3.0.zip
 cd birdLark-1.3.0
@@ -74,7 +74,7 @@ kafkaStream {
 }
 ```
 
-Through the above configuration, the data in kafka can be read. Topics is the topic of kafka to be subscribed to. Subscribing to multiple topics at the same time can be separated by commas. Consumer.bootstrap.servers is the list of Kafka servers, and schema is optional. Because the value read by StructuredStreaming from kafka (official fixed field value) is of binary type, see http://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html
+Through the above configuration, the data in kafka can be read. Topics is the topic of kafka to be subscribed to. Subscribing to multiple topics at the same time can be separated by commas. Consumer.bootstrap.servers is the list of Kafka servers, and schema is optional. Because the value read by StructuredStreaming from kafka (official fixed field value) is of binary type, see http://spark.github.io/docs/latest/structured-streaming-kafka-integration.html
 But if you are sure that the data in your kafka is a json string, you can specify the schema, and the input plugin will parse it according to the schema you specify
 
 #### Filter
@@ -106,7 +106,7 @@ output{
 }
 ```
 
-`topic` is the topic you want to output, `producer.bootstrap.servers` is a list of kafka clusters, `streaming_output_mode` is an output mode parameter of StructuredStreaming, there are three types of `append|update|complete`, for details, see the documentation http: //spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-modes
+`topic` is the topic you want to output, `producer.bootstrap.servers` is a list of kafka clusters, `streaming_output_mode` is an output mode parameter of StructuredStreaming, there are three types of `append|update|complete`, for details, see the documentation http: //spark.github.io/docs/latest/structured-streaming-programming-guide.html#output-modes
 
 `checkpointLocation` is the checkpoint path of StructuredStreaming. If configured, this directory will store the running information of the program. For example, if the program exits and restarts, it will continue to consume the last offset.
 
@@ -231,7 +231,7 @@ filter {
     
     #Left association right table must set watermark
     #Right off left and right tables must set watermark
-    #http://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#inner-joins-with-optional-watermarking
+    #http://spark.github.io/docs/latest/structured-streaming-programming-guide.html#inner-joins-with-optional-watermarking
     Watermark {
               source_table_name = "click_table" #Here you can specify to add a watermark to a temporary table. If you don't specify it, it will be the first one in the input.
               time_field = "time"
@@ -281,6 +281,6 @@ If you are also interested in these two, you can read our previous article "[How
 If you want to know more functions and cases of LarkMidTable combined with HBase, ClickHouse, Elasticsearch, Kafka, MySQL and other data sources, you can go directly to the official website [https://birdlark.github.io/](https://birdLark.apache. org/)
 
 ## 联系我们
-* Mailing list : **dev@birdLark.apache.org**. Send anything to `dev-subscribe@birdLark.apache.org` and subscribe to the mailing list according to the replies.
-* Slack: Send a `Request to join LarkMidTable slack` email to the mailing list (`dev@birdLark.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* Mailing list : **dev@birdLark.github.io**. Send anything to `dev-subscribe@birdLark.github.io` and subscribe to the mailing list according to the replies.
+* Slack: Send a `Request to join LarkMidTable slack` email to the mailing list (`dev@birdLark.github.io`), and we will invite you to join (please make sure you are registered with Slack before doing so).
 * [bilibili B station video](https://space.bilibili.com/1542095008)

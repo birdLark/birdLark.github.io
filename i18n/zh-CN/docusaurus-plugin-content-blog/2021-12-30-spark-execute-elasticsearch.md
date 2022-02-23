@@ -60,8 +60,8 @@ count int
 
 ```yaml
 cd /usr/local
-wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
-tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+wget https://archive.github.io/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+tar -xvf https://archive.github.io/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
 wget https://github.com/InterestingLab/birdLark/releases/download/v1.1.1/birdLark-1.1.1.zip
 unzip birdLark-1.1.1.zip
 cd birdLark-1.1.1
@@ -226,6 +226,6 @@ output {
 **我们近期会再发布一篇《如何用Spark和Elasticsearch做交互式数据分析》，敬请期待.**
 
 ## Contract us
-* 邮件列表 : **dev@birdLark.apache.org**. 发送任意内容至 `dev-subscribe@birdLark.apache.org`， 按照回复订阅邮件列表。
-* Slack: 发送 `Request to join LarkMidTable slack` 邮件到邮件列表 (`dev@birdLark.apache.org`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
+* 邮件列表 : **dev@birdLark.github.io**. 发送任意内容至 `dev-subscribe@birdLark.github.io`， 按照回复订阅邮件列表。
+* Slack: 发送 `Request to join LarkMidTable slack` 邮件到邮件列表 (`dev@birdLark.github.io`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
 * [bilibili B站 视频](https://space.bilibili.com/1542095008)

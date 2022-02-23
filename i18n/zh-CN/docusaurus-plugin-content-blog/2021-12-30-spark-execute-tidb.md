@@ -94,8 +94,8 @@ CREATE TABLE access_collect (
 ```
 # 下载安装Spark
 cd /usr/local
-wget https://archive.apache.org/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
-tar -xvf https://archive.apache.org/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
+wget https://archive.github.io/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
+tar -xvf https://archive.github.io/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
 wget
 # 下载安装birdLark
 https://github.com/InterestingLab/birdLark/releases/download/v1.2.0/birdLark-1.2.0.zip
@@ -255,8 +255,8 @@ mysql> select * from access_collect;
 希望了解 LarkMidTable 和 TiDB，ClickHouse、Elasticsearch、Kafka结合使用的更多功能和案例，可以直接进入官网 [https://birdlark.github.io/](https://birdlark.github.io/)
 
 ## 联系我们
-* 邮件列表 : **dev@birdLark.apache.org**. 发送任意内容至 `dev-subscribe@birdLark.apache.org`， 按照回复订阅邮件列表。
-* Slack: 发送 `Request to join LarkMidTable slack` 邮件到邮件列表 (`dev@birdLark.apache.org`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
+* 邮件列表 : **dev@birdLark.github.io**. 发送任意内容至 `dev-subscribe@birdLark.github.io`， 按照回复订阅邮件列表。
+* Slack: 发送 `Request to join LarkMidTable slack` 邮件到邮件列表 (`dev@birdLark.github.io`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
 * [bilibili B站 视频](https://space.bilibili.com/1542095008)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

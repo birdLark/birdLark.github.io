@@ -60,8 +60,8 @@ The following are simple steps, the specific installation can refer to [Quick St
 
 ```yaml
 cd /usr/local
-wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
-tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+wget https://archive.github.io/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+tar -xvf https://archive.github.io/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
 wget https://github.com/InterestingLab/birdLark/releases/download/v1.1.1/birdLark-1.1.1.zip
 unzip birdLark-1.1.1.zip
 cd birdLark-1.1.1
@@ -226,6 +226,6 @@ If you want to know more functions and cases of using LarkMidTable in combinatio
 **We will publish another article "How to Use Spark and Elasticsearch for Interactive Data Analysis" in the near future, so stay tuned.**
 
 ## Contract us
-* Mailing list : **dev@birdLark.apache.org**. Send anything to `dev-subscribe@birdLark.apache.org` and subscribe to the mailing list according to the replies.
-* Slack: Send a `Request to join LarkMidTable slack` email to the mailing list (`dev@birdLark.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* Mailing list : **dev@birdLark.github.io**. Send anything to `dev-subscribe@birdLark.github.io` and subscribe to the mailing list according to the replies.
+* Slack: Send a `Request to join LarkMidTable slack` email to the mailing list (`dev@birdLark.github.io`), and we will invite you to join (please make sure you are registered with Slack before doing so).
 * [bilibili B station video](https://space.bilibili.com/1542095008)

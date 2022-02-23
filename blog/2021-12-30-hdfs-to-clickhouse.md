@@ -65,8 +65,8 @@ The following are simple steps, the specific installation can refer to [Quick St
 ```shell
 cd /usr/local
 
-wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
-tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+wget https://archive.github.io/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+tar -xvf https://archive.github.io/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
 
 wget https://github.com/InterestingLab/birdLark/releases/download/v1.1.1/birdLark-1.1.1.zip
 

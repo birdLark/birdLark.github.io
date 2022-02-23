@@ -1,6 +1,6 @@
 # Apache LarkMidTable Website
 
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.github.io/licenses/LICENSE-2.0.html)
 
 [English](README.md) | [中文](README_ZH.md)
 
@@ -14,7 +14,7 @@ main is the default branch. For all modifications, please fork first, and then p
 ```
 main #default branch
 asf-site   #The official environment of asf-site official website is accessed through https://birdlark.github.io
-asf-staging #The asf-staging official website test environment is accessed through https://birdLark.staged.apache.org
+asf-staging #The asf-staging official website test environment is accessed through https://birdLark.staged.github.io
 ```
 
 ## 1. Preview and generate static files

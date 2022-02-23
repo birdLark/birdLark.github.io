@@ -17,7 +17,7 @@ rather than just open pull requests.
 
 ## Contributing by helping other users
 
-A great way to contribute to LarkMidTable is to help answer user questions on the `dev@birdLark.apache.org`
+A great way to contribute to LarkMidTable is to help answer user questions on the `dev@birdLark.github.io`
 mailing list or on StackOverflow. There are always many new LarkMidTable users; taking a few minutes to
 help answer a question is a very valuable community service.
 
@@ -25,14 +25,14 @@ Contributors should subscribe to this list and follow it in order to keep up to 
 happening in LarkMidTable. Answering questions is an excellent and visible way to help the community,
 which also demonstrates your expertise.
 
-See the [Mailing Lists guide](https://lists.apache.org/list.html?dev@birdLark.apache.org) for guidelines
+See the [Mailing Lists guide](https://lists.github.io/list.html?dev@birdLark.github.io) for guidelines
 about how to effectively participate in discussions on the mailing list, as well as forums
 like ISSUE.
 
 ## Contributing by testing releases
 
 LarkMidTable's release process is community-oriented, and members of the community can vote on new
-releases on the `dev@birdLark.apache.org` mailing list. LarkMidTable users are invited to subscribe to
+releases on the `dev@birdLark.github.io` mailing list. LarkMidTable users are invited to subscribe to
 this list to receive announcements, and test their workloads on newer release and provide
 feedback on any performance or correctness issues found in the newer release.
 
@@ -80,7 +80,7 @@ must provide a benchmark to prove the problem is indeed fixed.
 
 Note that, data correctness/data loss bugs are very serious. Make sure the corresponding bug
 report ISSUE ticket is labeled as `correctness` or `data-loss`. If the bug report doesn't get
-enough attention, please send an email to `dev@birdLark.apache.org`, to draw more attentions.
+enough attention, please send an email to `dev@birdLark.github.io`, to draw more attentions.
 
 It is possible to propose new features as well. These are generally not helpful unless
 accompanied by detail, such as a design document and/or code change. Large new contributions
@@ -126,7 +126,7 @@ Review can take hours or days of committer time. Everyone benefits if contributo
 changes that are useful, clear, easy to evaluate, and already pass basic checks.
 
 Sometimes, a contributor will already have a particular new change or bug in mind. If seeking
-ideas, consult the list of starter tasks in ISSUE, or ask the `dev@birdLark.apache.org` mailing list.
+ideas, consult the list of starter tasks in ISSUE, or ask the `dev@birdLark.github.io` mailing list.
 
 Before proceeding, contributors should evaluate if the proposed change is likely to be relevant,
 new and actionable:
@@ -134,8 +134,8 @@ new and actionable:
 - Is it clear that code must change? Proposing a ISSUE and pull request is appropriate only when a
   clear problem or change has been identified. If simply having trouble using LarkMidTable, use the mailing
   lists first, rather than consider filing a ISSUE or proposing a change. When in doubt, email
-  `dev@birdLark.apache.org` first about the possible change
-- Search the `dev@birdLark.apache.org` mailing list for
+  `dev@birdLark.github.io` first about the possible change
+- Search the `dev@birdLark.github.io` mailing list for
   related discussions.
   Often, the problem has been discussed before, with a resolution that doesn't require a code
   change, or recording what kinds of changes will not be accepted as a resolution.
@@ -278,7 +278,7 @@ decisions are discussed in ISSUE.
            possible fix by the target version.
     1. Do not include a patch file; pull requests are used to propose the actual change.
 1. If the change is a large change, consider inviting discussion on the issue at
-   `dev@birdLark.apache.org` first before proceeding to implement the change.
+   `dev@birdLark.github.io` first before proceeding to implement the change.
 
 ### Pull request
 
@@ -354,16 +354,16 @@ decisions are discussed in ISSUE.
 
 If you're not sure about the right style for something, try to follow the style of the existing
 codebase. Look at whether there are other examples in the code that use your feature. Feel free
-to ask on the `dev@birdLark.apache.org` list as well and/or ask committers.
+to ask on the `dev@birdLark.github.io` list as well and/or ask committers.
 
 ## Code of conduct
-The Apache LarkMidTable project follows the [Apache Software Foundation Code of Conduct](https://www.apache.org/foundation/policies/conduct.html). The [code of conduct](https://www.apache.org/foundation/policies/conduct.html) applies to all spaces managed by the Apache Software Foundation, including IRC, all public and private mailing lists, issue trackers, wikis, blogs, Twitter, and any other communication channel used by our communities. A code of conduct which is specific to in-person events (ie., conferences) is codified in the published ASF anti-harassment policy.
+The Apache LarkMidTable project follows the [Apache Software Foundation Code of Conduct](https://www.github.io/foundation/policies/conduct.html). The [code of conduct](https://www.github.io/foundation/policies/conduct.html) applies to all spaces managed by the Apache Software Foundation, including IRC, all public and private mailing lists, issue trackers, wikis, blogs, Twitter, and any other communication channel used by our communities. A code of conduct which is specific to in-person events (ie., conferences) is codified in the published ASF anti-harassment policy.
 
 We expect this code of conduct to be honored by everyone who participates in the Apache community formally or informally, or claims any affiliation with the Foundation, in any Foundation-related activities and especially when representing the ASF, in any role.
 
 This code <u>is not exhaustive or complete</u>. It serves to distill our common understanding of a collaborative, shared environment and goals. We expect it to be followed in spirit as much as in the letter, so that it can enrich all of us and the technical communities in which we participate.
 
-For more information and specific guidelines, refer to the [Apache Software Foundation Code of Conduct](https://www.apache.org/foundation/policies/conduct.html) .
+For more information and specific guidelines, refer to the [Apache Software Foundation Code of Conduct](https://www.github.io/foundation/policies/conduct.html) .
 
 
-Acknowledgement: This document refers to [Spark](https://spark.apache.org/contributing.html)
+Acknowledgement: This document refers to [Spark](https://spark.github.io/contributing.html)

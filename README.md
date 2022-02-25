@@ -1,169 +1,90 @@
-# GitHub birdLark Website
+# LarkMidTable
 
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.github.io/licenses/LICENSE-2.0.html)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-[English](README.md) | [中文](README_ZH.md)
+[English](README_EN.md)| [中文](README.md)
 
-This is the repository containing all the source code of `https://birdLark.github.io`.
-This guide will guide you how to contribute to the birdLarkwebsite.
+LarkMidTable Chinese name Skylark, the cloud stands for big data, and the finch stands for the ordinary and freedom.
 
-## Branch
+LarkMidTable is a one-stop open source data middle office that implements metadata management, data warehouse development, data quality management, data visualization, and achieves efficient data foreground and provides data services.
 
-main is the default branch. For all modifications, please fork first, and then proceed on the main branch.
 
-```
-main #default branch
-asf-site   #The official environment of asf-site official website is accessed through https://birdLark.github.io
-asf-staging #The asf-staging official website test environment is accessed through https://birdLark.staged.github.io
-```
 
-## 1. Preview and generate static files
+[![Stargazers over time](https://starchart.cc/wxgzgl/larkMidTable.svg)](#)
 
-This website is compiled using node, using Docusaurus framework components
+# **Product Vision**
 
-1. Download and install nodejs (version>12.5.0)
-2. Clone the code to the local `git clone git@github.com:apache/incubator-birdLark-website.git`
-2. Run `npm install` to install the required dependent libraries.
-3. Run `npm run start` in the root directory, you can visit http://localhost:3000 to view the English mode preview of the site
-4. Run `npm run start-zh` in the root directory, you can visit http://localhost:3000 to view the Chinese mode preview of the site
-5. To generate static website resource files, run `npm run build`. The static resources of the build are in the build directory.
+1. Meet many small businesses and provide one-stop solutions.
+2. Make world-class products that can Google or Apple.
+3. Create value, generate value, and make the world a better place.
 
-## 2. Directory structure
+#  Advertising Space 
 
-```
-├── LICENSE
-├── Logo.png
-├── README.md
-├── README_ZH.md
-├── babel.config.js
-├── blog
-├── community  // Community
-├── docs  // Documentation
-├── docusaurus.config.js
-|-- download  // Download
-├── faq  // Q&A
-├── i18n
-│       └── zh-CN  // Internationalized Chinese
-│           ├── docusaurus-plugin-content-blog
-│           ├── docusaurus-plugin-content-docs
-│           ├── docusaurus-plugin-content-docs-community
-│           ├── docusaurus-plugin-content-docs-download
-│           ├── docusaurus-plugin-content-docs-faq
-│           └── docusaurus-theme-classic
-├── package.json
-├── sidebars.js
-├── src
-│       ├── components
-│       ├── css
-│       ├── js
-│       ├── pages
-│       │       ├── home
-│       │       ├── index.tsx
-│       │       ├── team
-│       │       ├── user
-│       │       └── versions
-│       └── styles
-├── static  // static resources
-│       ├── doc  // Static resources for documentation
-│       │       ├── image  // Document common image
-│       │       ├── image_en  // English document picture
-│       │       └── image_zh  // Chinese document picture
-│       ├── home  // Homepage pictures
-│       ├── image  // Module common pictures
-│       └── user  // user picture
-├── tools
-        │└── build-docs.sh  // Document sync script
-├── tsconfig.json
-├── versioned_docs  // Version documentation
-│       ├── version-2.0.5
-├── versioned_sidebars  // Version sidebars
-│       ├── version-2.0.5-sidebars.json
-├── versions.json  // Version
-```
+**(AD长期招租，有需要宣传和推广产品的，可以加我微信:LarkMidTable2021)**
 
-## 3. Specification
+[LarkMidTable产品](https://github.com/wxgzgl/LarkMidTable)
 
-### 3.1 Directory naming convention
+LarkMidTable 是一站式开源的数据中台，实现元数据管理，数据仓库开发，数据质量管理，数据的可视化，实现高效赋能数据前台并提供数据服务的产品。
 
-Use all lowercase, separated by underscores. If there is a plural structure, use plural nomenclature, and do not use plural abbreviations
+# Architecture Diagram
 
-Positive example: `scripts / styles / components / images / utils / layouts / demo_styles / demo-scripts / img / doc`
+![系统架构图](https://img2020.cnblogs.com/blog/622382/202010/622382-20201019215540747-440767668.jpg ) 
 
-Counter example: `script / style / demoStyles / imgs / docs`
 
-### 3.2 javascript and the naming convention of static resource files
 
-All lowercase, separated by a dash
+# Product Renderings
 
-Positive example: `render-dom.js / signup.css / index.html / company-logo.png`
+![登陆页面](https://img2022.cnblogs.com/blog/622382/202201/622382-20220124162212117-942279447.jpg)
 
-Counter example: `renderDom.js / UserManagement.html`
+![数据报表](https://img2022.cnblogs.com/blog/622382/202202/622382-20220208153920857-1211695235.jpg)
 
-### 3.3 Resource Path
+![基础建设](https://img2022.cnblogs.com/blog/622382/202202/622382-20220213093859410-908575610.png)
 
-Image resources are unified under `static/{module name}`
+![数据集成](https://img2022.cnblogs.com/blog/622382/202202/622382-20220213095256736-980802722.png)
 
-css and other style files are placed in the `src/css` directory
+![数据开发](https://img2022.cnblogs.com/blog/622382/202202/622382-20220213093945512-1802846752.png)
 
-### 3.4 Page content modification
 
-> Except for the homepage, team, user, Docs>All Version module page, all other pages can be directly jumped to the corresponding github resource modification page through the'Edit this page' button at the bottom
 
-### 3.5 Home page modification
+# Product Features
 
-Visit the page https://birdLark.github.io
+| **function**                | **Features**   | **The database type** | **Read type** | **Write type** |
+| --------------------------- | :------------- | --------------------- | ------------- | -------------- |
+| **Data Integration**        | Batch          | Mysql                 | enable        | enable         |
+|                             |                | PostgreSql            | enable        | enable         |
+|                             |                | Mongodb               | enable        | enable         |
+|                             |                | SqlServer             | enable        | enable         |
+|                             |                | Oracle                | enable        | enable         |
+|                             |                | SAPHana               | enable        | enable         |
+|                             |                | ClickHouse            | enable        | enable         |
+|                             |                | Hive                  |               | enable         |
+|                             |                | Hbase                 | enable        | enable         |
+|                             |                | Hdfs                  | enable        | enable         |
+|                             |                | ElasticSearch         |               |                |
+|                             |                | Kudu                  |               |                |
+|                             |                | Redis                 |               |                |
+|                             | Real           | Kafka                 |               |                |
+|                             |                | MySQL Binlog          |               |                |
+|                             |                | MongoDB Oplog         |               |                |
+|                             |                | PostgreSQL WAL        |               |                |
+| **Task logical scheduling** | scheduling     |                       | enable        | enable         |
 
-Located in `src/pages/home`
 
-```
-├── home
-        ├── index.jsx
-        ├── index.less
-        └── languages.json
-```
 
-### 3.6 Team page modification
+# **Get Started Quickly**
 
-Visit the page https://birdLark.github.io/team
+Installation manual      [Installation manual](https://github.com/wxgzgl/flinkx-web/blob/dev/larkmidtable-doc/userGuid.md)
 
-Located in `src/pages/team`
+Operating manual  	[Operating manual](https://github.com/wxgzgl/LarkMidTable/tree/dev/larkmidtable-doc/userManual.md)
 
-```
-├── team
-        ├── index.js
-        ├── index.less
-        └── languages.json
-```
+Plugin Development Manual     [Plugin Development Manual](https://github.com/wxgzgl/LarkMidTable/tree/master/larkmidtable-doc/pluginDev.md)
 
-### 3.7 User list page modification
+# Fields of application
 
-Visit the page https://birdLark.github.io/user
+Smart campus, smart transportation, smart finance, smart agriculture, smart healthcare, smart government and other big data fields
 
-Located in `src/pages/user`
+# Technological Exchanges
 
-```
-├── user
-        ├── data.json
-        ├── images.json
-        ├── index.js
-        ├── index.less
-        └── languages.json
-```
+**One person goes fast, a group of people go farther.**
 
-### 3.8 version List page modification
-
-Visit the page https://birdLark.github.io/versions
-
-Located in `src/pages/versions`
-
-```
-└── versions
-        ├── config.json
-        ├── index.js
-        └── index.less
-```
-
-### 3.9 add a new version for documents
-
-- 1、Run `npm run docusaurus docs:version replace_by_target_version` locally to copy a document.
-- 2、Modify the last version in `/src/pages/version/index.js` .
+**Pay attention to the WeChat public number [LarkMidTable], and reply to [LarkMidTable], after getting WeChat, add me to pull you to the WeChat group, and provide you with free services throughout the process, you can also communicate big data technology with other partners, if you think the project is good, you can star attention, LarkMidTable team will be very grateful for your attention!**

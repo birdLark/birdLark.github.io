@@ -1,169 +1,84 @@
-# GitHub birdLark Website
+# LarkMidTable
 
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.github.io/licenses/LICENSE-2.0.html)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-[English](README.md) | [中文](README_ZH.md)
+ [中文](README.md)|  [English](README_EN.md)
 
-这是包含 `https://birdLark.github.io` 的所有源代码的存储库。
-本指南将指导您如何为LarkMidTable的网站做出贡献。
+LarkMidTable 中文名称 云雀，云代表大数据，雀代表平凡和自由。
 
-## 分支
+LarkMidTable 是一站式开源的数据中台，实现元数据管理，数据仓库开发，数据质量管理，数据的可视化，实现高效赋能数据前台并提供数据服务的产品。
 
-main为默认主分支，修改请先fork到自己的仓库，然后在main分支上进行开发修改。
 
-```
-main  默认分支
-asf-site    官网正式环境  通过https://birdLark.github.io 访问
-asf-staging 官网测试环境  通过https://birdLark.staged.github.io 访问
-```
 
-## 1.预览并生成静态文件
+[![Stargazers over time](https://starchart.cc/wxgzgl/larkMidTable.svg)](#)
 
-本网站是使用node编译的，使用的是Docusaurus框架组件
+# **产品愿景**
 
-1. 下载并安装 nodejs(version>12.5.0)
-2. 克隆代码到本地 `git clone  git@github.com:apache/incubator-birdLark-website.git`
-2. 运行 `npm install` 来安装所需的依赖库。
-3. 在根目录运行`npm run start`，可以访问http://localhost:3000查看站点英文模式预览
-4. 在根目录运行`npm run start-zh`，可以访问http://localhost:3000查看站点的中文模式预览
-5. 要生成静态网站资源文件，运行 `npm run build`。构建的静态资源在build目录中。
+1.满足许多的小企业，提供一站式的解决方案。
 
-## 2.目录结构
+2.做出世界级别，能够媲美BAT大厂的产品。
 
-```
-├── LICENSE
-├── Logo.png
-├── README.md
-├── README_ZH.md
-├── babel.config.js
-├── blog
-├── community  // 社区
-├── docs  // 文档
-├── docusaurus.config.js
-|-- download  // 下载
-├── faq  // Q&A
-├── i18n
-│       └── zh-CN  // 国际化中文
-│           ├── docusaurus-plugin-content-blog
-│           ├── docusaurus-plugin-content-docs
-│           ├── docusaurus-plugin-content-docs-community
-│           ├── docusaurus-plugin-content-docs-download
-│           ├── docusaurus-plugin-content-docs-faq
-│           └── docusaurus-theme-classic
-├── package.json
-├── sidebars.js
-├── src
-│       ├── components
-│       ├── css
-│       ├── js
-│       ├── pages
-│       │       ├── home
-│       │       ├── index.tsx
-│       │       ├── team
-│       │       ├── user
-│       │       └── versions
-│       └── styles
-├── static  // 静态资源
-│       ├── doc  // 文档的静态资源
-│       │       ├── image  // 文档通用图片
-│       │       ├── image_en  // 英文文档图片
-│       │       └── image_zh  // 中文文档图片
-│       ├── home  // 首页的图片
-│       ├── image  // 模块公用图片
-│       └── user  // 用户的图片
-├── tools
-        │└── build-docs.sh  // 文档同步脚本
-├── tsconfig.json
-├── versioned_docs  // 版本文档
-│       ├── version-2.0.5
-├── versioned_sidebars  // 版本 sidebars
-│       ├── version-2.0.5-sidebars.json
-├── versions.json  // 版本
-```
+3.创造价值，产生价值，让世界变得更加美好。
 
-## 3.规范
 
-### 3.1 目录命名规范
 
-全部采用小写方式， 以中下划线分隔，有复数结构时，要采用复数命名法， 缩写不用复数
+# 功能列表【已经实现】
 
-正例： `scripts / styles / components / images / utils / layouts / demo_styles / demo-scripts / img / doc`
+| 模块名称 | 功能名称     | 功能描述                                                     |
+| :------- | ------------ | ------------------------------------------------------------ |
+| 数据报表 | 数据报表     | 实时展现数据可视化大屏                                       |
+| 基础建设 | 数据源管理   | 配置全局数据源：mysql、oracle、hana、postgresql、sqlserver、hive、hbase、mongodb、es |
+|          | 资源管理     | 管理资源地址并可访问：ES、Kafka、ZK、Flink、Spark、Storm、HDFS、HBASE... |
+|          | 用户管理     | 用户的增删改查操作                                           |
+| 数据集成 | 项目管理     | 项目的增删改查操作                                           |
+|          | 任务模块     | 任务模块配置任务的定时调度                                   |
+|          | 任务构建     | 创建任务并添加任务模板的调度                                 |
+| 数据开发 | 开发环境配置 | 开发环境的增删改查操作，配置部署地址、ES、Kafka、ZK、Flink、Spark、Storm |
+|          | 开发任务列表 | 展示经过JAR和SQL添加的任务                                   |
+| 数据服务 | API接口列表  | 展示用户用户添加的API接口列表                                |
+|          | 权限管理列表 | 展示用户的分组和对应的访问的Token信息                        |
+|          | JSON格式化   | 可以将用户的JSON进行格式化的工具                             |
 
-反例： `script / style / demoStyles / imgs / docs`
 
-### 3.2 javascript 以及静态资源文件命名规范
 
-全部采用小写方式， 以中划线分隔
+# **快速开始**
 
-正例： `render-dom.js / signup.css / index.html / company-logo.png`
+开发计划     [开发计划](https://github.com/birdLark/LarkMidTable/issues/87) 
 
-反例： `renderDom.js / UserManagement.html`
+安装手册      [安装手册](https://github.com/wxgzgl/flinkx-web/blob/dev/larkmidtable-doc/userGuid.md)
 
-### 3.3 资源路径
+操作手册  	[操作手册](https://github.com/wxgzgl/LarkMidTable/tree/dev/larkmidtable-doc/userManual.md)
 
-图片资源统一放在`static/{模块名}`下
 
-css等样式文件放在`src/css`目录下
 
-### 3.4 页面内容修改
+# 产品架构图
 
-> 除了首页、团队、用户、Docs>All Version 模块页面外，其余页面都能通过底部的'Edit this page'按钮 直接跳转至对应的github的资源修改页
+![系统架构图](https://img2020.cnblogs.com/blog/622382/202010/622382-20201019215540747-440767668.jpg ) 
 
-### 3.5 首页页面修改
 
-访问页面  https://birdLark.github.io/
 
-位于 `src/pages/home`
+# 产品效果图
 
-```
-├── home
-        ├── index.jsx
-        ├── index.less
-        └── languages.json
-```
+![登陆页面](https://img2022.cnblogs.com/blog/622382/202201/622382-20220124162212117-942279447.jpg)
 
-### 3.6 团队页面修改
+![数据报表](https://img2022.cnblogs.com/blog/622382/202202/622382-20220208153920857-1211695235.jpg)
 
-访问页面  https://birdLark.github.io/zh-CN/team
+![基础建设](https://img2022.cnblogs.com/blog/622382/202202/622382-20220213093859410-908575610.png)
 
-位于 `src/pages/team`
+![数据集成](https://img2022.cnblogs.com/blog/622382/202202/622382-20220213095256736-980802722.png)
 
-```
-├── team
-        ├── index.js
-        ├── index.less
-        └── languages.json
-```
+![数据开发](https://img2022.cnblogs.com/blog/622382/202202/622382-20220213093945512-1802846752.png)
 
-### 3.7  用户 列表页面修改
 
-访问页面  https://birdLark.github.io/zh-CN/user/
 
-位于 `src/pages/user`
 
-```
-├── user
-        ├── data.json
-        ├── images.json
-        ├── index.js
-        ├── index.less
-        └── languages.json
-```
 
-### 3.8 version 列表页面修改
+# 应用领域
 
-访问页面  https://birdLark.github.io/zh-CN/versions/
+智慧校园 、智慧交通 、智慧金融 、智慧农业、智慧医疗、智慧政务  等多个大数据领域
 
-位于 `src/pages/versions`
+# 技术交流
 
-```
-└── versions
-        ├── config.json
-        ├── index.js
-        └── index.less
-```
+**一个人走的很快，一群人走的更远。**
 
-### 3.9 为文档添加新版本
-
-- 1、在本地运行 npm run docusaurus docs:version replace_by_target_version 以复制文档。
-- 2、修改 `/src/pages/version/index.js` 中的最新的版本。
+**关注微信公众号 【LarkMidTable】，并回复【LarkMidTable】，获取微信后，加我拉你到微信群，并为你提供全程免费服务，你也可以与其他伙伴交流大数据技术，如果觉得项目不错，可以star关注，LarkMidTable团队将十分感谢您的关注！**
